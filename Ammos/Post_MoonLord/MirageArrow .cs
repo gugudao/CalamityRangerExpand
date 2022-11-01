@@ -37,8 +37,8 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
         {
             DisplayName.SetDefault("Mirage Arrow");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "幻境箭");
-            Tooltip.SetDefault("May attract something small \nSummon red lightning when not critically hit");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "我给你留了两箭！");
+            Tooltip.SetDefault("Another two,another two, another two,and another two");
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "我给你留了（至少）两箭！");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Золотого пера Стрела");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Может привлечь что-то маленькое \nвызвать красную молнию, когда не нанесен критический удар");

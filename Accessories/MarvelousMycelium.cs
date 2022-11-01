@@ -35,8 +35,12 @@ namespace CalamityAmmo.Accessories
         {
             DisplayName.SetDefault("Marvelous Mycelium");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "神奇菌丝");
-            Tooltip.SetDefault("10% increased ranged damage\nSlightly increases all ranged projectile velocity");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "未受伤时减少5点防御与1点生命再生，提升6%远程伤害与9%远程暴击率\n受伤后不再减少生存属性并给予与菇共生增益");
+            Tooltip.SetDefault("10% increased ranged damage\nSlightly increases all ranged projectile velocity\n" +
+                "Death goes life on, and life achieves death soon");
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), 
+                "未受伤时减少5点防御与1点生命再生，提升6%远程伤害与9%远程暴击率\n" +
+                "受伤后给予5秒与菇共生buff，期间减少6%远程伤害与9%远程暴击，不再减少生存属性\n"+
+                "死亡延续生命，生命成就死亡");
         }
 
         public override void SetDefaults()

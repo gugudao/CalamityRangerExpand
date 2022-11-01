@@ -18,7 +18,7 @@ namespace CalamityAmmo.Misc
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Chewing Gun");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "Chewing Gun");
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "口枪糖");
             Tooltip.SetDefault("barely-usable");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "勉强能冲");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;

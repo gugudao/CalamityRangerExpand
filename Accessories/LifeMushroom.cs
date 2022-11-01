@@ -39,7 +39,7 @@ namespace CalamityAmmo.Accessories
         {
             DisplayName.SetDefault("Live Mushroom");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "一般路过的蘑菇");
-            Tooltip.SetDefault("Both you and the target enemy gain Marked for Death");
+            Tooltip.SetDefault("Generate a healing mushroom near the player randomly , and restores 15 health after picking");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "在玩家附近生成一个治愈蘑菇，拾取后恢复15点生命值");
         }
 

@@ -34,8 +34,8 @@ namespace CalamityAmmo.Accessories
         {
             DisplayName.SetDefault("Super Coil ");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "超级线圈");
-            Tooltip.SetDefault("increased ranged damage to 1.1x\nSlightly increases all ranged projectile velocity");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "远程伤害增加10%，但是乘算\n中幅提升远程弹幕的飞行速度");
+            Tooltip.SetDefault("Increased ranged damage to 1.1x\nSlightly increases all ranged projectile velocity");
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "远程伤害增加10%\n中幅提升远程弹幕的飞行速度");
         }
 
         public override void SetDefaults()
@@ -56,7 +56,7 @@ namespace CalamityAmmo.Accessories
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ModContent.ItemType<WulfrumCoil>());
+            recipe.AddIngredient(ModContent.ItemType<ModifiedCoil>());
             recipe.AddIngredient(ItemID.RangerEmblem,1);
             recipe.AddIngredient(ItemID.TitaniumBar, 3);
             recipe.AddIngredient(ItemID.AdamantiteBar, 3);

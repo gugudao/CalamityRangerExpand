@@ -65,7 +65,7 @@ namespace CalamityAmmo.Global
             {
                 projectile.velocity *= 1.35f;
             }
-            if (modplayer.Spore && projectile.CountsAsClass<RangedDamageClass>() && player.heldProj != projectile.whoAmI 
+            /*if (modplayer.Spore && projectile.CountsAsClass<RangedDamageClass>() && player.heldProj != projectile.whoAmI 
                  && projectile.type != ModContent.ProjectileType<MidasCoin>()
                  && projectile.type != ModContent.ProjectileType<Spore1>()
                  && projectile.type != ModContent.ProjectileType<Spore2>()
@@ -80,7 +80,7 @@ namespace CalamityAmmo.Global
                         Projectile.NewProjectile(projectile.GetSource_FromThis(), projectile.Center, projectile.velocity, ModContent.ProjectileType<FungiOrb>(), (int)(projectile.damage * 0.5f), 0f, player.whoAmI);
                     }
                 }
-            }
+            }*/
 
             if (modplayer.Radio && player.heldProj != projectile.whoAmI)
             {

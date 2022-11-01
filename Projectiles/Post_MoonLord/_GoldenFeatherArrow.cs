@@ -42,8 +42,8 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
                 Projectile.timeLeft = 300;
                 Projectile.light = 0f;
                 Projectile.extraUpdates = 3;
-            Projectile.arrow = true;
-            Projectile.aiStyle = 1;
+                Projectile.arrow = true;
+                Projectile.aiStyle = 1;
         }
 
             public override bool OnTileCollide(Vector2 oldVelocity)

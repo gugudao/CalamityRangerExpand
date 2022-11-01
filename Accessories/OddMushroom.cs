@@ -38,7 +38,8 @@ namespace CalamityAmmo.Accessories
         {
             DisplayName.SetDefault("Odd Mushroom(equipable)");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "致幻蘑菇（可装备）");
-            Tooltip.SetDefault("Both you and the target enemy gain Marked for Death");
+            Tooltip.SetDefault("When hide visual grains the Trippy buff\n" +
+                " You can't always trust what you see.");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "隐藏饰品可见性时给予幻菇中毒buff\n" +
                 "“眼睛所见的，未必真实”");
         }

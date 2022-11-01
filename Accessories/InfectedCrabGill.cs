@@ -36,7 +36,9 @@ namespace CalamityAmmo.Accessories
         {
             DisplayName.SetDefault("Infected Crab Gill");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "感染蟹腮");
-            Tooltip.SetDefault("Summons spores over time that will damage enemies\nProbability to shoot extra fungal rounds that split on death");
+            Tooltip.SetDefault("Summons spores over time that will damage enemies\n" +
+                "Probability shoot out extra fungal rounds that split on death\n"+
+                "Decrease liferegen by 1");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "随着时间推移召唤可以伤害敌人的孢子\n" +
                 "发射远程弹幕时有概率额外射出命中后分裂的真菌弹\n" +
                 "减少1点生命再生");

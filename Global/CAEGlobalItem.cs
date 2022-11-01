@@ -18,6 +18,8 @@ using CalamityAmmo.Accessories;
 using CalamityAmmo.Misc;
 using CalamityMod.Items.TreasureBags.MiscGrabBags;
 using CalamityMod.Items.Accessories;
+using CalamityMod.Projectiles.Ranged;
+using Microsoft.Xna.Framework.Input;
 
 namespace CalamityAmmo.Global
 {
@@ -28,16 +30,26 @@ namespace CalamityAmmo.Global
         {
               if (item.type == ModContent.ItemType<GloveOfRecklessness>())
               {
-                 tooltips.Add(new TooltipLine(Mod,"GORtooltip", "提高15%远程攻速，但是降低10%远程伤害与5%远程暴击"));
+                 tooltips.Add(new TooltipLine(Mod,"GORtooltip", "类似效果也作用于射手"));
               }
             if (item.type == ModContent.ItemType<GloveOfPrecision>())
             {
-                tooltips.Add(new TooltipLine(Mod, "GOPtooltip", "降低15%远程攻速，但是提高10%远程伤害与5%远程暴击"));
+                tooltips.Add(new TooltipLine(Mod, "GOPtooltip", "类似效果也作用于射手"));
             }
-
-
-
-
+        }
+        public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+            if(player.HeldItem.DamageType==DamageClass.Ranged)
+            {
+                if (Main.rand.NextBool(8))
+                {
+                    {
+                        Vector2 direction= Vector2.Normalize(Main.MouseWorld - player.Center);
+                        Projectile.NewProjectile(Projectile.GetSource_NaturalSpawn(), position, velocity, ModContent.ProjectileType<FungiOrb>(), (int)(item.damage * 0.3f), 0f, player.whoAmI);
+                    }
+                }
+            }
+            return true;
         }
         public override float UseSpeedMultiplier(Item item, Player player)
         {
