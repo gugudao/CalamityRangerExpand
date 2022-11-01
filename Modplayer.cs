@@ -1,0 +1,337 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Terraria;
+using Terraria.ModLoader;
+using Terraria.GameInput;
+using Terraria.ID;
+using IL.Terraria.GameContent;
+using On.Terraria.GameContent;
+using Terraria.DataStructures;
+using Microsoft.Xna.Framework;
+using CalamityMod.Projectiles.Ranged;
+using CalamityMod.Projectiles.Typeless;
+using CalamityMod;
+using CalamityAmmo.Projectiles.Hardmode;
+using Microsoft.Xna.Framework.Graphics;
+using CalamityMod.Buffs.StatBuffs;
+using CalamityAmmo.Accessories;
+using CalamityMod.EntitySources;
+using CalamityMod.Buffs.StatDebuffs;
+using CalamityMod.Buffs.Alcohol;
+using CalamityMod.Tiles.FurnitureVoid;
+using CalamityMod.Items.Placeables.FurnitureVoid;
+using CalamityMod.CalPlayer;
+
+namespace CalamityAmmo
+{
+    public class CaePlayer : ModPlayer
+    {
+        public bool Stars;
+        public bool Zip
+        {
+            get;
+            set;
+        }
+        public bool Aimed
+        {
+            get;
+            set;
+        }
+        public bool Coil;
+        public bool Coil2;
+        public bool Coil3;
+        public bool Spore;
+        public bool Radio;
+        public bool Holster;
+        public bool Evil;
+        public bool Odd;
+        public bool MUN;
+        public bool Live;
+        public int HealCD=0;
+        public bool Mycelium
+        {
+            get;
+            set;
+        }
+        public override void ProcessTriggers(TriggersSet triggersSet)
+        {
+            
+        }
+        public override void PreUpdate()
+        {
+            if(Holster)
+            {
+                Player.GetCritChance<RangedDamageClass>() -= 6 ;
+            }
+            if(Player.Calamity().gloveOfRecklessness)
+            {
+                Player.GetAttackSpeed<RangedDamageClass>() += 0.15f;
+                Player.GetDamage<RangedDamageClass>() -= 10f;
+                Player.GetCritChance<RangedDamageClass>()-=5f;
+            }
+            if (Player.Calamity().gloveOfPrecision)
+            {
+                Player.GetAttackSpeed<RangedDamageClass>() -= 0.15f;
+                Player.GetDamage<RangedDamageClass>() += 10f;
+                Player.GetCritChance<RangedDamageClass>() += 5f;
+            }
+        }
+        public override void PostUpdate()
+        {
+            CaePlayer modplayer = Player.GetModPlayer<CaePlayer>();
+            if (Evil)
+            {
+                Player.AddBuff(ModContent.BuffType<MarkedforDeath>(), 2);
+            }
+            if(Odd)
+            {
+                Player.AddBuff(ModContent.BuffType<Trippy>(), 2, false, false);
+            }
+            if(Mycelium)
+            {
+                if (!Player.HasBuff(ModContent.BuffType<Mushy>()))
+                {
+                    if(MUN)
+                    {
+                        Player.GetDamage<RangedDamageClass>() *= 1.12f;
+                        Player.GetCritChance<RangedDamageClass>() += 6f;
+                    }
+                    else
+                    {
+                        Player.GetDamage<RangedDamageClass>() += 0.06f;
+                        Player.GetCritChance<RangedDamageClass>() += 9f;
+                    }
+                    Player.statDefense -= 5;
+                    Player.lifeRegen -= 1;
+                }
+              
+            }
+            if(Spore)
+            {
+                modplayer.SporeSac();
+                Player.lifeRegen -= 1;
+            }
+            if(MUN)
+            {
+                Player.aggro -= 500;
+                if (Player.ownedProjectileCounts[ModContent.ProjectileType<Shroomere>()] <= 0)
+                {
+                    Vector2 spawnPos = Player.Center ;
+                    int shroomer =Projectile.NewProjectile(Projectile.GetSource_None(),
+                       spawnPos, new Vector2(0,0), ModContent.ProjectileType<Shroomere>(),
+                        (int)Player.GetDamage<RangedDamageClass>().ApplyTo(150f), 1f, Main.myPlayer);
+                    Main.projectile[shroomer].CritChance = 39+(int)Player.GetCritChance<RangedDamageClass>();
+                }
+            }
+            if(Live)
+            {
+                HealCD++;
+                if (HealCD >= 60*6 && Player.ownedProjectileCounts[ModContent.ProjectileType<HealOrb>()]<=0)
+                {
+                    Projectile.NewProjectile(Player.GetSource_Accessory(null),
+            Player.Center+new Vector2(Main.rand.Next(-200,201), Main.rand.Next(-242,-10)),
+            new Vector2(0, 0),
+            ModContent.ProjectileType<HealOrb>(), 0, 0,
+            Player.whoAmI, 15);
+                    HealCD = 0;
+                }
+            }
+        }
+
+        public override void ResetEffects()
+        {
+            this.Stars = false;
+            this.Aimed = false;
+            Zip = false;
+            Coil = false;
+            Coil2 = false;
+            Coil3 = false;
+            Spore = false;
+            Mycelium = false;
+            Radio = false;
+            Holster = false;
+            Evil = false;
+            Odd = false;
+            MUN = false;
+            Live = false;
+        }
+        public override void UpdateDead()
+        {
+            this.Stars = false;
+            this.Aimed = false;
+            Zip = false;
+            Coil = false;
+            Coil2 = false;
+            Coil3 = false;
+            Spore = false;
+            Mycelium = false;
+            Radio = false;
+            Holster = false;
+            Evil = false;
+            Odd = false;
+            MUN = false;
+            Live=false;
+        }
+        public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
+        {
+            if (Player.active && !Player.dead && Player.whoAmI == Main.myPlayer && Aimed)
+            {
+                Vector2 start = Player.Center + new Vector2(0, 6);
+                Vector2 end = Main.MouseWorld;
+                if (start != end)
+                {
+                    float length = Vector2.Distance(start, end);
+                    Vector2 direction = end - start;
+                    direction.Normalize();
+                    Texture2D texture = ModContent.Request<Texture2D>("CalamityAmmo/Misc/AimLine").Value;
+                    Texture2D texture1 = ModContent.Request<Texture2D>("CalamityAmmo/Misc/AimStar").Value;
+
+                    for (float k = 0; k <= length; k += 16f)
+                    {
+                        Vector2 drawlight = start + k * direction + new Vector2(6, 6);
+                        Main.EntitySpriteDraw(texture, start + k * direction - Main.screenPosition, null, Lighting.GetColor((int)(drawlight.X / 16), (int)(drawlight.Y / 16)), 0, new Vector2(6f, 8f), 1f, SpriteEffects.None, 0);
+                    }
+                    Main.EntitySpriteDraw(texture1, Main.MouseScreen, null, Color.Red, 0, new Vector2(34f, 34f), 1f, SpriteEffects.None, 0);
+                }
+            }
+            base.DrawEffects(drawInfo, ref r, ref g, ref b, ref a, ref fullBright);
+        }
+
+        public void ItemOnHit(Item item, int damage, Vector2 position, bool crit, bool npcCheck)
+        {
+            IEntitySource source = Player.GetSource_ItemUse(item);
+            if (Stars && crit)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    int projectileType = Utils.SelectRandom<int>(Main.rand, new int[]
+                    {
+                            ModContent.ProjectileType<AstralStar>(),
+                            92,
+                            ModContent.ProjectileType<FallenStarProj>(),
+                    });
+                    int astralStarDamage = (int)Player.GetBestClassDamage().ApplyTo(120f);
+                    Projectile star = CalamityUtils.ProjectileRain(source, position, 400f, 100f, 500f, 800f, 12f, projectileType, astralStarDamage, 5f, base.Player.whoAmI);
+                }
+            }
+        }
+        public override void PostHurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit, int cooldownCounter)
+        {
+            if (Mycelium)
+            {
+                Player.AddBuff(ModContent.BuffType<Mushy>(), 300);
+                if (MUN)
+                {
+                    Player.GetDamage<RangedDamageClass>() *= 1.12f;
+                    Player.GetCritChance<RangedDamageClass>() -= 6f;
+                }
+                else if(!MUN)
+                {
+                    Player.GetDamage<RangedDamageClass>() -= 0.06f;
+                    Player.GetCritChance<RangedDamageClass>() -= 9f;
+                }
+            }
+        }
+        public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
+        {
+            if (Evil)
+            {
+                target.AddBuff(ModContent.BuffType<MarkedforDeath>(), 150);
+            }
+        }
+        public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)
+        {
+            if (Evil)
+            {
+                target.AddBuff(ModContent.BuffType<MarkedforDeath>(), 150);
+            }
+        }
+        public void SporeSac()
+        {
+            if (Main.rand.Next(15) == 0)
+            {
+                int totalprojectiles = 0;
+                for (int i = 0; i < 1000; i++)
+                {
+                    if (Main.projectile[i].active && Main.projectile[i].owner == Player.whoAmI && (Main.projectile[i].type == ModContent.ProjectileType<Crabulon_Spore>()))
+                    {
+                        totalprojectiles++;
+                    }
+                }
+                if (Main.rand.Next(15) >= totalprojectiles && totalprojectiles < 10)
+                {
+                    int num3 = 24;
+                    int num4 = 90;
+                    for (int j = 0; j < 50; j++)
+                    {
+                        int num5 = Main.rand.Next(200 - j * 2, 400 + j * 2);
+                        Vector2 center = Player.Center;
+                        center.X += Main.rand.Next(-num5, num5 + 1);
+                        center.Y += Main.rand.Next(-num5, num5 + 1);
+                        if (!Collision.SolidCollision(center, num3, num3) && !Collision.WetCollision(center, num3, num3))
+                        {
+                            center.X += (float)(num3 / 2);
+                            center.Y += (float)(num3 / 2);
+                            if (Collision.CanHit(new Vector2(Player.Center.X, Player.position.Y), 1, 1, center, 1, 1) || Collision.CanHit(new Vector2(Player.Center.X, Player.position.Y - 50f), 1, 1, center, 1, 1))
+                            {
+                                int num6 = (int)center.X / 16;
+                                int num7 = (int)center.Y / 16;
+                                bool flag = false;
+                                if (Main.rand.Next(3) == 0)
+                                {
+                                    flag = true;
+                                }
+                                else
+                                {
+                                    center.X -= (num4 / 2);
+                                    center.Y -= (num4 / 2);
+                                    if (Collision.SolidCollision(center, num4, num4))
+                                    {
+                                        center.X += (float)(num4 / 2);
+                                        center.Y += (float)(num4 / 2);
+                                        flag = true;
+                                    }
+                                }
+                                if (flag)
+                                {
+                                    for (int k = 0; k < 1000; k++)
+                                    {
+                                        if (Main.projectile[k].active && Main.projectile[k].owner == Player.whoAmI && Main.projectile[k].aiStyle == 105 && (center - Main.projectile[k].Center).Length() < 48f)
+                                        {
+                                            flag = false;
+                                            break;
+                                        }
+                                    }
+                                    if (flag && Main.myPlayer == Player.whoAmI)
+                                    {
+                                        int damage = 10;
+                                        if(MUN)
+                                        {
+                                            damage = 50;
+                                        }
+                                        Projectile.NewProjectile(Projectile.GetSource_None(), center, new Vector2(0, 0), ModContent.ProjectileType<Crabulon_Spore>(), 
+                                            damage, 1.5f, Player.whoAmI);
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+        public override void PostUpdateMiscEffects()
+        {
+            //OddMushroomEffects();
+        }
+        private void OddMushroomEffects()
+        {
+        }
+    }
+}
+    
+

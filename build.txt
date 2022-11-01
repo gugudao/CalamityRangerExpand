@@ -1,0 +1,4 @@
+displayName = CalamityAmmoExpansion/灾厄弹药扩展
+author = 承影_chengying
+version = 1.0.2.1
+modReferences = CalamityMod@2.0.1.003
