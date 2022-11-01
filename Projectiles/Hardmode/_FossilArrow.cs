@@ -39,6 +39,7 @@ namespace CalamityAmmo.Projectiles.Hardmode
             Projectile.penetrate = 1;
             Projectile.timeLeft = 300;
             Projectile.light = 0f;
+            Projectile.arrow = true;
         }
 
         public override bool OnTileCollide(Vector2 oldVelocity)

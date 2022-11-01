@@ -167,7 +167,7 @@ namespace CalamityAmmo
         {
             if(type== NPCID.ArmsDealer)
             {
-                if(Main.hardMode)
+                if(DownedBossSystem.downedHiveMind||DownedBossSystem.downedPerforator)
                 {
                     shop.item[nextSlot].SetDefaults(ModContent.ItemType<FastHolster>());
                     nextSlot++;

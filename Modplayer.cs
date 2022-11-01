@@ -64,7 +64,7 @@ namespace CalamityAmmo
         {
             if(Holster)
             {
-                Player.GetCritChance<RangedDamageClass>() -= 6 ;
+                Player.GetCritChance<RangedDamageClass>() -= 4;
             }
             if(Player.Calamity().gloveOfRecklessness)
             {

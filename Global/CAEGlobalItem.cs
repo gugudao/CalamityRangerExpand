@@ -44,7 +44,7 @@ namespace CalamityAmmo.Global
             CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
             if (modplayer.Holster&& item.useAmmo == AmmoID.Bullet)
             {
-                return UseSpeedMultiplier(item, player) *1.12f;
+                return UseSpeedMultiplier(item, player) *1.1f;
             }
             return base.UseSpeedMultiplier(item, player);
         }

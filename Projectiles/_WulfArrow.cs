@@ -52,15 +52,17 @@ namespace CalamityAmmo.Projectiles
             Projectile.usesIDStaticNPCImmunity = false;//NPC是不是按照弹幕类型来获取无敌帧？（如果设定为true，玩家发射8个该弹幕同时击中敌人，则只能击中一次，其余的会穿透，原版用它来控制喽啰的输出上限）
             Projectile.idStaticNPCHitCooldown = 10;//上一个设定为true则被调用，NPC按照弹幕类型来获取多少无敌帧
             Projectile.netImportant = false;
+            Projectile.arrow = true;
+            Projectile.aiStyle = 1;
         }
         public override bool? CanCutTiles() => true;
         public override void AI()
         {
-            Projectile.ai[0]++;
+            Projectile.ai[1]++;
             Vector2 Normal = Projectile.velocity.RotatedBy(Math.PI / 3);
             Normal.Normalize();
-            Projectile.position += Normal * (float)Math.Sin(Projectile.ai[0] ) * (Main.rand.Next(-10, 11));
-            if (Projectile.ai[0] >= 20)
+            Projectile.position += Normal * (float)Math.Sin(Projectile.ai[1] ) * (Main.rand.Next(-10, 11));
+            if (Projectile.ai[1] >= 20)
             {
                 Projectile.velocity.Y +=3f;
             }

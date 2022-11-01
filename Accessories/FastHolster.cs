@@ -35,7 +35,9 @@ namespace CalamityAmmo.Accessories
             DisplayName.SetDefault("Fast Holster ");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "快拔枪套");
             Tooltip.SetDefault("10% increased ranged damage\nSlightly increases all ranged projectile velocity");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "枪械的使用时间减少12%\n远程武器的暴击率减少6%");
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), 
+                "枪械的使用时间减少10%\n远程暴击率减少4%\n" +
+                "不要在乎打得准不准，只要打得多，就是打得准！");
         }
 
         public override void SetDefaults()

@@ -36,14 +36,15 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
             {
                 Projectile.width = 10;
                 Projectile.height = 10;
-                Projectile.aiStyle = -1;
                 Projectile.friendly = true;
                 Projectile.DamageType = DamageClass.Ranged;
                 Projectile.penetrate = 1;
                 Projectile.timeLeft = 300;
                 Projectile.light = 0f;
                 Projectile.extraUpdates = 3;
-            }
+            Projectile.arrow = true;
+            Projectile.aiStyle = 1;
+        }
 
             public override bool OnTileCollide(Vector2 oldVelocity)
             {

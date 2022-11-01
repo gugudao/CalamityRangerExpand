@@ -54,6 +54,8 @@ namespace CalamityAmmo.Projectiles
             Projectile.idStaticNPCHitCooldown = 10;//上一个设定为true则被调用，NPC按照弹幕类型来获取多少无敌帧
             Projectile.netImportant = true;
             AIType = ProjectileID.WoodenArrowFriendly;
+            Projectile.arrow = true;
+            Projectile.aiStyle = 1;
         }
         public override bool? CanCutTiles() => true;
         public override void AI()

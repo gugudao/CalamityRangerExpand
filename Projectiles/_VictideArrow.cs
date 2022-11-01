@@ -47,12 +47,14 @@ namespace CalamityAmmo.Projectiles
             Projectile.penetrate = 1;
             Projectile.timeLeft = 300;
             Projectile.tileCollide = true;
-            Projectile.ignoreWater = true;
-            Projectile.usesLocalNPCImmunity = true;//NPC是不是按照弹幕ID来获取无敌帧？（如果设定为true，玩家发射8个该弹幕同时击中敌人，则八个都能击中，不骗伤，原版夜明弹的反骗伤就是如此）
+            Projectile.ignoreWater = false;
+            Projectile.usesLocalNPCImmunity = true;//NPC是不是按照弹幕ID来获取无敌帧？（如果设定为true，玩家发射8个该弹幕同时击中敌人，则八个都能击中）
             Projectile.localNPCHitCooldown = 20;//上一个设定为true则被调用，NPC按照弹幕ID来获取多少无敌帧
-            Projectile.usesIDStaticNPCImmunity = false;//NPC是不是按照弹幕类型来获取无敌帧？（如果设定为true，玩家发射8个该弹幕同时击中敌人，则只能击中一次，其余的会穿透，原版用它来控制喽啰的输出上限）
-            Projectile.idStaticNPCHitCooldown = 15;//上一个设定为true则被调用，NPC按照弹幕类型来获取多少无敌帧
+            Projectile.usesIDStaticNPCImmunity = false;//NPC是不是按照弹幕类型来获取无敌帧？（如果设定为true，玩家发射8个该弹幕同时击中敌人，则只能击中一次，其余的会穿透）
+            Projectile.idStaticNPCHitCooldown = 15;
             Projectile.netImportant = true;
+            Projectile.arrow = true;
+            Projectile.aiStyle = 1;
         }
         public override bool? CanCutTiles() => true;
         public override void AI()
@@ -65,13 +67,13 @@ namespace CalamityAmmo.Projectiles
         }
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
-            base.OnHitNPC(target, damage, knockback, crit);
+       
         }
         public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
         {
             if (Projectile.wet)
             {
-                damage = (int)(damage * 1.5f);
+                damage += (int)(damage * 0.5);
             }
         }
         public override bool PreDraw(ref Color lightColor)
@@ -79,11 +81,7 @@ namespace CalamityAmmo.Projectiles
             Projectile.rotation = (float)(Projectile.velocity.ToRotation() + Math.PI / 2);
             return base.PreDraw(ref lightColor);
         }
-        public override bool PreKill(int timeLeft)
-        {
-            Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-            return PreKill(timeLeft);
-        }
+    
       
     }
 }

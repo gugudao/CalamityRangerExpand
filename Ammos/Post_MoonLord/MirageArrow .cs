@@ -57,6 +57,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
             Item.shoot = ModContent.ProjectileType<MirageArrow_Proj>();
             Item.shootSpeed = 6f;
             Item.ammo = AmmoID.Arrow;
+
         }
         public override void AddRecipes()
         {
@@ -90,6 +91,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
             Projectile.timeLeft = 300;
             Projectile.light = 0f;
             Projectile.extraUpdates = 1;
+            Projectile.arrow = true;
         }
 
         public override bool OnTileCollide(Vector2 oldVelocity)

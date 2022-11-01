@@ -48,7 +48,7 @@ namespace CalamityAmmo.Global
             CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
             if (modplayer.Coil && projectile.CountsAsClass<RangedDamageClass>() && player.heldProj != projectile.whoAmI && projectile.type != ModContent.ProjectileType<MidasCoin>())
             {
-                projectile.velocity *= 1.1f;
+                projectile.velocity *= 1.08f;
             }
             if (modplayer.Coil2)
             {
@@ -65,7 +65,22 @@ namespace CalamityAmmo.Global
             {
                 projectile.velocity *= 1.35f;
             }
-          
+            if (modplayer.Spore && projectile.CountsAsClass<RangedDamageClass>() && player.heldProj != projectile.whoAmI 
+                 && projectile.type != ModContent.ProjectileType<MidasCoin>()
+                 && projectile.type != ModContent.ProjectileType<Spore1>()
+                 && projectile.type != ModContent.ProjectileType<Spore2>()
+                 && projectile.type != ModContent.ProjectileType<Spore3>()
+                 && projectile.type != ModContent.ProjectileType<Crabulon_Spore>()
+                 && projectile.type != ModContent.ProjectileType<FungiOrb>()
+                 && projectile.type != ModContent.ProjectileType<FungiOrb2>())
+            {
+                if (Main.rand.NextBool(8))
+                {
+                    {
+                        Projectile.NewProjectile(projectile.GetSource_FromThis(), projectile.Center, projectile.velocity, ModContent.ProjectileType<FungiOrb>(), (int)(projectile.damage * 0.5f), 0f, player.whoAmI);
+                    }
+                }
+            }
 
             if (modplayer.Radio && player.heldProj != projectile.whoAmI)
             {
@@ -83,21 +98,7 @@ namespace CalamityAmmo.Global
         {
             Player player = Main.player[projectile.owner];
             CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
-            if (modplayer.Spore && projectile.CountsAsClass<RangedDamageClass>() && player.heldProj != projectile.whoAmI && projectile.type != ModContent.ProjectileType<MidasCoin>()
-               && projectile.type != ModContent.ProjectileType<Spore1>()
-               && projectile.type != ModContent.ProjectileType<Spore2>()
-               && projectile.type != ModContent.ProjectileType<Spore3>()
-               && projectile.type != ModContent.ProjectileType<Crabulon_Spore>()
-               && projectile.type != ModContent.ProjectileType<FungiOrb>()
-               && projectile.type != ModContent.ProjectileType<FungiOrb2>())
-            {
-                if (Main.rand.NextBool(8))
-                {
-                    {
-                        Projectile.NewProjectile(projectile.GetSource_FromThis(), projectile.Center, projectile.velocity, ModContent.ProjectileType<FungiOrb>(), (int)(projectile.damage * 0.5f), 0f, player.whoAmI);
-                    }
-                }
-            }
+    
         }
     }
 }

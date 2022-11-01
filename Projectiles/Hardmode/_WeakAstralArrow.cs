@@ -31,12 +31,13 @@ namespace CalamityAmmo.Projectiles.Hardmode
         {
             Projectile.width = 4;
             Projectile.height = 4;
-            Projectile.aiStyle = -1;
             Projectile.friendly = true;
             Projectile.DamageType = DamageClass.Ranged;
             Projectile.penetrate = -1;
             Projectile.timeLeft = 300;
             Projectile.light = 0f;
+            Projectile.arrow = true;
+            Projectile.aiStyle = 1;
         }
 
         public override bool OnTileCollide(Vector2 oldVelocity)

@@ -53,15 +53,17 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
             Projectile.idStaticNPCHitCooldown = 10;//上一个设定为true则被调用，NPC按照弹幕类型来获取多少无敌帧
             Projectile.netImportant = false;
             Projectile.extraUpdates = 2;
+            Projectile.arrow = true;
+            Projectile.aiStyle = 1;
         }
         public override bool? CanCutTiles() => true;
         public override void AI()
         {
             Projectile.ai[0]++;
-            Lighting.AddLight(base.Projectile.Center, Color.White.ToVector3());
+            Lighting.AddLight(Projectile.Center, Color.White.ToVector3());
             if (Utils.NextBool(Main.rand, 5))
             {
-                int num250 = Dust.NewDust(base.Projectile.position + base.Projectile.velocity, base.Projectile.width, base.Projectile.height, 66, (float)(base.Projectile.direction * 2), 0f, 150, new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB), 1f);
+                int num250 = Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.RainbowTorch, (Projectile.direction * 2), 0f, 150, new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB), 1f);
                 Main.dust[num250].velocity *= 0.2f;
                 Main.dust[num250].noGravity = true;
             }

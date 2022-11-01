@@ -19,7 +19,6 @@ namespace CalamityAmmo.Projectiles.Hardmode
 
     public class _DazzlingAstralArrow : ModProjectile
     {
-        // Token: 0x06002DBA RID: 11706 RVA: 0x00178D40 File Offset: 0x00176F40
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Dazzling Astral Arrow");

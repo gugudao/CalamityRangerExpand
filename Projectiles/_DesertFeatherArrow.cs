@@ -42,6 +42,8 @@ namespace CalamityAmmo.Projectiles
             Projectile.height = 14;
             Projectile.friendly = true;
             Projectile.hostile = false;
+            Projectile.arrow = true;
+            Projectile.aiStyle = 1;
             Projectile.DamageType = DamageClass.Ranged;
             Projectile.penetrate = 2;
             Projectile.timeLeft = 300;
