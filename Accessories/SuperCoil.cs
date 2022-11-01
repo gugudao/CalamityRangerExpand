@@ -42,8 +42,8 @@ namespace CalamityAmmo.Accessories
         {
             Item.width = 28;
             Item.height = 32;
-            Item.value = CalamityGlobalItem.Rarity3BuyPrice;
-            Item.rare = ItemRarityID.Yellow;
+            Item.value = Item.buyPrice(0, 30, 0, 0);
+            Item.rare = 5;
             Item.accessory = true;
         }
 
@@ -58,8 +58,8 @@ namespace CalamityAmmo.Accessories
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<ModifiedCoil>());
             recipe.AddIngredient(ItemID.RangerEmblem,1);
-            recipe.AddIngredient(ItemID.TitaniumBar, 3);
-            recipe.AddIngredient(ItemID.AdamantiteBar, 3);
+            //recipe.AddIngredient(ItemID.TitaniumBar, 3);
+            recipe.AddIngredient(ItemID.AdamantiteBar, 5);
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.Register();
         }

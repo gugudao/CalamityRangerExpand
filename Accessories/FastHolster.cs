@@ -45,8 +45,8 @@ namespace CalamityAmmo.Accessories
         {
             Item.width = 28;
             Item.height = 32;
-            Item.value = CalamityGlobalItem.Rarity3BuyPrice;
-            Item.rare = ItemRarityID.Yellow;
+            Item.value = Item.buyPrice(0, 18, 0, 0);
+            Item.rare = 3;
             Item.accessory = true;
         }
 

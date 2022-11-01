@@ -69,10 +69,9 @@ namespace CalamityAmmo.Projectiles
                 perturbedSpeed = perturbedSpeed * scale;
                 if (Projectile.ai[0]>=24)
                 {
-                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position+new Vector2(0,5), perturbedSpeed, ModContent.ProjectileType<_RottenBullet2>(), Projectile.damage, Projectile.knockBack, Main.myPlayer);
+                    Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position+new Vector2(0,5), perturbedSpeed, ModContent.ProjectileType<_RottenBullet2>(), (int)(Projectile.damage/ (numberProjectiles-3)), Projectile.knockBack, Main.myPlayer);
                     Projectile.penetrate = 0;
                 }
-                
             }
         }
 
@@ -80,11 +79,10 @@ namespace CalamityAmmo.Projectiles
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
 
-            base.OnHitNPC(target, damage, knockback, crit);
         }
         public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
         {
-            base.ModifyHitNPC(target, ref damage, ref knockback, ref crit, ref hitDirection);
+
         }
         public override bool PreDraw(ref Color lightColor)
         {
@@ -102,24 +100,10 @@ namespace CalamityAmmo.Projectiles
         public override void OnSpawn(IEntitySource source)
         {
 
-            /*float numberProjectiles = 5 + Main.rand.Next(4); // 3, 4, or 5 shots
-            float rotation = MathHelper.ToRadians(45);
 
-            Projectile.position += Vector2.Normalize(Projectile.velocity) * 45f;
-
-            for (int i = 0; i < numberProjectiles; i++)
-            {
-                Vector2 perturbedSpeed = Projectile.velocity.RotatedBy(MathHelper.Lerp(-rotation, rotation, i / (numberProjectiles - 1))) * 0.2f;
-                Projectile.NewProjectile(source, Projectile.position, perturbedSpeed, ModContent.ProjectileType<_RottenBullet2>(), Projectile.damage, Projectile.knockBack, Main.myPlayer);
-
-            }*/
-            
-
-    
-           
-            }
-        }
-        }
+         }
+     }
+ }
 
 
 
