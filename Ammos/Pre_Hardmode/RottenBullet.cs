@@ -46,8 +46,8 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
             Item.maxStack = 1;
             Item.consumable = false;
             Item.knockBack = 0.3f;
-            Item.value = 10;
-            Item.rare = ItemRarityID.Blue;
+            Item.value = Item.buyPrice(0, 3, 60, 0);
+            Item.rare = ItemRarityID.Orange;
             Item.shoot = ModContent.ProjectileType<_RottenBullet>();
             Item.shootSpeed = 4.8f;
             Item.ammo = AmmoID.Bullet;
@@ -55,7 +55,7 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe(1);
-            recipe.AddIngredient(ModContent.ItemType<RottenMatter>(), 12);
+            recipe.AddIngredient(ModContent.ItemType<RottenMatter>(), 6);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }

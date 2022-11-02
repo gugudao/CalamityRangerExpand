@@ -47,7 +47,7 @@ namespace CalamityAmmo.Projectiles
             Projectile.penetrate = 1;
             Projectile.timeLeft = 300;
             Projectile.tileCollide = true;
-            Projectile.ignoreWater = true;
+            Projectile.ignoreWater = false;
             Projectile.usesLocalNPCImmunity = true;//NPC是不是按照弹幕ID来获取无敌帧？（如果设定为true，玩家发射8个该弹幕同时击中敌人，则八个都能击中，不骗伤，原版夜明弹的反骗伤就是如此）
             Projectile.localNPCHitCooldown = 20;//上一个设定为true则被调用，NPC按照弹幕ID来获取多少无敌帧
             Projectile.usesIDStaticNPCImmunity = false;//NPC是不是按照弹幕类型来获取无敌帧？（如果设定为true，玩家发射8个该弹幕同时击中敌人，则只能击中一次，其余的会穿透，原版用它来控制喽啰的输出上限）

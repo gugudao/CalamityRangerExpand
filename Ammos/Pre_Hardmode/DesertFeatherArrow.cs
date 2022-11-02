@@ -44,7 +44,7 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
             Item.maxStack = 999;
             Item.consumable = true;
             Item.knockBack = 0f;
-            Item.value = 10;
+            Item.value = Item.buyPrice(0, 0, 0, 35);
             Item.rare = ItemRarityID.Green;
             Item.shoot = ModContent.ProjectileType<_DesertFeatherArrow>();
             Item.shootSpeed = 4.5f;
@@ -56,7 +56,6 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
             recipe.AddIngredient(ItemID.WoodenArrow, 20);
             recipe.AddIngredient(ModContent.ItemType<DesertFeather>(), 1);
             recipe.AddTile(TileID.Anvils);
-
             recipe.Register();
         }
 

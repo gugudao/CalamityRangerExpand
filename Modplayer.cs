@@ -62,10 +62,7 @@ namespace CalamityAmmo
         }
         public override void PreUpdate()
         {
-            if(Holster)
-            {
-                Player.GetCritChance<RangedDamageClass>() -= 4;
-            }
+            
             if(Player.Calamity().gloveOfRecklessness)
             {
                 Player.GetAttackSpeed<RangedDamageClass>() += 0.15f;
@@ -82,6 +79,10 @@ namespace CalamityAmmo
         public override void PostUpdate()
         {
             CaePlayer modplayer = Player.GetModPlayer<CaePlayer>();
+            if (Holster)
+            {
+                Player.GetCritChance<RangedDamageClass>() -= 4;
+            }
             if (Evil)
             {
                 Player.AddBuff(ModContent.BuffType<MarkedforDeath>(), 2);

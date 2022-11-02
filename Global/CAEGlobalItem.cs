@@ -39,7 +39,8 @@ namespace CalamityAmmo.Global
         }
         public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            if(player.HeldItem.DamageType==DamageClass.Ranged)
+            CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
+            if (player.HeldItem.DamageType==DamageClass.Ranged&&modplayer.Spore)
             {
                 if (Main.rand.NextBool(8))
                 {
@@ -56,7 +57,7 @@ namespace CalamityAmmo.Global
             CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
             if (modplayer.Holster&& item.useAmmo == AmmoID.Bullet)
             {
-                return UseSpeedMultiplier(item, player) *1.1f;
+                return 1.1f;
             }
             return base.UseSpeedMultiplier(item, player);
         }
