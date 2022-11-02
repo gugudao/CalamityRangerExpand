@@ -45,7 +45,7 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
             Item.maxStack = 999;
             Item.consumable = true;
             Item.knockBack = 0f;
-            Item.value = Item.buyPrice(0, 0, 0, 35);
+            Item.value = Item.buyPrice(0, 0, 2, 25);
             Item.rare = ItemRarityID.Green;
             Item.shoot = ModContent.ProjectileType<_PearlArrow>();
             Item.shootSpeed = 4.5f;

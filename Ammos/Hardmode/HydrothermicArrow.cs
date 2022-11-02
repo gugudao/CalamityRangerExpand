@@ -39,7 +39,7 @@ namespace CalamityAmmo.Ammos.Hardmode
             Item.maxStack = 9999;
             Item.consumable = true;
             Item.knockBack = 2.5f;
-            Item.value = Item.buyPrice(0, 0, 30, 0);
+            Item.value = Item.buyPrice(0, 0, 4, 0);
             Item.rare = ItemRarityID.Yellow;
             Item.shoot = ModContent.ProjectileType<HydrothermicArrow_Proj>();
             Item.shootSpeed = 5f;
