@@ -49,8 +49,8 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
             Item.maxStack = 999;
             Item.consumable = true;
             Item.knockBack = 2.5f;
-            Item.value = 10;
-            Item.rare = ItemRarityID.Lime;
+            Item.value = Item.buyPrice(0, 0, 3, 0);
+            Item.rare = ItemRarityID.Purple;
             Item.shoot = ModContent.ProjectileType<_ElementalBullet>();
             Item.shootSpeed = 4f;
             Item.ArmorPenetration = 5;

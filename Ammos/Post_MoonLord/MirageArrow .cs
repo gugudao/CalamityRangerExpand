@@ -52,8 +52,8 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
             Item.maxStack = 9999;
             Item.consumable = true;
             Item.knockBack = 2.5f;
-            Item.value = 10;
-            Item.rare = ItemRarityID.Lime;
+            Item.value = Item.buyPrice(0, 0, 5, 0);
+            Item.rare = ItemRarityID.Purple;
             Item.shoot = ModContent.ProjectileType<MirageArrow_Proj>();
             Item.shootSpeed = 6f;
             Item.ammo = AmmoID.Arrow;
@@ -62,8 +62,9 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
         public override void AddRecipes()
         {
             CreateRecipe(333)
-            .AddIngredient(ModContent.ItemType<Phantoplasm>(), 1)
-            .AddIngredient(ModContent.ItemType<RuinousSoul > (), 1)
+            .AddIngredient(ModContent.ItemType<Phantoplasm>(), 3)
+            .AddIngredient(1508,5)
+            // .AddIngredient(ModContent.ItemType<RuinousSoul > (), 1)
             .AddTile(TileID.LunarCraftingStation)
             .Register();
         }
