@@ -46,8 +46,8 @@ namespace CalamityAmmo.Ammos.Hardmode
             Item.maxStack = 999;
             Item.consumable = true;
             Item.knockBack = 2.5f;
-            Item.value = 10;
-            Item.rare = ItemRarityID.Lime;
+            Item.value = Item.buyPrice(0, 0, 2, 85);
+            Item.rare = ItemRarityID.Orange;
             Item.shoot = ModContent.ProjectileType<_NapalmBullet>();
             Item.shootSpeed = 4f;
             Item.ammo = AmmoID.Bullet;

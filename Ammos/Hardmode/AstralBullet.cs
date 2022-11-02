@@ -47,8 +47,8 @@ namespace CalamityAmmo.Ammos.Hardmode
             Item.maxStack = 999;
             Item.consumable = true;
             Item.knockBack = 2.5f;
-            Item.value = 10;
-            Item.rare = ItemRarityID.Lime;
+            Item.value = Item.buyPrice(0, 0, 1, 0);
+            Item.rare = 7;
             Item.shoot = ModContent.ProjectileType < _AstralBullet>();
             Item.shootSpeed = 4f;
             Item.ArmorPenetration = 5;
