@@ -44,6 +44,8 @@ namespace CalamityAmmo.Misc
         public override void ModifyItemLoot(ItemLoot itemLoot)
         {
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<HardTack>(), 1, 15, 40));
+           
+           itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<KnowledgeAuric>(), 1000));
         }
 
     }

@@ -27,6 +27,7 @@ namespace CalamityAmmo.Misc
         public override void SetDefaults()
         {
             Item.CloneDefaults(ItemID.Minishark);
+            Item.value = 200;
         }
         public override void AddRecipes()
         {

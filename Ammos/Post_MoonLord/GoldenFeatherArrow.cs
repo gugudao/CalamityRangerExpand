@@ -50,7 +50,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
             Item.maxStack = 999;
             Item.consumable = true;
             Item.knockBack = 2.5f;
-            Item.value = Item.buyPrice(0, 0, 1, 50);
+            Item.value = Item.buyPrice(0, 0, 3, 0);
             Item.rare = ItemRarityID.Purple;
             Item.shoot = ModContent.ProjectileType<_GoldenFeatherArrow>();
             Item.shootSpeed = 3.85f;

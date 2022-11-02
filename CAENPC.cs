@@ -35,7 +35,8 @@ namespace CalamityAmmo
         public int carrot = 0;
         public override void OnHitByProjectile(NPC npc, Projectile projectile, int damage, float knockback, bool crit)
         {
-
+            Player player = Main.player[projectile.owner];
+            CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
             if (projectile.type == ModContent.ProjectileType<_DazzlingAstralArrow>() &&
                Main.myPlayer == projectile.owner)
             {
@@ -94,7 +95,7 @@ namespace CalamityAmmo
                 Main.projectile[star].localNPCHitCooldown = 21;
                 Main.projectile[star].netUpdate = true;
             }
-            Player player = Main.player[projectile.owner];
+            
             if (npc.type != NPCID.TargetDummy && Main.myPlayer == projectile.owner && projectile.type == ModContent.ProjectileType<_Seed>()
                 && player.ownedProjectileCounts[ModContent.ProjectileType<_Flower>()] <= 0)
             {

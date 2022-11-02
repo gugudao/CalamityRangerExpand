@@ -50,7 +50,10 @@ namespace CalamityAmmo
         public bool Odd;
         public bool MUN;
         public bool Live;
+        public bool Arcane;
+        public bool KnowledgeAuric;
         public int HealCD=0;
+        
         public bool Mycelium
         {
             get;
@@ -158,6 +161,7 @@ namespace CalamityAmmo
             Odd = false;
             MUN = false;
             Live = false;
+            Arcane=false;   
         }
         public override void UpdateDead()
         {
@@ -175,6 +179,7 @@ namespace CalamityAmmo
             Odd = false;
             MUN = false;
             Live=false;
+            Arcane =false;  
         }
         public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
         {

@@ -32,7 +32,7 @@ namespace CalamityAmmo.Global
                     {
                         int Proj = Projectile.NewProjectile(projectile.GetSource_FromThis(), proj.Center, proj.velocity, ModContent.ProjectileType<TeslaAura>(), (int)(projectile.damage * 0.2f), 0f, player.whoAmI);
                         Main.projectile[Proj].Center = proj.Center;
-                        Main.projectile[Proj].velocity= proj.velocity;
+                        Main.projectile[Proj].velocity = proj.velocity;
                         Main.projectile[Proj].timeLeft = 1;
                     }
             }
@@ -41,7 +41,19 @@ namespace CalamityAmmo.Global
 
             base.AI(projectile);
         }
-
+        public override void ModifyDamageScaling(Projectile projectile, ref float damageScale)
+        {
+            Player player = Main.player[projectile.owner];
+            CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
+            if (player.HasBuff(94))
+            {
+                player.GetDamage < RangedDamageClass >()*= 0.5f;
+            }
+            if (projectile.arrow && modplayer.Arcane)
+            {
+                damageScale = 1.05f + player.HeldItem.useTime / 420f;
+            }
+        }
         public override void OnSpawn(Projectile projectile, IEntitySource source)
         {
             Player player = Main.player[projectile.owner];
@@ -84,12 +96,12 @@ namespace CalamityAmmo.Global
 
             if (modplayer.Radio && player.heldProj != projectile.whoAmI)
             {
-                
-                    if (projectile.type != ModContent.ProjectileType<TeslaAura>() && projectile.CountsAsClass<RangedDamageClass>())
-                    {
-                        Projectile.NewProjectile(projectile.GetSource_FromThis(), projectile.Center, projectile.velocity, ModContent.ProjectileType<TeslaAura>(), (int)(projectile.damage * 0.2f), 0f, player.whoAmI);
-                    
-                    }
+
+                if (projectile.type != ModContent.ProjectileType<TeslaAura>() && projectile.CountsAsClass<RangedDamageClass>())
+                {
+                    Projectile.NewProjectile(projectile.GetSource_FromThis(), projectile.Center, projectile.velocity, ModContent.ProjectileType<TeslaAura>(), (int)(projectile.damage * 0.2f), 0f, player.whoAmI);
+
+                }
 
             }
 
@@ -98,7 +110,13 @@ namespace CalamityAmmo.Global
         {
             Player player = Main.player[projectile.owner];
             CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
-    
+
+        }
+        public override void ModifyHitNPC(Projectile projectile, NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        {
+            Player player = Main.player[projectile.owner];
+            CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
+            
         }
     }
 }

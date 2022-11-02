@@ -40,15 +40,24 @@ namespace CalamityAmmo.Global
         public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
+            
             if (player.HeldItem.DamageType==DamageClass.Ranged&&modplayer.Spore)
             {
                 if (Main.rand.NextBool(8))
                 {
                     {
-                        Vector2 direction= Vector2.Normalize(Main.MouseWorld - player.Center);
+                        //Vector2 direction= Vector2.Normalize(Main.MouseWorld - player.Center);
                         Projectile.NewProjectile(Projectile.GetSource_NaturalSpawn(), position, velocity, ModContent.ProjectileType<FungiOrb>(), (int)(item.damage * 0.3f), 0f, player.whoAmI);
                     }
                 }
+            }
+            if(player.HeldItem.useAmmo==AmmoID.Arrow&&modplayer.Arcane)
+            {
+                item.mana = item.useTime /3;
+            }
+            if(player.HeldItem.useAmmo == AmmoID.Arrow && !modplayer.Arcane)
+            {
+                item.mana = 0;
             }
             return true;
         }
@@ -61,6 +70,7 @@ namespace CalamityAmmo.Global
             }
             return base.UseSpeedMultiplier(item, player);
         }
+        
     }
     public class BossBag:GlobalItem
     {

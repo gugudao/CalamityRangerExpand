@@ -4,6 +4,7 @@ using CalamityMod;
 using CalamityMod.Items.Materials;
 using CalamityMod.Items.Placeables;
 using CalamityMod.Items.Potions;
+using CalamityMod.Rarities;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -35,8 +36,8 @@ namespace CalamityAmmo.Misc
             Item.useTime = 25;
             Item.useAnimation = 25;
             Item.useStyle = ItemUseStyleID.EatFood;
-            Item.value = Item.buyPrice(0, 80, 0, 0);
-            Item.rare = ItemRarityID.Yellow;
+            Item.value = Item.buyPrice(0, 10, 0, 0);
+            Item.rare = ModContent.RarityType<Violet>();
             Item.UseSound = new SoundStyle?(SoundID.Item8);
             Item.autoReuse = false;
             Item.buffType = BuffID.WellFed3;

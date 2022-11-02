@@ -40,6 +40,7 @@ namespace CalamityAmmo.Misc
             Item.width = 76;
             Item.height = 116;
             Item.rare = ModContent.RarityType<FirstRed>();
+            Item.value = 0;
             Item.shoot = ModContent.ProjectileType<Chengying_Fumo_Proj>();
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
