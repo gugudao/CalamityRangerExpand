@@ -62,7 +62,7 @@ namespace CalamityAmmo.Accessories
             modplayer.Arcane = true;
             player.magicQuiver = true;
         }
-        public override void AddRecipes()
+        /*public override void AddRecipes()
         {
             var recipe2 = CreateRecipe();
             recipe2 = CreateRecipe();
@@ -77,7 +77,7 @@ namespace CalamityAmmo.Accessories
             recipe2.ReplaceResult(ModContent.ItemType<ArcaneQuiver>(), 1);
             recipe2.AddTile(TileID.TinkerersWorkbench);
             recipe2.Register();
-        }
+        }*/
     }
 }
 

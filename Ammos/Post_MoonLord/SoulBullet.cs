@@ -49,7 +49,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
         }
         public override void SetDefaults()
         {
-            Item.damage = 25;
+            Item.damage = 1;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 8;
             Item.height = 8;
@@ -137,6 +137,10 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
      
             }
             CalamityUtils.HomeInOnNPC(Projectile, !Projectile.tileCollide, 600f, 12f, 12f);
+        }
+        public override void ModifyDamageScaling(ref float damageScale)
+        {
+            damageScale = 1f - 0.2f*(3 - Projectile.penetrate);
         }
         public override Color? GetAlpha(Color lightColor)
         {

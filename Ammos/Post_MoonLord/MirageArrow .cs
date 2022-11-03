@@ -45,7 +45,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
         }
         public override void SetDefaults()
         {
-            Item.damage = 20;
+            Item.damage = 1;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 8;
             Item.height = 8;

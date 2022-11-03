@@ -46,7 +46,16 @@ namespace CalamityAmmo.Accessories
             Item.rare = ItemRarityID.Blue;
             Item.accessory = true;
         }
-
+        public override void ExtractinatorUse(ref int resultType, ref int resultStack)
+        {
+            resultType = ModContent.ItemType<WulfrumMetalScrap>();
+            resultStack = Main.rand.Next(3, 6);
+            if (Utils.NextFloat(Main.rand) > 0.8f)
+            {
+                resultStack = 1;
+                resultType = ModContent.ItemType<EnergyCore>();
+            }
+        }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
