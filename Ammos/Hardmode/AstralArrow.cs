@@ -30,9 +30,9 @@ namespace CalamityAmmo.Ammos.Hardmode
     {
         public override void SetStaticDefaults()
         {
-                DisplayName.SetDefault("Astral Arrow");
-                DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "幻星箭");
-                Tooltip.SetDefault(IsChinese() ? "击败诞生于星辰之间的恐惧以完成进化" : "Will upgrade after Astrum Deus is defeated");
+            DisplayName.SetDefault("Astral Arrow");
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "幻星箭");
+            Tooltip.SetDefault(IsChinese() ? "击败诞生于星辰之间的恐惧以完成进化" : "Will upgrade after Astrum Deus is defeated");
             //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "在打败白金星舰后升级\n在打败星神游龙会再次升级");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Астральная стрела");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Будет обновляться после поражения Аструм Деуса");
@@ -49,7 +49,7 @@ namespace CalamityAmmo.Ammos.Hardmode
             Item.knockBack = 2.5f;
             Item.value = Item.buyPrice(0, 0, 1, 0);
             Item.rare = 7;
-            Item.shoot = ModContent.ProjectileType < _AstralArrow>();
+            Item.shoot = ModContent.ProjectileType<_AstralArrow>();
             Item.shootSpeed = 3.75f;
             Item.ammo = AmmoID.Arrow;
         }
@@ -61,8 +61,13 @@ namespace CalamityAmmo.Ammos.Hardmode
                 Item.SetDefaults(ModContent.ItemType<DazzlingAstralArrow>(), true);
                 Item.stack = i;
             }
-        }
+            if (!DownedBossSystem.downedAstrumAureus)
+            {
+                Item.SetDefaults(ModContent.ItemType<WeakAstralArrow>(), true);
+                Item.stack = i;
+            }
 
+        }
 
     }
 }

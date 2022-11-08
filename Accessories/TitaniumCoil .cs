@@ -28,14 +28,14 @@ using CalamityMod;
 
 namespace CalamityAmmo.Accessories
 {
-    public class SuperCoil : ModItem
+    public class TitaniumCoil : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Super Coil ");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "精金线圈");
+            DisplayName.SetDefault("Titanium Coil ");
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "钛金线圈");
             Tooltip.SetDefault("Increased ranged damage to 1.1x\nSlightly increases all ranged projectile velocity");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "提高远程暴击率\n远程武器的攻速越快，越容易暴击\n中幅提升远程弹幕的飞行速度");
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "提高远程伤害\n远程武器的攻速越慢，伤害越高\n中幅提升远程弹幕的飞行速度");
         }
 
         public override void SetDefaults()
@@ -50,12 +50,12 @@ namespace CalamityAmmo.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
-            modplayer.Coil3 = true;
+            modplayer.Coil4 = true;
         }
         public override bool CanEquipAccessory(Player player, int slot, bool modded)
         {
             CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
-            if (modplayer.Coil4)
+            if (modplayer.Coil3)
             {
                 return false;
             }
@@ -66,7 +66,8 @@ namespace CalamityAmmo.Accessories
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<ModifiedCoil>());
             recipe.AddIngredient(ItemID.RangerEmblem,1);
-            recipe.AddIngredient(ItemID.TitaniumBar, 5);
+            //recipe.AddIngredient(ItemID.TitaniumBar, 3);
+            recipe.AddIngredient(ItemID.AdamantiteBar, 5);
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.Register();
         }

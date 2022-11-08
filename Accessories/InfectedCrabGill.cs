@@ -77,6 +77,8 @@ namespace CalamityAmmo.Accessories
             Projectile.penetrate = 1;
             Projectile.timeLeft = 300;
             Projectile.light = 0f;
+            Projectile.usesLocalNPCImmunity = true;
+            Projectile.localNPCHitCooldown = 15;
         }
         public override void AI()
         {
@@ -143,6 +145,8 @@ namespace CalamityAmmo.Accessories
             Projectile.penetrate = 5;
             Projectile.timeLeft = 300;
             Projectile.light = 0f;
+            Projectile.usesLocalNPCImmunity = true;
+            Projectile.localNPCHitCooldown = 15;
         }
         public override void AI()
         {
@@ -184,6 +188,8 @@ namespace CalamityAmmo.Accessories
             Projectile.penetrate = 5;
             Projectile.timeLeft = 300;
             Projectile.light = 0f;
+            Projectile.usesLocalNPCImmunity = true;
+            Projectile.localNPCHitCooldown = 15;
         }
         public override void AI()
         {
@@ -226,6 +232,8 @@ namespace CalamityAmmo.Accessories
             Projectile.penetrate = 5;
             Projectile.timeLeft = 300;
             Projectile.light = 0f;
+            Projectile.usesLocalNPCImmunity = true;
+            Projectile.localNPCHitCooldown = 15;
         }
         public override void AI()
         {

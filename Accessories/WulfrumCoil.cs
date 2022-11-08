@@ -35,7 +35,7 @@ namespace CalamityAmmo.Accessories
             DisplayName.SetDefault("Wulfrum Coil ");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "钨钢线圈");
             Tooltip.SetDefault("10% increased ranged damage\nSlightly increases all ranged projectile velocity");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "远程伤害+7%\n小幅提升远程弹幕的飞行速度");
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "远程伤害+7%\n略微提升远程弹幕的飞行速度");
         }
 
         public override void SetDefaults()

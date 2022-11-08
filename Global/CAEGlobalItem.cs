@@ -20,6 +20,9 @@ using CalamityMod.Items.TreasureBags.MiscGrabBags;
 using CalamityMod.Items.Accessories;
 using CalamityMod.Projectiles.Ranged;
 using Microsoft.Xna.Framework.Input;
+using CalamityAmmo.Ammos.Post_MoonLord;
+using Mono.Cecil;
+using CalamityMod.Items.Weapons.Ranged;
 
 namespace CalamityAmmo.Global
 {
@@ -47,18 +50,22 @@ namespace CalamityAmmo.Global
                 {
                     {
                         //Vector2 direction= Vector2.Normalize(Main.MouseWorld - player.Center);
-                        Projectile.NewProjectile(Projectile.GetSource_NaturalSpawn(), position, velocity, ModContent.ProjectileType<FungiOrb>(), (int)(item.damage * 0.3f), 0f, player.whoAmI);
+                        Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<FungiOrb>(), (int)(damage * 0.3f), 0f, player.whoAmI);
                     }
                 }
             }
             if(player.HeldItem.useAmmo==AmmoID.Arrow&&modplayer.Arcane)
             {
                 item.mana = item.useTime /3;
+                //item.shoot = ModContent.ProjectileType<ArcaneArrow_Proj>();
             }
             if(player.HeldItem.useAmmo == AmmoID.Arrow && !modplayer.Arcane)
             {
                 item.mana = 0;
             }
+         
+                
+           
             return true;
         }
         public override float UseSpeedMultiplier(Item item, Player player)
@@ -67,6 +74,10 @@ namespace CalamityAmmo.Global
             if (modplayer.Holster&& item.useAmmo == AmmoID.Bullet)
             {
                 return 1.1f;
+            }
+          if(modplayer.LowATKspeed)
+            {
+                return 0.000005f;
             }
             return base.UseSpeedMultiplier(item, player);
         }
@@ -87,8 +98,38 @@ namespace CalamityAmmo.Global
             }
         }
     }
-    public class ModifyCal : GlobalItem
+    public class ThePackRework : GlobalItem
     {
+        public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+                Vector2 shootVel = velocity;
+                int rockettype = 0;
+            if(player.HeldItem.type==ModContent.ItemType<ThePack>())
+            {
+                switch (source.AmmoItemIdUsed)
+                {
+                    case ItemID.RocketI: rockettype = ModContent.ProjectileType<ThePack_RocketI>(); break;
+                    case ItemID.RocketII: rockettype = ModContent.ProjectileType<ThePack_RocketII>(); break;
+                    case ItemID.RocketIII: rockettype = ModContent.ProjectileType<ThePack_RocketIII>(); break;
+                    case ItemID.RocketIV: rockettype = ModContent.ProjectileType<ThePack_RocketIV>(); break;
+                    case ItemID.ClusterRocketI: rockettype = ModContent.ProjectileType<ThePack_ClusterRocketI>(); break;
+                    case ItemID.ClusterRocketII: rockettype = ModContent.ProjectileType<ThePack_ClusterRocketII>(); break;
 
+                    case ItemID.MiniNukeI: rockettype = ModContent.ProjectileType<ThePack_MiniNukeRocketI>(); break;
+                    case ItemID.MiniNukeII: rockettype = ModContent.ProjectileType<ThePack_MiniNukeRocketII>(); break;
+
+                    case ItemID.WetRocket: rockettype = ModContent.ProjectileType<ThePack_WetRocket>(); break;
+                    case ItemID.LavaRocket: rockettype = ModContent.ProjectileType<ThePack_LavaRocket>(); break;
+                    case ItemID.HoneyRocket: rockettype = ModContent.ProjectileType<ThePack_HoneyRocket>(); break;
+                    case ItemID.DryRocket: rockettype = ModContent.ProjectileType<ThePack_DryRocket>(); break;
+                }
+                Projectile.NewProjectile(source, position, shootVel, rockettype, damage, knockback, player.whoAmI);
+                return false;
+            }
+
+            return true;
+              
+            
+        }
     }
 }

@@ -28,9 +28,12 @@ using CalamityAmmo.Projectiles.Post_MoonLord;
 using Terraria.Audio;
 using CalamityAmmo.Ammos.Hardmode;
 using CalamityMod.Items.Weapons.Ranged;
+using System.Threading;
+using System.Timers;
 
 namespace CalamityAmmo.Ammos.Post_MoonLord
 {
+
     public class MirageArrow : ModItem
     {
         public override void SetStaticDefaults()
@@ -59,6 +62,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
             Item.ammo = AmmoID.Arrow;
 
         }
+        
         public override void AddRecipes()
         {
             CreateRecipe(333)
@@ -73,6 +77,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
     }
     public class MirageArrow_Proj : ModProjectile
     {
+
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Mirage Arrow");
@@ -92,7 +97,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
             Projectile.timeLeft = 300;
             Projectile.light = 0f;
             Projectile.extraUpdates = 1;
-            Projectile.arrow = true;
+            //Projectile.arrow = true;
         }
 
         public override bool OnTileCollide(Vector2 oldVelocity)
@@ -104,6 +109,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
 
         public override void OnSpawn(IEntitySource source)
         {
+            
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center + Projectile.velocity*4, Projectile.velocity, ModContent.ProjectileType<MirageArrow_Proj2>(), Projectile.damage, Projectile.knockBack, Main.myPlayer);
             if (Main.rand.NextBool(2))
             {
@@ -111,25 +117,31 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center + new Vector2(spawnPos, spawnPos), Projectile.velocity, ModContent.ProjectileType<MirageArrow_Proj>(), Projectile.damage,Projectile.knockBack, Main.myPlayer);
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center + new Vector2(spawnPos, spawnPos) + Projectile.velocity*2, Projectile.velocity, ModContent.ProjectileType<MirageArrow_Proj2>(), Projectile.damage , Projectile.knockBack, Main.myPlayer);
             }
-            base.OnSpawn(source);
         }
         public override void ModifyDamageScaling(ref float damageScale)
         {
-            damageScale = 0.666666666f;
+            damageScale = 0.6f;
             Player player = Main.player[Projectile.owner];
             if (player.HeldItem.type == ModContent.ItemType<TheStorm>())
             {
-                damageScale = 0.5f;
+                damageScale = 0.3f;
             }
         }
         public override void AI()
         {
+            Player player = Main.player[Projectile.owner];
+            CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
             Projectile.rotation = Utils.ToRotation(Projectile.velocity) + MathHelper.ToRadians(90f);
             CalamityUtils.HomeInOnNPC(Projectile, !Projectile.tileCollide, 500f, Projectile.velocity.Length(), 12f);
         }
         public override bool PreDraw(ref Color lightColor)
         {
             return base.PreDraw(ref lightColor);
+        }
+        public override void Kill(int timeLeft)
+        {
+            Player player = Main.player[Projectile.owner];
+            CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
         }
     }
     public class MirageArrow_Proj2 : ModProjectile
@@ -154,6 +166,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
             Projectile.timeLeft = 300;
             Projectile.light = 0f;
             Projectile.extraUpdates = 1;
+            //Projectile.arrow = true;
         }
 
         public override bool OnTileCollide(Vector2 oldVelocity)
@@ -164,12 +177,13 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
         }
         public override void ModifyDamageScaling(ref float damageScale)
         {
-            damageScale = 2f/3f;
+            damageScale = 0.6f;
             Player player = Main.player[Projectile.owner];
             if (player.HeldItem.type==ModContent.ItemType<TheStorm>())
             {
-                damageScale = 0.5f;
+                damageScale = 0.3f;
             }
+          
         }
         public override void OnSpawn(IEntitySource source)
         {

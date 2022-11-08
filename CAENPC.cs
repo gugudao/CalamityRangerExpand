@@ -156,6 +156,7 @@ namespace CalamityAmmo
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MarvelousMycelium>(), 5));
                 npcLoot.Add(notExpertRule);
             }
+  
         }
     }
    public class ArmsDealer : GlobalNPC

@@ -185,7 +185,7 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
                 }
                 else
                 {
-                    NetMessage.SendData(61, -1, -1, null, player.whoAmI, ModContent.NPCType<Bumblefuck>(), 0f, 0f, 0, 0, 0);
+                    NetMessage.SendData(MessageID.SpawnBoss, -1, -1, null, player.whoAmI, ModContent.NPCType<Bumblefuck>(), 0f, 0f, 0, 0, 0);
                 }
             base.OnSpawn(source);
         }

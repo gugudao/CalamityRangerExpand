@@ -36,7 +36,7 @@ namespace CalamityAmmo.Accessories
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "魔改线圈");
             Tooltip.SetDefault("Increased ranged damage to 1.07x\nSlightly increases all ranged projectile velocity\n" +
                 " May occur electric leakage");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "远程伤害增加7%\n" +
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "远程伤害+7%\n" +
                 "小幅提升远程弹幕的飞行速度\n" +
                 "可能会漏电");
         }

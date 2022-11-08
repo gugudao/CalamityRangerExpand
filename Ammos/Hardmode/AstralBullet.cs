@@ -63,6 +63,11 @@ namespace CalamityAmmo.Ammos.Hardmode
                 Item.SetDefaults(ModContent.ItemType<DazzlingAstralBullet>(), true);
                 Item.stack = i;
             }
+            if (!DownedBossSystem.downedAstrumAureus)
+            {
+                Item.SetDefaults(ModContent.ItemType<WeakAstralBullet>(), true);
+                Item.stack = i;
+            }
         }
 
 

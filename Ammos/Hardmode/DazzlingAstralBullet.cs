@@ -54,8 +54,16 @@ namespace CalamityAmmo.Ammos.Hardmode
             Item.ArmorPenetration = 5;
             Item.ammo = AmmoID.Bullet;
         }
-        
 
+        public override void UpdateInventory(Player player)
+        {
+            int i = Item.stack;
+            if (!DownedBossSystem.downedAstrumDeus)
+            {
+                Item.SetDefaults(ModContent.ItemType<AstralBullet>(), true);
+                Item.stack = i;
+            }
+        }
 
 
     }

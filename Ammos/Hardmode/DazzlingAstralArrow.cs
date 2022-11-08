@@ -57,7 +57,12 @@ namespace CalamityAmmo.Ammos.Hardmode
         }
         public override void UpdateInventory(Player player)
         {
-            player.GetModPlayer<CaePlayer>().Stars  = true;
+            int i = Item.stack;
+            if (!DownedBossSystem.downedAstrumDeus)
+            {
+                Item.SetDefaults(ModContent.ItemType<AstralArrow>(), true);
+                Item.stack = i;
+            }
         }
     }
 }

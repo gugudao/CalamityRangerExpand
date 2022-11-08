@@ -153,8 +153,12 @@ namespace CalamityAmmo.Accessories
                     SoundEngine.PlaySound(SoundID.Item40, Projectile.position);
                     int proj = Projectile.NewProjectile(Projectile.GetSource_FromThis(), 
                        Projectile.Center +( (Projectile.direction == 1) ? Vector2.Normalize(targetPos - Projectile.Center)*50: Vector2.Normalize(targetPos - Projectile.Center) *50), Vector2.Normalize(targetPos - Projectile.Center) * 16,ProjectileID.BulletHighVelocity , Projectile.damage, Projectile.knockBack, Main.myPlayer, 0f, 0f);
+                    Main.projectile[proj].usesLocalNPCImmunity = true;
+                    Main.projectile[proj].localNPCHitCooldown = 15;
                     Projectile.NewProjectile(Projectile.GetSource_FromThis(),
                         Projectile.Center + ((Projectile.direction == 1) ? Vector2.Normalize(targetPos - Projectile.Center) * 24: Vector2.Normalize(targetPos - Projectile.Center) * 24), Vector2.Normalize(targetPos - Projectile.Center) *16, ModContent.ProjectileType<Shroom>(), Projectile.damage, Projectile.knockBack, Main.myPlayer, 0f, 0f);
+                    Main.projectile[proj].usesLocalNPCImmunity = true;
+                    Main.projectile[proj].localNPCHitCooldown = 15;
                 }
                 Projectile.ai[0] = 1;
             }

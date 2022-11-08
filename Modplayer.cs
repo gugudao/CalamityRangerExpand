@@ -43,6 +43,7 @@ namespace CalamityAmmo
         public bool Coil;
         public bool Coil2;
         public bool Coil3;
+        public bool Coil4;
         public bool Spore;
         public bool Radio;
         public bool Holster;
@@ -51,8 +52,12 @@ namespace CalamityAmmo
         public bool MUN;
         public bool Live;
         public bool Arcane;
+        public bool Arcane2;
         public bool KnowledgeAuric;
+        public bool LowATKspeed;
+        public float atkspeed = 0f;
         public int HealCD=0;
+     
         
         public bool Mycelium
         {
@@ -65,19 +70,8 @@ namespace CalamityAmmo
         }
         public override void PreUpdate()
         {
+            CaePlayer modplayer = Player.GetModPlayer<CaePlayer>();
             
-            if(Player.Calamity().gloveOfRecklessness)
-            {
-                Player.GetAttackSpeed<RangedDamageClass>() += 0.15f;
-                Player.GetDamage<RangedDamageClass>() -= 10f;
-                Player.GetCritChance<RangedDamageClass>()-=5f;
-            }
-            if (Player.Calamity().gloveOfPrecision)
-            {
-                Player.GetAttackSpeed<RangedDamageClass>() -= 0.15f;
-                Player.GetDamage<RangedDamageClass>() += 10f;
-                Player.GetCritChance<RangedDamageClass>() += 5f;
-            }
         }
         public override void PostUpdate()
         {
@@ -143,6 +137,26 @@ namespace CalamityAmmo
                     HealCD = 0;
                 }
             }
+            if (Player.Calamity().gloveOfRecklessness)
+            {
+                Player.GetAttackSpeed<RangedDamageClass>() += 0.15f;
+                Player.GetDamage<RangedDamageClass>() -= 10f;
+                Player.GetCritChance<RangedDamageClass>() -= 5f;
+            }
+            if (Player.Calamity().gloveOfPrecision)
+            {
+                Player.GetAttackSpeed<RangedDamageClass>() -= 0.15f;
+                Player.GetDamage<RangedDamageClass>() += 10f;
+                Player.GetCritChance<RangedDamageClass>() += 5f;
+            }
+            if (Coil3)
+            {
+                Player.GetCritChance<RangedDamageClass>() += 7f + 24f / Player.HeldItem.useTime;
+            }
+            if (Coil4)
+            {
+                Player.GetDamage<RangedDamageClass>() *= 1.07f + Player.HeldItem.useTime / 480f;
+            }
         }
 
         public override void ResetEffects()
@@ -162,6 +176,9 @@ namespace CalamityAmmo
             MUN = false;
             Live = false;
             Arcane=false;   
+            Arcane2 = false;
+            Coil4 = false;
+            LowATKspeed = false;
         }
         public override void UpdateDead()
         {
@@ -179,7 +196,10 @@ namespace CalamityAmmo
             Odd = false;
             MUN = false;
             Live=false;
-            Arcane =false;  
+            Arcane =false;
+            Arcane2 = false;
+            Coil4=false;
+            LowATKspeed = false;
         }
         public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
         {
