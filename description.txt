@@ -4,7 +4,7 @@
 
 【请注意】此模组必须与灾厄mod本体同时加载！！！
 
-CalamityAmmoExpansion is a mod that provides several extra shooter ammunitions ,in order to promote the toy weapons of most shooters to a level that can be used at will, instead of doing useless research all day long;
+Calamity Ranger Expansion is a mod that provides several extra ranger ammunitions and accessories ,in order to promote the toy weapons of most rangers to a level that can be used at will, instead of doing useless research all day long;
 
 Changelog
 v0.1

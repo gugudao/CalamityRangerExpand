@@ -55,9 +55,11 @@ namespace CalamityAmmo
         public bool Arcane2;
         public bool KnowledgeAuric;
         public bool LowATKspeed;
+        public bool Grape;
         public float atkspeed = 0f;
         public int HealCD=0;
-     
+        public int GrapeTime2 = 0;
+
         
         public bool Mycelium
         {
@@ -179,6 +181,7 @@ namespace CalamityAmmo
             Arcane2 = false;
             Coil4 = false;
             LowATKspeed = false;
+            Grape = false;
         }
         public override void UpdateDead()
         {
@@ -200,6 +203,7 @@ namespace CalamityAmmo
             Arcane2 = false;
             Coil4=false;
             LowATKspeed = false;
+            Grape=false;
         }
         public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
         {
@@ -249,16 +253,8 @@ namespace CalamityAmmo
             if (Mycelium)
             {
                 Player.AddBuff(ModContent.BuffType<Mushy>(), 300);
-                if (MUN)
-                {
-                    Player.GetDamage<RangedDamageClass>() *= 1.12f;
-                    Player.GetCritChance<RangedDamageClass>() -= 6f;
-                }
-                else if(!MUN)
-                {
-                    Player.GetDamage<RangedDamageClass>() -= 0.06f;
-                    Player.GetCritChance<RangedDamageClass>() -= 9f;
-                }
+                Player.GetDamage<RangedDamageClass>() -= 0.06f;
+                Player.GetCritChance<RangedDamageClass>() -= 9f;
             }
         }
         public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
@@ -338,8 +334,10 @@ namespace CalamityAmmo
                                         {
                                             damage = 50;
                                         }
-                                        Projectile.NewProjectile(Projectile.GetSource_None(), center, new Vector2(0, 0), ModContent.ProjectileType<Crabulon_Spore>(), 
+                                        int proj=Projectile.NewProjectile(Projectile.GetSource_None(), center, new Vector2(0, 0), ModContent.ProjectileType<Crabulon_Spore>(), 
                                             damage, 1.5f, Player.whoAmI);
+                                        Main.projectile[proj].usesLocalNPCImmunity = true;
+                                        Main.projectile[proj].localNPCHitCooldown = 15;
                                         return;
                                     }
                                 }

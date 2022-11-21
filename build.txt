@@ -1,4 +1,4 @@
 displayName = Calamity Ranger Expansion/灾厄射手扩展
 author = 承影_chengying
-version = 1.0.2.4
+version = 1.0.3
 modReferences = CalamityMod@2.0.1.003

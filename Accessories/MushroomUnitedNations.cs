@@ -56,6 +56,8 @@ namespace CalamityAmmo.Accessories
                 "隐藏饰品可见性时给予幻菇中毒buff\n" +
                 "一杆蘑菇狙击枪悬浮在你的头顶，狙杀进入射程的敌人\n"+
                 "敌人将不那么容易瞄准你");
+            Main.RegisterItemAnimation(base.Item.type, new DrawAnimationVertical(4, 8, false));
+            ItemID.Sets.AnimatesAsSoul[base.Type] = true;
         }
 
         public override void SetDefaults()
@@ -153,10 +155,12 @@ namespace CalamityAmmo.Accessories
                     SoundEngine.PlaySound(SoundID.Item40, Projectile.position);
                     int proj = Projectile.NewProjectile(Projectile.GetSource_FromThis(), 
                        Projectile.Center +( (Projectile.direction == 1) ? Vector2.Normalize(targetPos - Projectile.Center)*50: Vector2.Normalize(targetPos - Projectile.Center) *50), Vector2.Normalize(targetPos - Projectile.Center) * 16,ProjectileID.BulletHighVelocity , Projectile.damage, Projectile.knockBack, Main.myPlayer, 0f, 0f);
+                    Main.projectile[proj].usesIDStaticNPCImmunity = false;
                     Main.projectile[proj].usesLocalNPCImmunity = true;
                     Main.projectile[proj].localNPCHitCooldown = 15;
                     Projectile.NewProjectile(Projectile.GetSource_FromThis(),
                         Projectile.Center + ((Projectile.direction == 1) ? Vector2.Normalize(targetPos - Projectile.Center) * 24: Vector2.Normalize(targetPos - Projectile.Center) * 24), Vector2.Normalize(targetPos - Projectile.Center) *16, ModContent.ProjectileType<Shroom>(), Projectile.damage, Projectile.knockBack, Main.myPlayer, 0f, 0f);
+                    Main.projectile[proj].usesIDStaticNPCImmunity = false;
                     Main.projectile[proj].usesLocalNPCImmunity = true;
                     Main.projectile[proj].localNPCHitCooldown = 15;
                 }

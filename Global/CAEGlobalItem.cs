@@ -23,12 +23,27 @@ using Microsoft.Xna.Framework.Input;
 using CalamityAmmo.Ammos.Post_MoonLord;
 using Mono.Cecil;
 using CalamityMod.Items.Weapons.Ranged;
+using CalamityAmmo.Rockets;
+using CalamityMod.Items.Weapons.Rogue;
 
 namespace CalamityAmmo.Global
 {
     // Here is a class dedicated to showcasing Send/ReceiveExtraAI()
+    
     public class CAEGlobalItem : GlobalItem
     {
+        public override void SetDefaults(Item item)
+        {
+            if(item.type==ItemID.Beenade||
+                item.type==ItemID.Grenade||
+                item.type==ItemID.BouncyGrenade||
+                item.type==ItemID.StickyGrenade||
+                item.type==ItemID.PartyGirlGrenade||
+                item.type == ModContent.ItemType<Plaguenade>())
+            {
+                item.ammo = ItemID.Beenade;
+            }    
+        }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
               if (item.type == ModContent.ItemType<GloveOfRecklessness>())
@@ -49,7 +64,6 @@ namespace CalamityAmmo.Global
                 if (Main.rand.NextBool(8))
                 {
                     {
-                        //Vector2 direction= Vector2.Normalize(Main.MouseWorld - player.Center);
                         Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<FungiOrb>(), (int)(damage * 0.3f), 0f, player.whoAmI);
                     }
                 }
@@ -62,6 +76,10 @@ namespace CalamityAmmo.Global
             if(player.HeldItem.useAmmo == AmmoID.Arrow && !modplayer.Arcane)
             {
                 item.mana = 0;
+            }
+            if(modplayer.Grape)
+            {
+               
             }
          
                 
@@ -89,12 +107,21 @@ namespace CalamityAmmo.Global
         {
             if(item.type==ModContent.ItemType<CrabulonBag>())
             {
-                itemLoot.Add(ModContent.ItemType<InfectedCrabGill>(), 5, 1, 1);
-                itemLoot.Add(ModContent.ItemType<MarvelousMycelium>(), 5, 1, 1);
+                itemLoot.Add(ModContent.ItemType<InfectedCrabGill>(), 4, 1, 1);
+                itemLoot.Add(ModContent.ItemType<MarvelousMycelium>(), 4, 1, 1);
+                itemLoot.Add(ModContent.ItemType<MushroomMortar>(), 3, 1, 1);
             }
             if(item.type==ModContent.ItemType<StarterBag>())
             {
                 itemLoot.Add(ModContent.ItemType<HardTackChest>(), 1, 1, 1);
+            }
+            if (item.type==ModContent.ItemType<DesertScourgeBag>())
+            {
+                itemLoot.Add(ModContent.ItemType<SandWorm>(),3,1, 1);
+            }
+            if(item.type==ItemID.QueenBeeBossBag)
+            {
+                itemLoot.Add(ModContent.ItemType<BeenadeLauncher>(), 3, 1, 1);
             }
         }
     }
@@ -123,6 +150,7 @@ namespace CalamityAmmo.Global
                     case ItemID.HoneyRocket: rockettype = ModContent.ProjectileType<ThePack_HoneyRocket>(); break;
                     case ItemID.DryRocket: rockettype = ModContent.ProjectileType<ThePack_DryRocket>(); break;
                 }
+                if (source.AmmoItemIdUsed == ModContent.ItemType<SandRocket>()) rockettype = ModContent.ProjectileType<ThePack_SandRocket>();
                 Projectile.NewProjectile(source, position, shootVel, rockettype, damage, knockback, player.whoAmI);
                 return false;
             }

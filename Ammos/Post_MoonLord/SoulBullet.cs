@@ -96,6 +96,8 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
             Projectile.extraUpdates = 1;
             Projectile.penetrate = 3;
             Projectile.timeLeft = 300;
+            Projectile.usesLocalNPCImmunity= true;
+            Projectile.localNPCHitCooldown = 10;
         }
         public override void OnSpawn(IEntitySource source)
         {
@@ -140,7 +142,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
         }
         public override void ModifyDamageScaling(ref float damageScale)
         {
-            damageScale = 1f - 0.2f*(3 - Projectile.penetrate);
+            damageScale = 1f - 0.15f*(3 - Projectile.penetrate);
         }
         public override Color? GetAlpha(Color lightColor)
         {

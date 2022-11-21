@@ -4,11 +4,13 @@ using CalamityAmmo.Accessories;
 using CalamityAmmo.Ammos.Hardmode;
 using CalamityAmmo.Projectiles.Hardmode;
 using CalamityAmmo.Projectiles.Post_MoonLord;
+using CalamityAmmo.Rockets;
 using CalamityMod;
 using CalamityMod.Buffs.DamageOverTime;
 using CalamityMod.Dusts;
 using CalamityMod.Items.Weapons.Rogue;
 using CalamityMod.NPCs.Crabulon;
+using CalamityMod.NPCs.DesertScourge;
 using CalamityMod.NPCs.NormalNPCs;
 using CalamityMod.Projectiles.Magic;
 using CalamityMod.Projectiles.Melee;
@@ -33,6 +35,8 @@ namespace CalamityAmmo
     {
         public override bool InstancePerEntity => true;
         public int carrot = 0;
+        public int GrapeTime = 0;
+        
         public override void OnHitByProjectile(NPC npc, Projectile projectile, int damage, float knockback, bool crit)
         {
             Player player = Main.player[projectile.owner];
@@ -134,8 +138,32 @@ namespace CalamityAmmo
                     }
                 }
              }
+            if(modplayer.Grape&&projectile.DamageType==DamageClass.Ranged &&projectile.owner==Main.myPlayer)
+            {
+                GrapeTime += 1;
+                Main.NewText(GrapeTime);
+                if(GrapeTime>=7)
+                {
+                    GrapeTime = 0;
+                    for (int i = 0; i < 10; i++)
+                    {
+                        Vector2 vec = Main.MouseWorld - player.Center;
+                        vec = Vector2.Normalize(vec);
+                        Vector2 finalVec = vec * 16f + new Vector2(Main.rand.NextFloatDirection() * 5f,
+                            Main.rand.NextFloatDirection() * 5f);
+                        int solar = Projectile.NewProjectile(npc.GetSource_FromAI(),
+                            player.Center, 
+                            finalVec, projectile.type, 
+                            (int)(projectile.damage * 0.6f), 
+                            projectile.knockBack, Main.myPlayer);
+                        Main.projectile[solar].usesIDStaticNPCImmunity = false;
+                        Main.projectile[solar].usesLocalNPCImmunity = true;
+                        Main.projectile[solar].DamageType=DamageClass.Generic;
+                    }
+                    
+                }
             }
-        
+         }
     }
     public class NPCLoot:GlobalNPC
     {
@@ -154,12 +182,28 @@ namespace CalamityAmmo
                 LeadingConditionRule notExpertRule = new(new Conditions.NotExpert());
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<InfectedCrabGill>(),5));
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MarvelousMycelium>(), 5));
+                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MushroomMortar>(), 4));
                 npcLoot.Add(notExpertRule);
             }
-  
+            if (npc.type == ModContent.NPCType<DesertScourgeHead>())
+            {
+                LeadingConditionRule notExpertRule = new(new Conditions.NotExpert());
+                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<SandWorm>(), 4));
+                npcLoot.Add(notExpertRule);
+            }
+            if(npc.type == ModContent.NPCType<DesertNuisanceHead>())
+            {
+                npcLoot.Add(ModContent.ItemType<SandWorm>(), new Fraction(5, 100));
+            }
+            if(npc.type==NPCID.QueenBee)
+            {
+                LeadingConditionRule notExpertRule = new(new Conditions.NotExpert());
+                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<BeenadeLauncher>(), 4));
+                npcLoot.Add(notExpertRule);
+            }
         }
     }
-   public class ArmsDealer : GlobalNPC
+    public class ArmsDealer : GlobalNPC
     {
         public override bool AppliesToEntity(NPC npc, bool lateInstatiation)
         {
@@ -167,17 +211,39 @@ namespace CalamityAmmo
         }
         public override void SetupShop(int type, Chest shop, ref int nextSlot)
         {
-            if(type== NPCID.ArmsDealer)
+            if (type == NPCID.ArmsDealer)
             {
-                if(DownedBossSystem.downedHiveMind||DownedBossSystem.downedPerforator)
+                if (DownedBossSystem.downedHiveMind || DownedBossSystem.downedPerforator)
                 {
                     shop.item[nextSlot].SetDefaults(ModContent.ItemType<FastHolster>());
                     nextSlot++;
                 }
             }
         }
+        public class Demolitionist : GlobalNPC
+        {
+            public override bool AppliesToEntity(NPC npc, bool lateInstatiation)
+            {
+                return npc.type == NPCID.Demolitionist;
+            }
+            public override void SetupShop(int type, Chest shop, ref int nextSlot)
+            {
+                if (type == NPCID.Demolitionist)
+                {
+                    if (DownedBossSystem.downedDesertScourge)
+                    {
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<SandRocket>());
+                        nextSlot++;
+                    }
+                    if (DownedBossSystem.downedHiveMind || DownedBossSystem.downedPerforator)
+                    {
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Aerocket>());
+                        nextSlot++;
+                    }
+                }
+            }
+        }
     }
-
 
 
     }

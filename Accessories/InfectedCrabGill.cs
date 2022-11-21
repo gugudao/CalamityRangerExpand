@@ -106,10 +106,10 @@ namespace CalamityAmmo.Accessories
         {
             Player player = Main.player[Projectile.owner];
             CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
-            int SPdamage = 10;
+            int SPdamage = (int)player.GetDamage<RangedDamageClass>().ApplyTo(10);
             if (modplayer.MUN)
             {
-                SPdamage = 50;
+                SPdamage = (int)player.GetDamage<RangedDamageClass>().ApplyTo(50);
             }
             int randomSP = Utils.SelectRandom(Main.rand, new int[]
                 {
@@ -117,8 +117,12 @@ namespace CalamityAmmo.Accessories
                     ModContent.ProjectileType<Spore2>(),
                     ModContent.ProjectileType<Spore3>(),
                 });
-            Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, Projectile.velocity * 0.1f, randomSP,
+            int proj=Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, Projectile.velocity * 0.1f, randomSP,
                 SPdamage, 1.5f, player.whoAmI);
+            Main.projectile[proj].usesIDStaticNPCImmunity = false;
+            Main.projectile[proj].usesLocalNPCImmunity = true;
+            Main.projectile[proj].localNPCHitCooldown = 15;
+            Main.projectile[proj].CritChance = (int)player.GetCritChance<RangedDamageClass>();
         }
         public override void Kill(int timeLeft)
         {

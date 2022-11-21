@@ -27,11 +27,14 @@ using CalamityMod.Items;
 using CalamityMod;
 using CalamityAmmo.Ammos.Post_MoonLord;
 using CalamityMod.Items.Weapons.Ranged;
+using CalamityMod.Tiles.FurnitureVoid;
+
 
 namespace CalamityAmmo.Accessories
 {
     public class ArcaneQuiver : ModItem
     {
+        
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Arcane Quiver");
@@ -70,13 +73,13 @@ namespace CalamityAmmo.Accessories
             }
             player.magicQuiver = true;
         }
-        /*public override void AddRecipes()
+        public override void AddRecipes()
         {
             var recipe2 = CreateRecipe();
             recipe2 = CreateRecipe();
             recipe2.AddIngredient(ItemID.MagicQuiver, 1);
             recipe2.AddIngredient(ItemID.ArcaneFlower, 1);
-            recipe2.AddIngredient(ItemID.ArcaneFlower, 5);
+            recipe2.AddIngredient(ItemID.CrystalShard, 5);
             recipe2.ReplaceResult(ModContent.ItemType<ArcaneQuiver>(), 1);
             recipe2.AddTile(TileID.TinkerersWorkbench);
             recipe2.Register();
@@ -84,13 +87,14 @@ namespace CalamityAmmo.Accessories
             recipe2.AddIngredient(ItemID.StalkersQuiver, 1);
             recipe2.AddIngredient(ItemID.ManaFlower, 1);
             recipe2.ReplaceResult(ModContent.ItemType<ArcaneQuiver>(), 1);
-            recipe2.AddIngredient(ItemID.ArcaneFlower, 5);
+            recipe2.AddIngredient(ItemID.CrystalShard, 5);
             recipe2.AddTile(TileID.TinkerersWorkbench);
             recipe2.Register();
-        }*/
+        }
     }
     public class ArcaneArrow_Proj : ModProjectile
     {
+        private Vector2[] oldPosi = new Vector2[5];
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Arcane Arrow");
@@ -102,14 +106,14 @@ namespace CalamityAmmo.Accessories
         {
             Projectile.width = 20;
             Projectile.height = 20;
-            Projectile.aiStyle = -1;
+            Projectile.aiStyle = ProjectileID.WoodenArrowFriendly;
             Projectile.friendly = true;
             Projectile.hostile = false;
             Projectile.DamageType = DamageClass.Ranged;
             Projectile.penetrate = 1;
             Projectile.timeLeft = 360;
             Projectile.light = 0f;
-            Projectile.extraUpdates = 1;
+            Projectile.extraUpdates = 0;
             Projectile.arrow = true;
         }
 
@@ -119,7 +123,10 @@ namespace CalamityAmmo.Accessories
             SoundEngine.PlaySound(SoundID.Item8, new Vector2?(Projectile.position));
             return true;
         }
-
+        public override Color? GetAlpha(Color lightColor)
+        {
+            return new Color(255, 255, 255, 255);
+        }
         public override void OnSpawn(IEntitySource source)
         {
 
@@ -130,122 +137,32 @@ namespace CalamityAmmo.Accessories
           
         }
         public override void AI()
+
         {
             Projectile.ai[0]++;
-            //Projectile.rotation = Utils.ToRotation(Projectile.velocity) + MathHelper.ToRadians(90f);
-            if (Main.rand.Next(9) == 0)
+            Projectile.rotation = Utils.ToRotation(Projectile.velocity)+MathHelper.ToRadians(90f);
+            if (Main.rand.Next(2) == 0)
             {
-                int num9 = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, 15, 0f, 0f, 100, default(Color), 2f);
+                int num9 = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, 21, 0f, 0f, 100, default, 1.75f);
                 Main.dust[num9].velocity *= 0.3f;
                 Main.dust[num9].position.X = Projectile.position.X + (float)(Projectile.width / 2) + 4f + (float)Main.rand.Next(-4, 5);
                 Main.dust[num9].position.Y = Projectile.position.Y + (float)(Projectile.height / 2) + (float)Main.rand.Next(-4, 5);
                 Main.dust[num9].noGravity = true;
                 Main.dust[num9].velocity += Main.rand.NextVector2Circular(2f, 2f);
             }
-            CalamityUtils.HomeInOnNPC(Projectile, !Projectile.tileCollide, 500f, Projectile.ai[0], 12f);
+            CalamityUtils.HomeInOnNPC(Projectile, !Projectile.tileCollide, 400f, Projectile.velocity.Length(), 5f);
         }
         public override bool PreDraw(ref Color lightColor)
         {
-            return base.PreDraw(ref lightColor);
+            CalamityUtils.DrawAfterimagesCentered(Projectile, ProjectileID.Sets.TrailingMode[Projectile.type], lightColor, 1, null, true);
+            return true;
         }
         public override void Kill(int timeLeft)
         {
             
-                int width2 = Projectile.width;
-                int height2 = Projectile.height;
-                Projectile.Resize(128, 128);
-                Projectile.Resize(width2, height2);
+            
                 SoundEngine.PlaySound(SoundID.Item10, Projectile.Center);
-                Vector2 target4 = Projectile.Center;
-                int num6;
-                for (int m = 0; m < Projectile.oldPos.Length; m = num6 + 1)
-                {
-                    Vector2 vector4 = Projectile.oldPos[m];
-                    if (vector4 == Vector2.Zero)
-                    {
-                        break;
-                    }
-                    Color newColor2 = Main.hslToRgb(0.444444448f + Main.rand.NextFloat() * 0.222222224f, 1f, 0.65f);
-                    int num21 = Main.rand.Next(1, 4);
-                    float num22 = MathHelper.Lerp(0.3f, 1f, Utils.GetLerpValue((float)Projectile.oldPos.Length, 0f, (float)m, true));
-                    if ((float)m >= (float)Projectile.oldPos.Length * 0.3f)
-                    {
-                        num6 = num21;
-                        num21 = num6 - 1;
-                    }
-                    if ((float)m >= (float)Projectile.oldPos.Length * 0.75f)
-                    {
-                        num21 -= 2;
-                    }
-                    Vector2 value3 = vector4.DirectionTo(target4).SafeNormalize(Vector2.Zero);
-                    target4 = vector4;
-                    float num9;
-                    for (float num23 = 0f; num23 < (float)num21; num23 = num9 + 1f)
-                    {
-                        bool flag = Main.rand.Next(3) == 0;
-                        if (flag)
-                        {
-                            int num24 = Dust.NewDust(vector4, Projectile.width, Projectile.height, 267, 0f, 0f, 0, newColor2, 1f);
-                            Dust dust2 = Main.dust[num24];
-                            dust2.velocity *= Main.rand.NextFloat() * 0.8f;
-                            Main.dust[num24].noGravity = true;
-                            Main.dust[num24].scale = Main.rand.NextFloat() * 0.8f;
-                            Main.dust[num24].fadeIn = Main.rand.NextFloat() * 1.2f * num22;
-                            dust2 = Main.dust[num24];
-                            dust2.velocity += value3 * 6f;
-                            dust2 = Main.dust[num24];
-                            dust2.scale *= num22;
-                            if (num24 != 6000)
-                            {
-                                Dust dust6 = Dust.CloneDust(num24);
-                                dust2 = dust6;
-                                dust2.scale /= 2f;
-                                dust2 = dust6;
-                                dust2.fadeIn /= 2f;
-                                dust6.color = new Color(255, 255, 255, 255);
-                            }
-                        }
-                        else
-                        {
-                            Dust dust7 = Dust.NewDustDirect(vector4, Projectile.width, Projectile.height, 15, -Projectile.velocity.X * 0.2f, -Projectile.velocity.Y * 0.2f, 100, default(Color), 1f);
-                            Main.rand.Next(2);
-                            dust7.noGravity = true;
-                            Dust dust2 = dust7;
-                            dust2.velocity *= 2f;
-                            dust2 = dust7;
-                            dust2.velocity += value3 * 9f;
-                            dust2 = dust7;
-                            dust2.scale *= num22;
-                            dust7.fadeIn = (0.6f + Main.rand.NextFloat() * 0.4f) * num22;
-                            dust7.noLightEmittence = (dust7.noLight = true);
-                        }
-                        num9 = num23;
-                    }
-                    num6 = m;
-                }
-                for (int n = 0; n < 20; n = num6 + 1)
-                {
-                    Dust dust8 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, 15, 0f, 0f, 0, default(Color), 1f);
-                    dust8.noGravity = true;
-                    dust8.velocity = Main.rand.NextVector2Circular(1f, 1f) * 1.5f;
-                    dust8.scale = 1.2f + Main.rand.NextFloat() * 0.5f;
-                    dust8.noLightEmittence = (dust8.noLight = true);
-                    Dust dust2 = dust8;
-                    dust2.velocity += Projectile.velocity * 0.01f;
-                    dust2 = dust8;
-                    dust2.position += dust8.velocity * (float)Main.rand.Next(1, 16);
-                    dust8 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, 15, 0f, 0f, 100, default(Color), 1f);
-                    dust2 = dust8;
-                    dust2.velocity *= 1.2f;
-                    dust8.noLightEmittence = (dust8.noLight = true);
-                    dust2 = dust8;
-                    dust2.velocity += Projectile.velocity * 0.01f;
-                    dust2 = dust8;
-                    dust2.scale *= 0.8f + Main.rand.NextFloat() * 0.2f;
-                    dust2 = dust8;
-                    dust2.position += dust8.velocity * (float)Main.rand.Next(1, 16);
-                    num6 = n;
-                }
+                
             }
         }
     }
