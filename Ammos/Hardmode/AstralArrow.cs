@@ -63,7 +63,7 @@ namespace CalamityAmmo.Ammos.Hardmode
             }
             if (!DownedBossSystem.downedAstrumAureus)
             {
-                Item.SetDefaults(ModContent.ItemType<WeakAstralArrow>(), true);
+                Item.SetDefaults(ModContent.ItemType<AstralArrow>(), true);
                 Item.stack = i;
             }
 

@@ -44,7 +44,9 @@ namespace CalamityAmmo.Accessories
         {
             DisplayName.SetDefault("Mushroom United Nations");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "蘑拟黏合国");
-            Tooltip.SetDefault("Both you and the target enemy gain Marked for Death");
+            Tooltip.SetDefault("Has the effect of  Live Mushroom, Evil Mushroom, Fungal Carapace,Infected CrabGill, MarvelousMycelium and OddMushroom\n"+
+                "A mushroom sniper rifle hovers above your head, sniping enemies that come into range\n "+
+                "reducing chance for enemies to target you" ) ;
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese),
                 "生成一个治愈蘑菇，拾取后恢复15点生命值\n"+
                 "你和被命中的敌人均获得死亡标记\n" +

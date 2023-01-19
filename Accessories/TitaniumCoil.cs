@@ -34,7 +34,7 @@ namespace CalamityAmmo.Accessories
         {
             DisplayName.SetDefault("Titanium Coil ");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "钛金线圈");
-            Tooltip.SetDefault("Increased ranged damage to 1.1x\nSlightly increases all ranged projectile velocity");
+            Tooltip.SetDefault("Increased ranged damage ,amplification depends on attack speed\nMediumly increases all ranged projectile velocity");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "提高远程伤害\n远程武器的攻速越慢，伤害越高\n中幅提升远程弹幕的飞行速度");
         }
 
@@ -66,8 +66,7 @@ namespace CalamityAmmo.Accessories
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<ModifiedCoil>());
             recipe.AddIngredient(ItemID.RangerEmblem,1);
-            //recipe.AddIngredient(ItemID.TitaniumBar, 3);
-            recipe.AddIngredient(ItemID.AdamantiteBar, 5);
+            recipe.AddIngredient(ItemID.TitaniumBar, 5);
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.Register();
         }

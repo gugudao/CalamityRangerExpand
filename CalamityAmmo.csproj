@@ -20,4 +20,5 @@
       <HintPath>D:\Steam\steamapps\workshop\content\1281930\2824688072\2022.9\CalamityMod\CalamityMod.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 </Project>

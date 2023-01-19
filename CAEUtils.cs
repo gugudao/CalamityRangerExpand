@@ -51,5 +51,6 @@ namespace CalamityAmmo
             float colorMePurple = (float)((Math.Sin((double)(Math.PI*2 / seconds) * Main.GlobalTimeWrappedHourly) + 1.0) * 0.5);
             return Color.Lerp(firstColor, secondColor, colorMePurple);
         }
+        public static string GetTranslation(string key,bool  caeKey=true)=>LocalizationLoader.GetOrCreateTranslation(caeKey?$"Mods.CalamityAmmo.{key}":key).GetTranslation(Language.ActiveCulture);
     }
 }

@@ -70,9 +70,9 @@ namespace CalamityAmmo
         public override void Unload()
         {
             //这三行在Mod卸载时会把存入的glowmask也卸掉，让出内存
-            List<Asset<Texture2D>> assetsGlow = new List<Asset<Texture2D>>(TextureAssets.GlowMask);
-            assetsGlow.RemoveAll(x => assets.Find(y => y == x) != default(Asset<Texture2D>));
-            TextureAssets.GlowMask = assetsGlow.ToArray();
+            //List<Asset<Texture2D>> assetsGlow = new List<Asset<Texture2D>>(TextureAssets.GlowMask);
+            //assetsGlow.RemoveAll(x => assets.Find(y => y == x) != default(Asset<Texture2D>));
+            //TextureAssets.GlowMask = assetsGlow.ToArray();
             TrippyKey = null;
         }
 

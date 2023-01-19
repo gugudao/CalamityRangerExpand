@@ -25,6 +25,7 @@ using Mono.Cecil;
 using CalamityMod.Items.Weapons.Ranged;
 using CalamityAmmo.Rockets;
 using CalamityMod.Items.Weapons.Rogue;
+using CalamityMod.CalPlayer;
 
 namespace CalamityAmmo.Global
 {
@@ -48,11 +49,13 @@ namespace CalamityAmmo.Global
         {
               if (item.type == ModContent.ItemType<GloveOfRecklessness>())
               {
-                 tooltips.Add(new TooltipLine(Mod,"GORtooltip", "类似效果也作用于射手"));
+                 tooltips.Add(new TooltipLine(Mod,"GORtooltip", GetTranslation("Glove")));
               }
             if (item.type == ModContent.ItemType<GloveOfPrecision>())
             {
-                tooltips.Add(new TooltipLine(Mod, "GOPtooltip", "类似效果也作用于射手"));
+                tooltips.Add(new TooltipLine(Mod, "GOPtooltip", GetTranslation("Glove")));
+                //tooltips.Insert(5, new TooltipLine(Mod, "GOPtooltip", GetTranslation("Glove")));
+                //tooltips.Find(line => line.Name == "GOPtooltip");
             }
         }
         public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -89,6 +92,15 @@ namespace CalamityAmmo.Global
         public override float UseSpeedMultiplier(Item item, Player player)
         {
             CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
+            CalamityPlayer calamityPlayer = player.Calamity();
+            if (calamityPlayer.gloveOfRecklessness&&item.DamageType==DamageClass.Ranged)
+            {
+                return 1.15f;
+            }
+            if (calamityPlayer.gloveOfRecklessness && item.DamageType == DamageClass.Ranged)
+            {
+                return 0.85f;
+            }
             if (modplayer.Holster&& item.useAmmo == AmmoID.Bullet)
             {
                 return 1.1f;

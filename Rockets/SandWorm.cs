@@ -47,7 +47,7 @@ namespace CalamityAmmo.Rockets
 
         public override void SetDefaults()
         {
-            Item.damage = 22;
+            Item.damage = 20;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 106;
             Item.height = 35;
@@ -68,7 +68,7 @@ namespace CalamityAmmo.Rockets
 
         public override void ModifyWeaponCrit(Player player, ref float crit)
         {
-            crit += 22f;
+            //crit += 22f;
         }
 
         public override Vector2? HoldoutOffset()

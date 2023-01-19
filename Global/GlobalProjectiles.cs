@@ -126,7 +126,7 @@ namespace CalamityAmmo.Global
                     player.AddBuff(144, 45);
                 }
             }
-            if (modplayer.Coil3 && projectile.CountsAsClass<RangedDamageClass>() && player.heldProj != projectile.whoAmI && projectile.type != ModContent.ProjectileType<MidasCoin>())
+            if ((modplayer.Coil3||modplayer.Coil4) && projectile.CountsAsClass<RangedDamageClass>() && player.heldProj != projectile.whoAmI && projectile.type != ModContent.ProjectileType<MidasCoin>())
             {
                 projectile.velocity *= 1.35f;
             }
@@ -142,10 +142,12 @@ namespace CalamityAmmo.Global
                 }
 
             }
-            if (modplayer.Arcane2 && (projectile.arrow || projectile.type == ModContent.ProjectileType<MirageArrow_Proj>()
+            if (modplayer.Arcane2 && (projectile.arrow //|| projectile.type == ModContent.ProjectileType<MirageArrow_Proj>()
                 || projectile.type == ModContent.ProjectileType<MirageArrow_Proj2>())
-                && projectile.type!= ModContent.ProjectileType<ArcaneArrow_Proj>()
-                &&projectile.type != 631)
+                && projectile.type != ModContent.ProjectileType<ArcaneArrow_Proj>()
+                && projectile.type != 631
+                && player.HeldItem.type!= 4953
+                 && player.HeldItem.type != 3540)
             {
                 projectile.penetrate = 0;
                 projectile.active = false;

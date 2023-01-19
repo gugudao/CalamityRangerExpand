@@ -1,5 +1,7 @@
 ﻿using System;
 using CalamityMod.Items.Materials;
+using CalamityMod.Items.Weapons.Rogue;
+using CalamityMod.Projectiles.Rogue;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -50,7 +52,7 @@ using Terraria.ModLoader;
 
             public override void ModifyWeaponCrit(Player player, ref float crit)
             {
-
+                
             }
 
             public override Vector2? HoldoutOffset()
@@ -71,20 +73,26 @@ using Terraria.ModLoader;
                 {
                     return false;
                 }
-                /*if (source.AmmoItemIdUsed == ModContent.ItemType<Plaguenade>())
-                     grenadeType = ModContent.ProjectileType<PlaguenadeProj>();
-                 if (source.AmmoItemIdUsed == ItemID.Grenade)
-                     grenadeType = ProjectileID.Grenade;
-                 if (source.AmmoItemIdUsed == ItemID.Beenade)
-                     grenadeType = ProjectileID.Beenade;
-                 if (source.AmmoItemIdUsed == ItemID.StickyGrenade)
-                     grenadeType = ProjectileID.StickyGrenade;
-                 if (source.AmmoItemIdUsed == ItemID.BouncyGrenade)
-                     grenadeType = ProjectileID.BouncyGrenade;
-                 if (source.AmmoItemIdUsed == ItemID.PartyGirlGrenade)
-                     grenadeType = ProjectileID.PartyGirlGrenade;
-                 Projectile.NewProjectile(source, position, velocity, grenadeType, damage, knockback, player.whoAmI);*/
-                return true;
+            if (source.AmmoItemIdUsed == ModContent.ItemType<Plaguenade>())
+            {
+                grenadeType = ModContent.ProjectileType<PlaguenadeProj>();
+                Projectile.NewProjectile(source, position, velocity * 2 / 3, grenadeType, damage, knockback, player.whoAmI);
+                return false;
+            }
+            /*if (source.AmmoItemIdUsed == ModContent.ItemType<Plaguenade>())
+                 grenadeType = ModContent.ProjectileType<PlaguenadeProj>();
+             if (source.AmmoItemIdUsed == ItemID.Grenade)
+                 grenadeType = ProjectileID.Grenade;
+             if (source.AmmoItemIdUsed == ItemID.Beenade)
+                 grenadeType = ProjectileID.Beenade;
+             if (source.AmmoItemIdUsed == ItemID.StickyGrenade)
+                 grenadeType = ProjectileID.StickyGrenade;
+             if (source.AmmoItemIdUsed == ItemID.BouncyGrenade)
+                 grenadeType = ProjectileID.BouncyGrenade;
+             if (source.AmmoItemIdUsed == ItemID.PartyGirlGrenade)
+                 grenadeType = ProjectileID.PartyGirlGrenade;
+             Projectile.NewProjectile(source, position, velocity, grenadeType, damage, knockback, player.whoAmI);*/
+            return true;
             }
             public override void AddRecipes()
             {

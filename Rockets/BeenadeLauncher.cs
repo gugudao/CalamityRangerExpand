@@ -64,7 +64,7 @@ namespace CalamityAmmo.Rockets
             Item.UseSound = new SoundStyle?(SoundID.Item40);
             Item.autoReuse = true;
             Item.shoot = ProjectileID.Beenade;
-            Item.shootSpeed = 6f;
+            Item.shootSpeed = 6.5f;
             Item.useAmmo = ItemID.Beenade;
             //Item.Calamity().canFirePointBlankShots = true;
         }
@@ -92,9 +92,13 @@ namespace CalamityAmmo.Rockets
             {
                 return false;
             }
-           /*if (source.AmmoItemIdUsed == ModContent.ItemType<Plaguenade>())
+           if (source.AmmoItemIdUsed == ModContent.ItemType<Plaguenade>())
+            {
                 grenadeType = ModContent.ProjectileType<PlaguenadeProj>();
-            if (source.AmmoItemIdUsed == ItemID.Grenade)
+                Projectile.NewProjectile(source, position, velocity*2/3, grenadeType, damage, knockback, player.whoAmI);
+                return false;
+            }
+            /*if (source.AmmoItemIdUsed == ItemID.Grenade)
                 grenadeType = ProjectileID.Grenade;
             if (source.AmmoItemIdUsed == ItemID.Beenade)
                 grenadeType = ProjectileID.Beenade;
@@ -104,7 +108,7 @@ namespace CalamityAmmo.Rockets
                 grenadeType = ProjectileID.BouncyGrenade;
             if (source.AmmoItemIdUsed == ItemID.PartyGirlGrenade)
                 grenadeType = ProjectileID.PartyGirlGrenade;
-            Projectile.NewProjectile(source, position, velocity, grenadeType, damage, knockback, player.whoAmI);*/
+            */
             return true;
         }
         public override void AddRecipes()

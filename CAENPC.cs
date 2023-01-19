@@ -138,30 +138,7 @@ namespace CalamityAmmo
                     }
                 }
              }
-            if(modplayer.Grape&&projectile.DamageType==DamageClass.Ranged &&projectile.owner==Main.myPlayer)
-            {
-                GrapeTime += 1;
-                Main.NewText(GrapeTime);
-                if(GrapeTime>=7)
-                {
-                    GrapeTime = 0;
-                    for (int i = 0; i < 10; i++)
-                    {
-                        Vector2 vec = Main.MouseWorld - player.Center;
-                        vec = Vector2.Normalize(vec);
-                        Vector2 finalVec = vec * 16f + new Vector2(Main.rand.NextFloatDirection() * 5f,
-                            Main.rand.NextFloatDirection() * 5f);
-                        int solar = Projectile.NewProjectile(npc.GetSource_FromAI(),
-                            player.Center, 
-                            finalVec, projectile.type, 
-                            (int)(projectile.damage * 0.6f), 
-                            projectile.knockBack, Main.myPlayer);
-                        Main.projectile[solar].usesIDStaticNPCImmunity = false;
-                        Main.projectile[solar].usesLocalNPCImmunity = true;
-                        Main.projectile[solar].DamageType=DamageClass.Generic;
-                    }
-                    
-                }
+            
             }
          }
     }

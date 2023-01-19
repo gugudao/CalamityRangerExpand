@@ -1,0 +1,884 @@
+
+Mods: {
+	CalamityAmmo: {
+		Bestiary.QianXing: A cat girl who gives you ammunition,she is cute in appearance and affordable in price.  With enough money you can even try to buy herself  (provided that you are not killed with a big axe).
+
+		TownNPCMood: {
+			QianXing: {
+				Content: I get along well with you.
+				NoHome: six six six.
+				LoveSpace: (sparse area placeholder)
+				FarFromHome: Well, could you lend me your magic mirror?
+				DislikeCrowded: Get together and have sex is not a good activity.
+				HateCrowded: It's too crowded... Go up the price.
+				LikeBiome: This place is full of dangers and treasures,I like it.Are you ready to die anytime?
+				LoveBiome: Don't even think about it, Choosing forest is just for your shopping convenience.
+				DislikeBiome: The sandstorm here makes me dirty, can I move to another place?
+				HateBiome: No cat in his right mind would jump into ocean to catch fish for dinner.
+				LikeNPC: "{NPCName}doesn't sell any scraps basically, he's pretty good."
+				LikeNPC_Princess: princess princess princess princess princess princess princess princess princess princess princess princess
+				LoveNPC: "{NPCName} chats well with me, is that because both we have animal ears?"
+				DislikeNPC: Everyday {NPCName} compete with me for business and stare at me , It's really uncomfortable.
+				HateNPC: "{NPCName} the naturally evil brat doesn't deserve to live next to me!"
+			}
+		}
+
+		QX: Starry
+		Glove: Similar effects also applies to ranger
+
+		Projectiles: {
+			ArcaneArrow_Proj: {
+				DisplayName: Arcane Arrow
+			}
+
+			Crabulon_Spore: {
+				DisplayName: Crabulon's Spore
+			}
+
+			HealOrb: {
+				DisplayName: Heal Orb
+			}
+
+			RadioAura: {
+				DisplayName: Red Lightning Aura
+			}
+
+			Shroomere: {
+				DisplayName: Shroomere
+			}
+
+			Spore1: {
+				DisplayName: Spore Cloud
+			}
+
+			Spore2: {
+				DisplayName: Spore Cloud
+			}
+
+			Spore3: {
+				DisplayName: Spore Cloud
+			}
+
+			HydrothermicArrow_Proj: {
+				DisplayName: Hydrothermic Arrow
+			}
+
+			HydrothermicExplosion: {
+				DisplayName: Hydrothermic Explosion
+			}
+
+			HydrothermicBullet_Proj: {
+				DisplayName: Hydrothermic Bullet
+			}
+
+			HydrothermicVolcano: {
+				DisplayName: "Hydrothermic Volcano "
+			}
+
+			VolcanicFireballRanged: {
+				DisplayName: Volcanic Fireball
+			}
+
+			MirageArrow_Proj: {
+				DisplayName: Mirage Arrow
+			}
+
+			MirageArrow_Proj2: {
+				DisplayName: Mirage Arrow
+			}
+
+			SoulBullet_Proj: {
+				DisplayName: Phantom Spirit
+			}
+
+			Chengying_Fumo_Proj: {
+				DisplayName: Chengying's Fumo
+			}
+
+			_BloodBullet: {
+				DisplayName: Blood Bullet
+			}
+
+			_DesertFeatherArrow: {
+				DisplayName: Desert Feather Arrow
+			}
+
+			_PearlArrow: {
+				DisplayName: Pearl Arrow
+			}
+
+			_PearlBullet: {
+				DisplayName: Pearl Bullet
+			}
+
+			_PrismBullet: {
+				DisplayName: PrsimBullet
+			}
+
+			_RottenBullet: {
+				DisplayName: Rotten Bullet
+			}
+
+			_RottenBullet2: {
+				DisplayName: Rotten Bullet
+			}
+
+			_SeaBubble: {
+				DisplayName: Stream
+			}
+
+			_VictideArrow: {
+				DisplayName: Victide Arrow
+			}
+
+			_VictideBullet: {
+				DisplayName: Victide Bullet
+			}
+
+			_WulfArrow: {
+				DisplayName: WulfrumArrow
+			}
+
+			_AstralArrow: {
+				DisplayName: Astral Arrow
+			}
+
+			_AstralBullet: {
+				DisplayName: Astral Bullet
+			}
+
+			_AstralMine: {
+				DisplayName: Astral Mine
+			}
+
+			_AstralShot: {
+				DisplayName: Astral Laser
+			}
+
+			_AstralStar: {
+				DisplayName: Astral Star
+			}
+
+			_AstralStar2: {
+				DisplayName: Astral Star
+			}
+
+			_DazzlingAstralArrow: {
+				DisplayName: Dazzling Astral Arrow
+			}
+
+			_DazzlingAstralBullet: {
+				DisplayName: Astral Bullet
+			}
+
+			_Flower: {
+				DisplayName: Perennial Flower
+			}
+
+			_FossilArrow: {
+				DisplayName: Fossil Arrow
+			}
+
+			_FossilBullet: {
+				DisplayName: Fossil Bullet
+			}
+
+			_FossilShard: {
+				DisplayName: 化石碎片
+			}
+
+			_FossilShard2: {
+				DisplayName: 化石碎片
+			}
+
+			_NapalmBullet: {
+				DisplayName: Napalm Bullet
+			}
+
+			_Seed: {
+				DisplayName: Perennial Seed
+			}
+
+			_WeakAstralArrow: {
+				DisplayName: Astral Bullet
+			}
+
+			_WeakAstralBullet: {
+				DisplayName: Weak Astral Bullet
+			}
+
+			FakeSeaStar1: {
+				DisplayName: Aquatic Star
+			}
+
+			FakeSeaStar2: {
+				DisplayName: Brittle Star
+			}
+
+			_ElementalArrow: {
+				DisplayName: Elemental Arrow
+			}
+
+			_ElementalBullet: {
+				DisplayName: Shredded Celestial Carrot
+			}
+
+			_GoldenFeatherArrow: {
+				DisplayName: GoldenFeather Arrow
+			}
+
+			_RedLightning: {
+				DisplayName: Red Lightning
+			}
+
+			HealingRain: {
+				DisplayName: Healing Rain
+			}
+
+			HealingStarcloud: {
+				DisplayName: Healing Nebula
+			}
+
+			LightningVortex: {
+				DisplayName: Lightning Vortex
+			}
+
+			MetorSolar: {
+				DisplayName: Solar Fireball
+			}
+
+			WulfrumBoltRanged: {
+				DisplayName: WulfrumBoltRanged
+			}
+
+			AeroGrenade: {
+				DisplayName: Aerocket
+			}
+
+			AeroMine: {
+				DisplayName: Aerocket
+			}
+
+			AeroRocket: {
+				DisplayName: Aerocket
+			}
+
+			AeroSnowman: {
+				DisplayName: Aerocket
+			}
+
+			Mushroom_ClusterRocketI: {
+				DisplayName: Mushroom
+			}
+
+			Mushroom_ClusterRocketII: {
+				DisplayName: Mushroom
+			}
+
+			Mushroom_DryRocket: {
+				DisplayName: Mushroom
+			}
+
+			Mushroom_HoneyRocket: {
+				DisplayName: Mushroom
+			}
+
+			Mushroom_LavaRocket: {
+				DisplayName: Mushroom
+			}
+
+			Mushroom_MiniNukeRocketI: {
+				DisplayName: Mushroom
+			}
+
+			Mushroom_MiniNukeRocketII: {
+				DisplayName: Mushroom
+			}
+
+			Mushroom_RocketI: {
+				DisplayName: Mushroom
+			}
+
+			Mushroom_RocketII: {
+				DisplayName: Mushroom
+			}
+
+			Mushroom_RocketIII: {
+				DisplayName: Mushroom
+			}
+
+			Mushroom_RocketIV: {
+				DisplayName: Mushroom
+			}
+
+			Mushroom_WetRocket: {
+				DisplayName: Mushroom
+			}
+
+			Sand_Rocket: {
+				DisplayName: Earth-Penetrating Missile
+			}
+
+			SandGrenade: {
+				DisplayName: Earth-Penetrating Missile
+			}
+
+			SandMine: {
+				DisplayName: Earth-Penetrating Missile
+			}
+
+			SandSnowman: {
+				DisplayName: Earth-Penetrating Missile
+			}
+
+			Spike: {
+				DisplayName: Spike
+			}
+
+			SpikyBall: {
+				DisplayName: Spiky Ball
+			}
+
+			ThePack_ClusterRocketI: {
+				DisplayName: PR
+			}
+
+			ThePack_ClusterRocketII: {
+				DisplayName: PR
+			}
+
+			ThePack_DryRocket: {
+				DisplayName: PR
+			}
+
+			ThePack_HoneyRocket: {
+				DisplayName: PR
+			}
+
+			ThePack_LavaRocket: {
+				DisplayName: PR
+			}
+
+			ThePack_MiniNukeRocketI: {
+				DisplayName: PR
+			}
+
+			ThePack_MiniNukeRocketII: {
+				DisplayName: PR
+			}
+
+			ThePack_RocketI: {
+				DisplayName: PR
+			}
+
+			ThePack_RocketII: {
+				DisplayName: PR
+			}
+
+			ThePack_RocketIII: {
+				DisplayName: PR
+			}
+
+			ThePack_RocketIV: {
+				DisplayName: PR
+			}
+
+			ThePack_SandRocket: {
+				DisplayName: PR
+			}
+
+			ThePack_WetRocket: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_ClusterRocketI: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_ClusterRocketII: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_DryRocket: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_HoneyRocket: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_LavaRocket: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_MiniNukeRocketI: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_MiniNukeRocketII: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_RocketI: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_RocketII: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_RocketIII: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_RocketIV: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_WetRocket: {
+				DisplayName: PR
+			}
+
+			_AstralFlame: {
+				DisplayName: Astral Crystal
+			}
+		}
+
+		Items: {
+			ArcaneQuiver: {
+				DisplayName: Arcane Quiver
+				Tooltip:
+					'''
+					Allows you consume mana to enchant arrows and increase damage when holding a bow or repeater, 
+					Mana usage and damage scale are based on usetime of the weapon
+					Mana Sickness also reduces player's ranged damage
+					greatly increases arrow speed
+					20% chance to not consume arrows
+					Energy, power. My people are addicted to it!
+					'''
+			}
+
+			EvilMushroom: {
+				DisplayName: Evil Mushroom
+				Tooltip: Both you and the target enemy gain Marked for Death
+			}
+
+			FastHolster: {
+				DisplayName: "Fast Holster "
+				Tooltip:
+					'''
+					Decrease usetime of guns by 10%
+					Derease ranged critchance by 4%
+					Don't worry about your accuracy. Take enough shots, and you're guaranteed to land something!
+					'''
+			}
+
+			GrapeLauncher: {
+				DisplayName: Suspended Shotgun Shell Launcher
+				Tooltip: Fire a series of bullets after hit enemy 8 times in a row
+			}
+
+			InfectedCrabGill: {
+				DisplayName: Infected Crab Gill
+				Tooltip:
+					'''
+					Summons spores over time that will damage enemies
+					Probability shoot out extra fungal rounds that split on death
+					Decrease liferegen by 1
+					'''
+			}
+
+			LifeMushroom: {
+				DisplayName: Live Mushroom
+				Tooltip: Generate a healing mushroom near the player randomly , and restores 15 health after picking
+			}
+
+			MarvelousMycelium: {
+				DisplayName: Marvelous Mycelium
+				Tooltip:
+					'''
+					10% increased ranged damage
+					Slightly increases all ranged projectile velocity
+					Death goes life on, and life achieves death soon
+					'''
+			}
+
+			ModifiedCoil: {
+				DisplayName: "Modified Coil "
+				Tooltip:
+					'''
+					Increased ranged damage to 1.07x
+					Slightly increases all ranged projectile velocity
+					 May occur electric leakage
+					'''
+			}
+
+			MushroomUnitedNations: {
+				DisplayName: Mushroom United Nations
+				Tooltip: Both you and the target enemy gain Marked for Death
+			}
+
+			OdddMushroom: {
+				DisplayName: Odd Mushroom(equipable)
+				Tooltip:
+					'''
+					When hide visual grains the Trippy buff
+					 You can't always trust what you see.
+					'''
+			}
+
+			SuperCoil: {
+				DisplayName: "Adamantite Coil "
+				Tooltip:
+					'''
+					Increased ranged damage to 1.1x
+					Slightly increases all ranged projectile velocity
+					'''
+			}
+
+			TitaniumCoil: {
+				DisplayName: "Titanium Coil "
+				Tooltip:
+					'''
+					Increased ranged damage to 1.1x
+					Slightly increases all ranged projectile velocity
+					'''
+			}
+
+			WulfrumCoil: {
+				DisplayName: "Wulfrum Coil "
+				Tooltip:
+					'''
+					10% increased ranged damage
+					Slightly increases all ranged projectile velocity
+					'''
+			}
+
+			AstralArrow: {
+				DisplayName: Astral Arrow
+				Tooltip: 击败诞生于星辰之间的恐惧以完成进化
+			}
+
+			AstralBullet: {
+				DisplayName: Astral Bullet
+				Tooltip: 击败诞生于星辰之间的恐惧以完成进化
+			}
+
+			DazzlingAstralArrow: {
+				DisplayName: Dazzling Astral Arrow
+				Tooltip:
+					'''
+					星星，排列好了！
+					你确定？
+					'''
+			}
+
+			DazzlingAstralBullet: {
+				DisplayName: Dazzling Astral Bullet
+				Tooltip: 行星，恒星，力量就在其中！
+			}
+
+			FossilArrow: {
+				DisplayName: Fossil Arrow
+				Tooltip:
+					'''
+					坚固的化石击碎敌人的防御
+					酸腐的化石释放积年的余毒
+					'''
+			}
+
+			FossilBullet: {
+				DisplayName: Fossil Bullet
+				Tooltip:
+					'''
+					坚固的化石击碎敌人的防御
+					酸腐的化石释放积年的余毒
+					'''
+			}
+
+			HydrothermicArrow: {
+				DisplayName: Hydrothermic Arrow
+				Tooltip: You dare strike my shield with your spear? That's gonna end with you in pieces!
+			}
+
+			HydrothermicBullet: {
+				DisplayName: Hydrothermic Bullet
+				Tooltip: My body burns at over 1,400 degrees!
+			}
+
+			NapalmBullet: {
+				DisplayName: Napalm Bullet
+				Tooltip: 一点点火光，谁也烧不到！
+			}
+
+			PerennialSeed: {
+				DisplayName: Perennial Seed
+				Tooltip: 长盛不衰
+			}
+
+			WeakAstralArrow: {
+				DisplayName: WeakAstralArrow
+				Tooltip: 蠕虫说，“是的我有很多父亲”
+			}
+
+			WeakAstralBullet: {
+				DisplayName: Weak Astral Bullet
+				Tooltip:
+					'''
+					力量还不够......
+					在击败被星辉瘟疫侵蚀的机械巨兽后，进化
+					'''
+			}
+
+			ElementalBullet: {
+				DisplayName: Celestial Carrot
+				Tooltip: Every four hits on enemies you will call upon small power of one celestial pillar randomly
+			}
+
+			GoldenFeatherArrow: {
+				DisplayName: Golden Feather Arrow
+				Tooltip:
+					'''
+					May attract something small 
+					Summon red lightning when not critically hit
+					'''
+			}
+
+			MirageArrow: {
+				DisplayName: Mirage Arrow
+				Tooltip: Another two,another two, another two,and another two
+			}
+
+			SoulBullet: {
+				DisplayName: Soul Bullet
+				Tooltip:
+					'''
+					May attract something small 
+					Summon red lightning when not critically hit
+					'''
+			}
+
+			BloodBullet: {
+				DisplayName: Blood Bullet
+				Tooltip: May steal life from the enemies
+			}
+
+			DesertFeatherArrow: {
+				DisplayName: Desert Feather Arrow
+				Tooltip: "When the feather was still on the vulture, it wasn't so fast "
+			}
+
+			ElectricArrow: {
+				DisplayName: Electric Arrow
+				Tooltip: "Chasing the storm "
+			}
+
+			PearlArrow: {
+				DisplayName: Pearl Arrow
+				Tooltip: "Generate smaller fragments when destroyed "
+			}
+
+			PearlBullet: {
+				DisplayName: Pearl Bullet
+				Tooltip:
+					'''
+					Can penetrate two enemies
+					When hitting the enemies, slow them down
+					'''
+			}
+
+			RottenBullet: {
+				DisplayName: Rotten Bullet
+				Tooltip:
+					'''
+					Split into several small pieces of rotten matter when fire 
+					 "It's still crawling and proliferating, and  seems will never be exhausted"
+					'''
+			}
+
+			SPBullet: {
+				DisplayName: Sea Prism Bullet
+				Tooltip: Release a stream of water during crushing
+			}
+
+			VictideArrow: {
+				DisplayName: Victide Arrow
+				Tooltip:
+					'''
+					Move faster under water and increase damage to 2x 
+					 'Take my high-pressure gas cylinder '
+					'''
+			}
+
+			VictideBullet: {
+				DisplayName: Victide Bullet
+				Tooltip:
+					'''
+					Move faster under water and increase damage to 2x 
+					 'Take my high-pressure gas cylinder '
+					'''
+			}
+
+			WulfrumArrow: {
+				DisplayName: Wulfrum Arrow
+				Tooltip:
+					'''
+					It's too heavy to make arrows at all. 
+					 'really ?' 
+					'''
+			}
+
+			WulfrumBullet: {
+				DisplayName: Wulfrum Scrap Bullet
+				Tooltip:
+					'''
+					Radiate out wulfrum energy beam with slight tracking ability. The beam has 10 base armor penetration  
+					 Last hamon , son.
+					'''
+			}
+
+			Chengying_Fumo: {
+				DisplayName: Chengying's Fumo
+				Tooltip: You should understand that we cannot deal with the darkness with gentleness, but with fire.
+			}
+
+			ChewingGum: {
+				DisplayName: Chewing Gum
+				Tooltip:
+					'''
+					Increases view range for guns (Right click to zoom out)
+					When holding a gun, display a line of sight and replace cursor with a sight bead
+					'''
+			}
+
+			ChewingGun: {
+				DisplayName: Chewing Gun
+				Tooltip: barely-usable
+			}
+
+			HardTack: {
+				DisplayName: Hard Tack
+				Tooltip:
+					'''
+					{$CommonItemTooltip.MajorStats}
+					Just one look and you're full
+					'''
+			}
+
+			HardTackChest: {
+				DisplayName: Auric Coffer
+				Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+			}
+
+			KnowledgeAuric: {
+				DisplayName: Auric Compressed Biscuits
+				Tooltip:
+					'''
+					This twisted dreamscape, surrounded by unnatural pillars under a dark and hazy sky.
+					Natural law has been upturned. What will you make of it?
+					'''
+			}
+
+			SpectreRifle: {
+				DisplayName: Spectre Rifle
+				Tooltip: Converts musket balls into powerful homing souls
+			}
+
+			Aerocket: {
+				DisplayName: Aerocket
+				Tooltip: Right click to switch projectile into air-staying booby trap
+			}
+
+			BeenadeLauncher: {
+				DisplayName: Beenade Launcher
+				Tooltip:
+					'''
+					Fires a brittle spiky ball
+					Every four attack will shoot 6 sand blasts
+					'''
+			}
+
+			MushroomMortar: {
+				DisplayName: Mushroom Mortar
+				Tooltip: Grow mushroom
+			}
+
+			PlaguenadeLauncher: {
+				DisplayName: " Plaguenade Launcher"
+				Tooltip:
+					'''
+					Fires a brittle spiky ball
+					Every four attack will shoot 6 sand blasts
+					'''
+			}
+
+			SandRocket: {
+				DisplayName: Earth-Penetrating Missile
+				Tooltip:
+					'''
+					Can go through tiles and tracking enemies
+					Move faster in sand blocks
+					'''
+			}
+
+			SandWorm: {
+				DisplayName: Sand Dog
+				Tooltip:
+					'''
+					Fires a brittle spiky ball
+					Every four attack will shoot 6 sand blasts
+					'''
+			}
+		}
+
+		Buffs: {
+			Focus: {
+				DisplayName: Focus
+				Description: I can do this all day
+			}
+
+			Heal: {
+				DisplayName: Healing
+				Description:
+					'''
+					Life regeneration speed increased  
+					You are lucky today, worm... No, it's nothing. You misheard
+					'''
+			}
+		}
+
+		NPCs: {
+			QianXing: {
+				DisplayName: 弹药商
+			}
+		}
+
+		Keybinds: {
+			Trippy: {
+				DisplayName: Trippy
+			}
+		}
+
+		Homeless1:Hmm... if you can see me, you must be a ranger!
+		Homeless2: I can't believe you don't even have a room, can't you even build a basic NPC prison? Aughhhhhhhh
+		Any1: Why do I carrying this axe? Because it used to be a godly battle axe with 44 damage !
+		Any2: If you start flipping through npc's conversation, I suggest going to find someone to join you online.
+		Any3:Have you run out of ammunition materials since I came here?
+		Any4: I haven't eaten for two minutes. I'm so hungry... Do you have anything to eat?
+		Day1: Running a server is really tired , as the owner you have to solve all the problems.
+		Day2: My habit is to name the character as "Qianxing" xx Generation every time I start a new game, now estimated to be 25th generation .
+		Day3: I have 20,000HP, without any accidents I'm able to live until you graduate .
+		Day4: Don't touch my tail, it's impolite.
+		Night1: What do you want me to do at night, night owls can't stand your troubles also.
+		Night2: If it were me, I would choose to use the magic sundial instead of staying at night and doing nothing.
+		Night3: Falling Stars... Great stuff, 300 should be enough.
+		Night4: Do not touch there! 
+		BM1: Hurry up and kill monsters! Don't waste your time here!
+		BM2: How many blood orbs have you got?
+		Party: A useless event... the only thing of value is the cake.
+		HateAnger1: Anger
+		HateAnger2: I don't like this kid, I have to arrange a high-level prison for him.
+		Goblin1: Fortunately here is calamity, otherwise 		the Goblin Tinker
+		Goblin2: can empty your wallet.
+	}
+}

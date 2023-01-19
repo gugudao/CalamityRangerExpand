@@ -32,9 +32,9 @@ namespace CalamityAmmo.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Super Coil ");
+            DisplayName.SetDefault("Adamantite Coil ");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "精金线圈");
-            Tooltip.SetDefault("Increased ranged damage to 1.1x\nSlightly increases all ranged projectile velocity");
+            Tooltip.SetDefault("Increased ranged crit chance ,amplification depends on attack speed\nMediumly increases all ranged projectile velocity");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "提高远程暴击率\n远程武器的攻速越快，越容易暴击\n中幅提升远程弹幕的飞行速度");
         }
 
@@ -66,7 +66,7 @@ namespace CalamityAmmo.Accessories
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<ModifiedCoil>());
             recipe.AddIngredient(ItemID.RangerEmblem,1);
-            recipe.AddIngredient(ItemID.TitaniumBar, 5);
+            recipe.AddIngredient(ItemID.AdamantiteBar, 5);
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.Register();
         }

@@ -6,7 +6,7 @@
 
 Calamity Ranger Expansion is a mod that provides several extra ranger ammunitions and accessories ,in order to promote the toy weapons of most rangers to a level that can be used at will, instead of doing useless research all day long;
 
-Changelog
+Changelog(The latest now released on discord & bilibili)
 v0.1
 Where the dream start :)
 v0.2
@@ -82,7 +82,7 @@ Thank very much for the source code reference provided by Homeward Journey mod a
 
 灾厄弹药拓展是一个提供了数种额外射手弹药的模组，目的在于把大部分射手的玩具武器拉到随便抓一把起来都勉强能用的水平而不用整天做无用的研究；
 
-更新日志：
+更新日志（现改为在discord服务器和哔哩哔哩发布）
 v0.1
 梦开始的地方
 v0.2

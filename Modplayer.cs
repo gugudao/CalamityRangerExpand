@@ -141,15 +141,15 @@ namespace CalamityAmmo
             }
             if (Player.Calamity().gloveOfRecklessness)
             {
-                Player.GetAttackSpeed<RangedDamageClass>() += 0.15f;
-                Player.GetDamage<RangedDamageClass>() -= 10f;
-                Player.GetCritChance<RangedDamageClass>() -= 5f;
+                //Player.GetAttackSpeed<MeleeDamageClass>() += 150f;
+                Player.GetDamage<RangedDamageClass>() -= 0.10f;
+                //Player.GetCritChance<RangedDamageClass>() -= 10f;
             }
             if (Player.Calamity().gloveOfPrecision)
             {
-                Player.GetAttackSpeed<RangedDamageClass>() -= 0.15f;
-                Player.GetDamage<RangedDamageClass>() += 10f;
-                Player.GetCritChance<RangedDamageClass>() += 5f;
+                //Player.GetAttackSpeed<RangedDamageClass>() -= 0.15f;
+                Player.GetDamage<RangedDamageClass>() += 0.10f;
+                Player.GetCritChance<RangedDamageClass>() += 10f;
             }
             if (Coil3)
             {
