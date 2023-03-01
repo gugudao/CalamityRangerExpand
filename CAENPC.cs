@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using CalamityAmmo.Accessories;
 using CalamityAmmo.Ammos.Hardmode;
+using CalamityAmmo.Projectiles;
 using CalamityAmmo.Projectiles.Hardmode;
 using CalamityAmmo.Projectiles.Post_MoonLord;
 using CalamityAmmo.Rockets;
@@ -12,6 +13,7 @@ using CalamityMod.Items.Weapons.Rogue;
 using CalamityMod.NPCs.Crabulon;
 using CalamityMod.NPCs.DesertScourge;
 using CalamityMod.NPCs.NormalNPCs;
+using CalamityMod.Projectiles.Boss;
 using CalamityMod.Projectiles.Magic;
 using CalamityMod.Projectiles.Melee;
 using CalamityMod.Projectiles.Ranged;
@@ -35,14 +37,13 @@ namespace CalamityAmmo
     {
         public override bool InstancePerEntity => true;
         public int carrot = 0;
-        public int GrapeTime = 0;
         
         public override void OnHitByProjectile(NPC npc, Projectile projectile, int damage, float knockback, bool crit)
         {
             Player player = Main.player[projectile.owner];
             CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
-            if (projectile.type == ModContent.ProjectileType<_DazzlingAstralArrow>() &&
-               Main.myPlayer == projectile.owner)
+ if (projectile.type == ModContent.ProjectileType<_DazzlingAstralArrow>() &&
+            Main.myPlayer == projectile.owner)
             {
                 Vector2 spawnPos = npc.Center - new Vector2(0, 600).RotatedByRandom(Math.PI / 4);
                 int star = Projectile.NewProjectile(npc.GetSource_FromAI(), spawnPos, Vector2.Normalize(npc.Center + npc.velocity * (600 / 24) - spawnPos) * 24f, ProjectileID.StarCannonStar, (int)(projectile.damage * 0.6f), projectile.knockBack, Main.myPlayer);
@@ -99,7 +100,6 @@ namespace CalamityAmmo
                 Main.projectile[star].localNPCHitCooldown = 21;
                 Main.projectile[star].netUpdate = true;
             }
-            
             if (npc.type != NPCID.TargetDummy && Main.myPlayer == projectile.owner && projectile.type == ModContent.ProjectileType<_Seed>()
                 && player.ownedProjectileCounts[ModContent.ProjectileType<_Flower>()] <= 0)
             {
@@ -111,7 +111,6 @@ namespace CalamityAmmo
              {
                 carrot++;
                 if (carrot > 4) carrot = 1;
-                
                 if (carrot>=4)
                 {
                     int select = Main.rand.Next(0, 3);
@@ -137,11 +136,12 @@ namespace CalamityAmmo
                         Main.projectile[nebula].usesLocalNPCImmunity = true;
                     }
                 }
-             }
-            
             }
-         }
+           
+            }
+        }
     }
+
     public class NPCLoot:GlobalNPC
     {
         public override void ModifyNPCLoot(NPC npc, Terraria.ModLoader.NPCLoot npcLoot)
@@ -159,7 +159,7 @@ namespace CalamityAmmo
                 LeadingConditionRule notExpertRule = new(new Conditions.NotExpert());
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<InfectedCrabGill>(),5));
                 notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MarvelousMycelium>(), 5));
-                notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MushroomMortar>(), 4));
+                //notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<MushroomMortar>(), 4));
                 npcLoot.Add(notExpertRule);
             }
             if (npc.type == ModContent.NPCType<DesertScourgeHead>())
@@ -223,6 +223,6 @@ namespace CalamityAmmo
     }
 
 
-    }
+
  
 

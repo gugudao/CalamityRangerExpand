@@ -8,6 +8,9 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Rockets\MushroomMortar.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="Projectiles\Hardmode\Star2.png" />
     <None Remove="Projectiles\Hardmode\Star4.png" />
     <None Remove="Projectiles\Hardmode\Star5.png" />

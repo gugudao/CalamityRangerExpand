@@ -111,7 +111,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
         {
             
             Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center + Projectile.velocity*4, Projectile.velocity, ModContent.ProjectileType<MirageArrow_Proj2>(), Projectile.damage, Projectile.knockBack, Main.myPlayer);
-            if (Main.rand.NextBool(2))
+            if (Main.rand.NextBool(3))
             {
                 float spawnPos = Main.rand.NextFloat(-100, 101);
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center + new Vector2(spawnPos, spawnPos), Projectile.velocity, ModContent.ProjectileType<MirageArrow_Proj>(), Projectile.damage,Projectile.knockBack, Main.myPlayer);

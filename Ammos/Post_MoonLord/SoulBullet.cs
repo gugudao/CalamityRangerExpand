@@ -87,7 +87,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
         public override void SetDefaults()
         {
             Projectile.DamageType = DamageClass.Ranged;
-            Projectile.ArmorPenetration = 50;
+            Projectile.ArmorPenetration = 30;
             Projectile.width = 8;
             Projectile.height = 8;
             Projectile.aiStyle = -1;
@@ -142,7 +142,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
         }
         public override void ModifyDamageScaling(ref float damageScale)
         {
-            damageScale = 1f - 0.15f*(3 - Projectile.penetrate);
+            damageScale = 1f - 0.25f*(3 - Projectile.penetrate);
         }
         public override Color? GetAlpha(Color lightColor)
         {

@@ -43,9 +43,17 @@ namespace CalamityAmmo.Global
                 &&projectile.type!= ModContent.ProjectileType<ArcaneArrow_Proj>()
                 && projectile.type != 631)
             {
-                projectile.penetrate = 0;
-                projectile.active = false;
-                return false;
+                //projectile.penetrate = 0;
+                //projectile.active = false;
+                if (Main.rand.Next(4) == 0)
+                {
+                    int num9 = Dust.NewDust(projectile.position+projectile.velocity, projectile.width, projectile.height, 21, 0f, 0f, 100, default, 1.5f);
+                    Main.dust[num9].velocity *= 0.3f;
+                    Main.dust[num9].position.X = projectile.position.X + (float)(projectile.width / 2) + 4f + (float)Main.rand.Next(-4, 5);
+                    Main.dust[num9].position.Y = projectile.position.Y + (float)(projectile.height / 2) + (float)Main.rand.Next(-4, 5);
+                    Main.dust[num9].noGravity = true;
+                    Main.dust[num9].velocity += Main.rand.NextVector2Circular(2f, 2f);
+                }
             }
             return true;
         }
@@ -98,11 +106,11 @@ namespace CalamityAmmo.Global
             CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
             if (player.HasBuff(94))
             {
-                player.GetDamage<RangedDamageClass>() *= 0.5f;
+                //player.GetDamage<RangedDamageClass>() *= 0.5f;
             }
             if (projectile.arrow && modplayer.Arcane)
             {
-                damageScale = 1.05f + player.HeldItem.useTime / 420f;
+                //damageScale = 1.05f + player.HeldItem.useTime / 420f;
             }
            
         }
@@ -142,26 +150,34 @@ namespace CalamityAmmo.Global
                 }
 
             }
-            if (modplayer.Arcane2 && (projectile.arrow //|| projectile.type == ModContent.ProjectileType<MirageArrow_Proj>()
+            /*if (modplayer.Arcane2 && (projectile.arrow //|| projectile.type == ModContent.ProjectileType<MirageArrow_Proj>()
                 || projectile.type == ModContent.ProjectileType<MirageArrow_Proj2>())
                 && projectile.type != ModContent.ProjectileType<ArcaneArrow_Proj>()
                 && projectile.type != 631
                 && player.HeldItem.type!= 4953
                  && player.HeldItem.type != 3540)
             {
-                projectile.penetrate = 0;
-                projectile.active = false;
+                //projectile.penetrate = 0;
+                //projectile.active = false;
                 int damage = projectile.damage;
                 if ((float)player.statMana / (float)player.statManaMax2 >= 0.8)
                 {
-                    damage = projectile.damage + (int)player.GetDamage<RangedDamageClass>().ApplyTo(15f);
+                    //damage = projectile.damage + (int)player.GetDamage<RangedDamageClass>().ApplyTo(15f);
                 }
                 //Main.NewText((float)player.statMana / (float)player.statManaMax2);
-               int proj= Projectile.NewProjectile(projectile.GetSource_FromThis(), projectile.Center, projectile.velocity, ModContent.ProjectileType<ArcaneArrow_Proj>(), damage, projectile.knockBack, player.whoAmI);
-                Main.projectile[proj].CritChance =(int) player.GetCritChance<RangedDamageClass>();
-                
-                  
-            }
+               //int proj= Projectile.NewProjectile(projectile.GetSource_FromThis(), projectile.Center, projectile.velocity, ModContent.ProjectileType<ArcaneArrow_Proj>(), damage, projectile.knockBack, player.whoAmI);
+                //Main.projectile[proj].CritChance =(int) player.GetCritChance<RangedDamageClass>();
+                if (Main.rand.Next(2) == 0)
+                {
+                    int num9 = Dust.NewDust(projectile.position, projectile.width, projectile.height, 21, 0f, 0f, 100, default, 1.75f);
+                    Main.dust[num9].velocity *= 0.3f;
+                    Main.dust[num9].position.X = projectile.position.X + (float)(projectile.width / 2) + 4f + (float)Main.rand.Next(-4, 5);
+                    Main.dust[num9].position.Y = projectile.position.Y + (float)(projectile.height / 2) + (float)Main.rand.Next(-4, 5);
+                    Main.dust[num9].noGravity = true;
+                    Main.dust[num9].velocity += Main.rand.NextVector2Circular(2f, 2f);
+                }
+
+            }*/
            
         }
         public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)

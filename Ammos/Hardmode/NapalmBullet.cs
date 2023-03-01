@@ -55,7 +55,7 @@ namespace CalamityAmmo.Ammos.Hardmode
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe(70);
-            recipe.AddIngredient(ModContent.ItemType<EssenceofChaos>(), 1);
+            recipe.AddIngredient(ModContent.ItemType< EssenceofHavoc > (), 1);
             recipe.AddIngredient(ItemID.EmptyBullet, 70);
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.Register();

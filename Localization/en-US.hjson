@@ -6,17 +6,17 @@ Mods: {
 		TownNPCMood: {
 			QianXing: {
 				Content: I get along well with you.
-				NoHome: six six six.
-				LoveSpace: (sparse area placeholder)
+				NoHome: Do you have any spare rooms? I don't want to live in the same room with others.
+				LoveSpace: Enough private space makes me very comfortable. Even if I do something quietly, I won't be found
 				FarFromHome: Well, could you lend me your magic mirror?
-				DislikeCrowded: Get together and have sex is not a good activity.
-				HateCrowded: It's too crowded... Go up the price.
+				DislikeCrowded: Many people are busy，But I can't sleep because of the noise.
+				HateCrowded: Get together and have sex is not a good activity.
 				LikeBiome: This place is full of dangers and treasures,I like it.Are you ready to die anytime?
 				LoveBiome: Don't even think about it, Choosing forest is just for your shopping convenience.
 				DislikeBiome: The sandstorm here makes me dirty, can I move to another place?
 				HateBiome: No cat in his right mind would jump into ocean to catch fish for dinner.
 				LikeNPC: "{NPCName}doesn't sell any scraps basically, he's pretty good."
-				LikeNPC_Princess: princess princess princess princess princess princess princess princess princess princess princess princess
+				LikeNPC_Princess: Why do I like {NPCName}? The official answer is: "Every NPC likes the princess." The private answer is: "The staff of resonance is too easy to use."
 				LoveNPC: "{NPCName} chats well with me, is that because both we have animal ears?"
 				DislikeNPC: Everyday {NPCName} compete with me for business and stare at me , It's really uncomfortable.
 				HateNPC: "{NPCName} the naturally evil brat doesn't deserve to live next to me!"
@@ -878,7 +878,7 @@ Mods: {
 		Party: A useless event... the only thing of value is the cake.
 		HateAnger1: Anger
 		HateAnger2: I don't like this kid, I have to arrange a high-level prison for him.
-		Goblin1: Fortunately here is calamity, otherwise 		the Goblin Tinker
-		Goblin2: can empty your wallet.
+		Goblin1: Fortunately here is calamity, otherwise 		
+		Goblin2: the Goblin Tinker can empty your wallet.
 	}
 }

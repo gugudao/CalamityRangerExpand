@@ -29,6 +29,12 @@ using CalamityMod.Buffs.StatDebuffs;
 using CalamityAmmo.Ammos.Post_MoonLord;
 using CalamityMod.Buffs.Alcohol;
 using CalamityMod.Items.Accessories;
+using CalamityMod.Buffs.Pets;
+using CalamityMod.Items.Mounts;
+using Microsoft.Xna.Framework.Input;
+using CalamityMod.NPCs.AcidRain;
+using CalamityMod.Items.Placeables.Furniture;
+using CalamityMod.Items.SummonItems;
 
 namespace CalamityAmmo.Accessories
 {
@@ -59,24 +65,24 @@ namespace CalamityAmmo.Accessories
         }
         public override void AddRecipes()
         {
- 
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.VileMushroom, 1);
-            recipe.AddTile(TileID.TinkerersWorkbench);
-            recipe.Register();
+            CreateRecipe()
+            .AddIngredient(ItemID.VileMushroom, 1)
+            .AddTile(TileID.TinkerersWorkbench)
+            .Register();
 
             var recipe2 = CreateRecipe();
-            recipe2 = CreateRecipe();
             recipe2.AddIngredient(ItemID.ViciousMushroom, 1);
             recipe2.ReplaceResult(ModContent.ItemType<EvilMushroom>(), 1);
             recipe2.AddTile(TileID.TinkerersWorkbench);
             recipe2.Register();
+
             recipe2 = CreateRecipe();
             recipe2.AddIngredient(ItemID.Geode, 1);
             recipe2.AddIngredient(ItemID.Granite, 8);
             recipe2.ReplaceResult(ModContent.ItemType <UnstableGraniteCore> (), 1);
             recipe2.AddTile(TileID.Anvils);
             recipe2.Register();
+
             recipe2 = CreateRecipe();
             recipe2.AddIngredient(ItemID.Geode, 1);
             recipe2.AddIngredient(ItemID.Ruby, 1);
@@ -86,6 +92,58 @@ namespace CalamityAmmo.Accessories
             recipe2.AddIngredient(ItemID.Amethyst, 1);
             recipe2.ReplaceResult(ModContent.ItemType<LuxorsGift>(), 1);
             recipe2.AddTile(TileID.Anvils);
+            recipe2.Register();
+
+            recipe2 = CreateRecipe();
+            recipe2.AddRecipeGroup(RecipeGroupID.Wood, 2);
+            recipe2.AddIngredient(ItemID.RedDye, 1);
+            recipe2.ReplaceResult(ModContent.ItemType<TrinketofChi>(), 1);
+            recipe2.AddTile(TileID.HeavyWorkBench);
+            recipe2.Register();
+
+            recipe2 = CreateRecipe();
+            recipe2.AddIngredient(ItemID.Chain, 1);
+            recipe2.AddIngredient(ItemID.FlinxFur, 2);
+            recipe2.ReplaceResult(ModContent.ItemType <TundraLeash> (), 1);
+            recipe2.AddTile(TileID.WorkBenches);
+            recipe2.Register();
+
+            recipe2 = CreateRecipe();
+            recipe2.AddIngredient(ItemID.ShadowKey, 1);
+            recipe2.AddIngredient(ItemID.Obsidian, 5);
+            recipe2.AddIngredient(ItemID.DemonTorch, 1);
+            recipe2.ReplaceResult(ModContent.ItemType< OnyxExcavatorKey > (), 1);
+            recipe2.AddTile(TileID.WorkBenches);
+            recipe2.Register();
+
+            recipe2 = CreateRecipe();
+            recipe2.AddIngredient(ItemID.GoldWatch,1);
+            recipe2.AddIngredient(ItemID.Gladius, 2);
+            recipe2.ReplaceResult(ModContent.ItemType < GladiatorsLocket>(), 1);
+            recipe2.AddTile(TileID.Anvils);
+            recipe2.Register();
+
+            recipe2 = CreateRecipe();
+            recipe2.AddIngredient(ItemID.GlowingMushroom, 50);
+            recipe2.ReplaceResult(ModContent.ItemType < FungalSymbiote > (), 1);
+            recipe2.AddTile(TileID.TinkerersWorkbench);
+            recipe2.Register();
+
+            recipe2 = CreateRecipe();
+            recipe2.AddIngredient(ItemID.EbonstoneBlock, 50);
+            recipe2.ReplaceResult(ModContent.ItemType<CorruptionEffigy>(), 1);
+            recipe2.AddTile(TileID.DemonAltar);
+            recipe2.Register();
+
+            recipe2 = CreateRecipe();
+            recipe2.AddIngredient(ItemID.CrimstoneBlock, 50);
+            recipe2.ReplaceResult(ModContent.ItemType <CrimsonEffigy> (), 1);
+            recipe2.AddTile(TileID.DemonAltar);
+            recipe2.Register();
+
+            recipe2 = CreateRecipe();
+            recipe2.AddIngredient(ItemID.StoneBlock, 50);
+            recipe2.ReplaceResult(ModContent.ItemType<Terminus>(), 1);
             recipe2.Register();
         }
     }

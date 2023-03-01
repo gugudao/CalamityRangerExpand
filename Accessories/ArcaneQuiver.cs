@@ -45,13 +45,7 @@ namespace CalamityAmmo.Accessories
                 "greatly increases arrow speed\n20% chance to not consume arrows\n" +
                 "Energy, power. My people are addicted to it!");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese),
-                "使用弓弩时可消耗魔力为箭矢附魔，提升伤害\n" +
-                "魔力消耗与伤害增幅取决于武器的攻速\n" +
-                "打开饰品可见性将把任何种类的箭矢替换为追踪的奥术箭\n" +
-                "法力充盈时，奥术箭的伤害更高\n" +
-                "箭的速度大大提高\n20%的几率不消耗箭\n" +
-                "魔力病也会影响远程伤害\n" +
-                "魔法，能量。我的人民陷入其中不能自拔!") ;
+                "使你的箭矢在飞行轨迹上留下无害的紫色奥术粒子" ) ;
         }
 
         public override void SetDefaults()

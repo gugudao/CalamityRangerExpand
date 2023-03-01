@@ -26,6 +26,8 @@ using CalamityMod.Items.Weapons.Ranged;
 using CalamityAmmo.Rockets;
 using CalamityMod.Items.Weapons.Rogue;
 using CalamityMod.CalPlayer;
+using CalamityMod.Items.Mounts;
+using CalamityMod.Items.SummonItems;
 
 namespace CalamityAmmo.Global
 {
@@ -73,20 +75,13 @@ namespace CalamityAmmo.Global
             }
             if(player.HeldItem.useAmmo==AmmoID.Arrow&&modplayer.Arcane)
             {
-                item.mana = item.useTime /3;
+                //item.mana = item.useTime /3;
                 //item.shoot = ModContent.ProjectileType<ArcaneArrow_Proj>();
             }
             if(player.HeldItem.useAmmo == AmmoID.Arrow && !modplayer.Arcane)
             {
-                item.mana = 0;
+                //item.mana = 0;
             }
-            if(modplayer.Grape)
-            {
-               
-            }
-         
-                
-           
             return true;
         }
         public override float UseSpeedMultiplier(Item item, Player player)
@@ -121,7 +116,7 @@ namespace CalamityAmmo.Global
             {
                 itemLoot.Add(ModContent.ItemType<InfectedCrabGill>(), 4, 1, 1);
                 itemLoot.Add(ModContent.ItemType<MarvelousMycelium>(), 4, 1, 1);
-                itemLoot.Add(ModContent.ItemType<MushroomMortar>(), 3, 1, 1);
+                //itemLoot.Add(ModContent.ItemType<MushroomMortar>(), 3, 1, 1);
             }
             if(item.type==ModContent.ItemType<StarterBag>())
             {
@@ -172,4 +167,5 @@ namespace CalamityAmmo.Global
             
         }
     }
+ 
 }

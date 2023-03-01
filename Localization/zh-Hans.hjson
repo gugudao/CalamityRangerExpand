@@ -6,17 +6,17 @@ Mods: {
 		TownNPCMood: {
 			QianXing: {
 				Content: 和你相处很不错哦。
-				NoHome: 6。
-				LoveSpace: 和平与宁静意味着我可以尽情享受！
+				NoHome: 你有没有空余的房间？我可不要和别人住在一个屋子里。
+				LoveSpace: 足够的私人空间让我很舒适，就算悄悄做一些事情也不会被发现
 				FarFromHome: 额，能把你的魔镜借我一下嘛？
-				DislikeCrowded: 聚众开趴可不是什么好活动。
-				HateCrowded: 这也太挤了......涨价吧。
+				DislikeCrowded: 人多了虽然热闹,  但是吵得我没法睡觉诶
+				HateCrowded: 聚众开趴可不是什么好活动。
 				LikeBiome: 我喜欢这个充满了危险和宝藏的地方，你准备好被秒杀了吗？
 				LoveBiome: 别想啦，就是为了方便你买东西才选的森林群落
 				DislikeBiome: 这里的沙尘暴把我身上都弄脏了，能换个地方住吗？
 				HateBiome: 没有一只脑子正常的猫会自己跳进海里抓鱼吃。
 				LikeNPC: "{NPCName}基本不卖什么废品，他还挺不错的。"
-				LikeNPC_Princess: 公主公主公主公主公主公主公主公主公主公主公主公主公主
+				LikeNPC_Princess: 我为什么喜欢{NPCName}?官方的回答是:“每个NPC都喜欢公主”私人的回答是:“共鸣法杖太好用了”
 				LoveNPC: "{NPCName}和我很聊得来，是因为都长着兽耳嘛？"
 				DislikeNPC: 我受不了像{NPCName}又和我抢生意又天天盯着我看，真让人不舒服啊
 				HateNPC: "{NPCName}这个天生邪恶的小鬼不配住在我旁边！"

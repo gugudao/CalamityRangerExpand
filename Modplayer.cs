@@ -132,10 +132,10 @@ namespace CalamityAmmo
                 if (HealCD >= 60*6 && Player.ownedProjectileCounts[ModContent.ProjectileType<HealOrb>()]<=0)
                 {
                     Projectile.NewProjectile(Player.GetSource_Accessory(null),
-            Player.Center+new Vector2(Main.rand.Next(-200,201), Main.rand.Next(-242,-10)),
-            new Vector2(0, 0),
-            ModContent.ProjectileType<HealOrb>(), 0, 0,
-            Player.whoAmI, 15);
+                    Player.Center+new Vector2(Main.rand.Next(-200,201), Main.rand.Next(-242,-10)),
+                    new Vector2(0, 0),
+                    ModContent.ProjectileType<HealOrb>(), 0, 0,
+                    Player.whoAmI, 15);
                     HealCD = 0;
                 }
             }

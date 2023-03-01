@@ -22,6 +22,7 @@ using CalamityAmmo.Accessories;
 using CalamityMod;
 using CalamityAmmo.Ammos.Hardmode;
 using static CalamityAmmo.CAEUtils;
+using CalamityAmmo.Ammos.Post_MoonLord;
 
 namespace CalamityAmmo.Misc
 {
@@ -206,56 +207,100 @@ namespace CalamityAmmo.Misc
             //shop.item[nextSlot].value = 10;
             //切换到下一栏，否则你的NPC只能卖一件物品
             //nextSlot++;
-            shop.item[nextSlot].SetDefaults(ModContent.ItemType<WulfrumBullet>());
-            nextSlot++;
-            shop.item[nextSlot].SetDefaults(ModContent.ItemType<WulfrumArrow>());
-            nextSlot++;
-            shop.item[nextSlot].SetDefaults(ModContent.ItemType<DesertFeatherArrow>());
-            nextSlot++;
-            shop.item[nextSlot].SetDefaults(ModContent.ItemType<ElectricArrow>());
-            nextSlot++;
-            if (DownedBossSystem.downedDesertScourge)
+            //Player player = 
+            if(Main.dayTime)
             {
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<PearlBullet>());
+                shop.item[nextSlot].SetDefaults(ModContent.ItemType<WulfrumArrow>());
                 nextSlot++;
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<PearlArrow>());
-                nextSlot++;
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<SPBullet>());
-                nextSlot++;
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<VictideBullet>());
-                nextSlot++;
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<VictideArrow>());
-                nextSlot++;
-            }
-            if (DownedBossSystem.downedHiveMind || DownedBossSystem.downedPerforator)
-            {
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<RottenBullet>());
-                nextSlot++;
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<BloodBullet>());
-                nextSlot++;
-            }
-            if(Main.hardMode)
-            {
-                
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<WeakAstralBullet>());
-                nextSlot++;
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<WeakAstralArrow>());
-                nextSlot++;
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<NapalmBullet>());
-                nextSlot++;
-                if (DownedBossSystem.downedAquaticScourge)
+               if(Main.LocalPlayer.ZoneDesert)
                 {
-                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<FossilBullet>());
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<DesertFeatherArrow>());
                     nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<FossilArrow>());
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<ElectricArrow>());
                     nextSlot++;
                 }
-                if (DownedBossSystem.downedRavager||NPC.downedPlantBoss)
+                if (DownedBossSystem.downedDesertScourge)
                 {
-                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<HydrothermicBullet>());
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<PearlArrow>());
                     nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<HydrothermicArrow>());
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<VictideArrow>());
                     nextSlot++;
+                }
+                if (Main.hardMode)
+                {
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<WeakAstralArrow>());
+                    nextSlot++;
+                    if (Main.LocalPlayer.ZoneNormalUnderground)
+                    {
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<NapalmBullet>());
+                        nextSlot++;
+                    }
+                    if (DownedBossSystem.downedAquaticScourge)
+                    {
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<FossilArrow>());
+                        nextSlot++;
+                    }
+                    if (DownedBossSystem.downedRavager || NPC.downedGolemBoss)
+                    {
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<HydrothermicArrow>());
+                        nextSlot++;
+                    }
+                    if(NPC.downedMoonlord)
+                    {
+                        //shop.item[nextSlot].SetDefaults(ModContent.ItemType<ElementalArrow>());
+                        //nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<GoldenFeatherArrow>());
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<MirageArrow>());
+                        nextSlot++;
+                    }
+                }
+            }
+            else
+            {
+                shop.item[nextSlot].SetDefaults(ModContent.ItemType<WulfrumBullet>());
+                nextSlot++;
+                if (DownedBossSystem.downedDesertScourge)
+                {
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<PearlBullet>());
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<SPBullet>());
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<VictideBullet>());
+                    nextSlot++;
+                }
+                if (DownedBossSystem.downedHiveMind || DownedBossSystem.downedPerforator)
+                {
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<RottenBullet>());
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<BloodBullet>());
+                    nextSlot++;
+                }
+                if (Main.hardMode)
+                {
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<WeakAstralBullet>());
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<NapalmBullet>());
+                    nextSlot++;
+                    if (DownedBossSystem.downedAquaticScourge)
+                    {
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<FossilBullet>());
+                        nextSlot++;
+                    }
+                    if (DownedBossSystem.downedRavager || NPC.downedGolemBoss)
+                    {
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<HydrothermicBullet>());
+                        nextSlot++;
+                    }
+                    if (NPC.downedMoonlord)
+                    {
+                        //shop.item[nextSlot].SetDefaults(ModContent.ItemType<ElementalArrow>());
+                        //nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<ElementalBullet>());
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<SoulBullet>());
+                        nextSlot++;
+                    }
                 }
             }
         }

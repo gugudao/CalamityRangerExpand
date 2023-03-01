@@ -64,7 +64,7 @@ namespace CalamityAmmo.Ammos.Hardmode
             recipe.AddIngredient(ItemID.EmptyBullet, 200);
             recipe.AddIngredient(ModContent.ItemType<RustedPipes>(), 1);
             recipe.AddIngredient(ModContent.ItemType<ScoriaBar>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<CoreofChaos>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<CoreofHavoc>(), 1);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }
