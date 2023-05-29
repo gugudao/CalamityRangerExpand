@@ -37,7 +37,7 @@ namespace CalamityAmmo.Misc
             Item.useTime = 25;
             Item.useAnimation = 25;
             Item.useStyle = ItemUseStyleID.EatFood;
-            Item.value = Item.buyPrice(0, 10, 0, 0);
+            Item.value = Item.buyPrice(0, 0, 0, 2);
             Item.rare = 1;
             Item.autoReuse = false;
             Item.consumable = true;
@@ -47,12 +47,11 @@ namespace CalamityAmmo.Misc
 
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe(50);
+            Recipe recipe = CreateRecipe(10);
             recipe.AddRecipeGroup(RecipeGroupID.Wood, 1);
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
             var recipe2 = CreateRecipe();
-            recipe2 = CreateRecipe();
             recipe2.AddIngredient(ModContent.ItemType<Paper>(), 1);
             recipe2.ReplaceResult(4344, 1);
             recipe2.Register();
@@ -77,7 +76,7 @@ namespace CalamityAmmo.Misc
             Item.useTime = 25;
             Item.useAnimation = 25;
             Item.useStyle = ItemUseStyleID.EatFood;
-            Item.value = Item.buyPrice(0, 10, 0, 0);
+            Item.value = Item.buyPrice(0, 0, 0, 2);
             Item.rare = 1;
             Item.autoReuse = false;
             Item.consumable = true;
@@ -87,12 +86,12 @@ namespace CalamityAmmo.Misc
 
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe(50);
-            recipe.AddIngredient(4564, 1);
+            Recipe recipe = CreateRecipe(10);
+            recipe.AddIngredient(ItemID.BambooBlock, 1);
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
+
             var recipe2 = CreateRecipe();
-            recipe2 = CreateRecipe();
             recipe2.AddIngredient(ModContent.ItemType<Paper2>(), 1);
             recipe2.ReplaceResult(4343, 1);
             recipe2.Register();

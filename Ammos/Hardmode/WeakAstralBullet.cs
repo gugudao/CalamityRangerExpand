@@ -41,7 +41,7 @@ namespace CalamityAmmo.Ammos.Hardmode
         }
         public override void SetDefaults()
         {
-            Item.damage = 9;
+            Item.damage = 8;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 8;
             Item.height = 8;

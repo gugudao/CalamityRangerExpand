@@ -16,37 +16,37 @@ namespace CalamityAmmo.Misc
     {
         public override void SetStaticDefaults()
         {
-            base.DisplayName.SetDefault("Spectre Rifle");
+            DisplayName.SetDefault("Spectre Rifle");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "幽灵狙击枪"); 
-            base.Tooltip.SetDefault("Converts musket balls into powerful homing souls");
+            Tooltip.SetDefault("Converts musket balls into powerful homing souls");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "将火枪子弹转化为强大的追踪灵魂弹");
-            base.SacrificeTotal = 1;
+            SacrificeTotal = 1;
         }
 
         public override void SetDefaults()
         {
-            base.Item.damage = 150;
-            base.Item.DamageType = DamageClass.Ranged;
-            base.Item.width = 88;
-            base.Item.height = 30;
-            base.Item.useTime = 25;
-            base.Item.useAnimation = 25;
-            base.Item.useStyle = 5;
-            base.Item.noMelee = true;
-            base.Item.knockBack = 7f;
-            base.Item.value = Item.buyPrice(0, 80, 0, 0);
-            base.Item.rare = ItemRarityID.Yellow;
-            base.Item.UseSound = new SoundStyle?(SoundID.Item40);
-            base.Item.autoReuse = false;
-            base.Item.shoot = ProjectileID.LostSoulFriendly;
-            base.Item.shootSpeed = 12f;
-            base.Item.useAmmo = AmmoID.Bullet;
-            base.Item.Calamity().canFirePointBlankShots = true;
+            Item.damage = 147;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 88;
+            Item.height = 30;
+            Item.useTime = 48;
+            Item.useAnimation = 48;
+            Item.useStyle = 5;
+            Item.noMelee = true;
+            Item.knockBack = 6f;
+            Item.value = Item.buyPrice(0, 80, 0, 0);
+            Item.rare = ItemRarityID.Yellow;
+            Item.UseSound = new SoundStyle?(SoundID.Item40);
+            Item.autoReuse = false;
+            Item.shoot = ProjectileID.LostSoulFriendly;
+            Item.shootSpeed = 12f;
+            Item.useAmmo = AmmoID.Bullet;
+            Item.Calamity().canFirePointBlankShots = true;
         }
 
         public override void ModifyWeaponCrit(Player player, ref float crit)
         {
-            crit += 22f;
+            crit += 25f;
         }
 
         public override Vector2? HoldoutOffset()

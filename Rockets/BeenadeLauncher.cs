@@ -50,16 +50,16 @@ namespace CalamityAmmo.Rockets
 
         public override void SetDefaults()
         {
-            Item.damage = 24;
+            Item.damage = 12;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 86;
             Item.height = 34;
-            Item.useTime = 45;
-            Item.useAnimation = 45;
+            Item.useTime = 50;
+            Item.useAnimation = 50;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.noMelee = true;
             Item.knockBack = 2f;
-            Item.value = Item.buyPrice(0, 80, 0, 0);
+            Item.value = Item.buyPrice(0, 5, 0, 0);
             Item.rare = ItemRarityID.Green;
             Item.UseSound = new SoundStyle?(SoundID.Item40);
             Item.autoReuse = true;
@@ -85,16 +85,10 @@ namespace CalamityAmmo.Rockets
         }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            int grenadeType=0;
             float angle = Utils.ToRotation(velocity) + (float)Math.PI/2;
-            //Main.NewText(angle.ToRotationVector2());
-            if (angle <= -Math.PI / 4 || angle >= Math.PI / 4)
-            {
-                return false;
-            }
            if (source.AmmoItemIdUsed == ModContent.ItemType<Plaguenade>())
             {
-                grenadeType = ModContent.ProjectileType<PlaguenadeProj>();
+                int grenadeType = ModContent.ProjectileType<PlaguenadeProj>();
                 Projectile.NewProjectile(source, position, velocity*2/3, grenadeType, damage, knockback, player.whoAmI);
                 return false;
             }
