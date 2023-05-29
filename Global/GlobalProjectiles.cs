@@ -119,13 +119,13 @@ namespace CalamityAmmo.Global
             Player player = Main.player[projectile.owner];
             CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
             
-            if (modplayer.Coil && projectile.CountsAsClass<RangedDamageClass>() && player.heldProj != projectile.whoAmI && projectile.type != ModContent.ProjectileType<MidasCoin>())
+            if (modplayer.Coil && projectile.CountsAsClass<RangedDamageClass>() && player.heldProj != projectile.whoAmI && projectile.type != ModContent.ProjectileType<RicoshotCoin>())
             {
                 projectile.velocity *= 1.08f;
             }
             if (modplayer.Coil2)
             {
-                if (projectile.CountsAsClass<RangedDamageClass>() && player.heldProj != projectile.whoAmI && projectile.type != ModContent.ProjectileType<MidasCoin>())
+                if (projectile.CountsAsClass<RangedDamageClass>() && player.heldProj != projectile.whoAmI && projectile.type != ModContent.ProjectileType<RicoshotCoin>())
                 {
                     projectile.velocity *= 1.2f;
                 }
@@ -134,7 +134,7 @@ namespace CalamityAmmo.Global
                     player.AddBuff(144, 45);
                 }
             }
-            if ((modplayer.Coil3||modplayer.Coil4) && projectile.CountsAsClass<RangedDamageClass>() && player.heldProj != projectile.whoAmI && projectile.type != ModContent.ProjectileType<MidasCoin>())
+            if ((modplayer.Coil3||modplayer.Coil4) && projectile.CountsAsClass<RangedDamageClass>() && player.heldProj != projectile.whoAmI && projectile.type != ModContent.ProjectileType<RicoshotCoin>())
             {
                 projectile.velocity *= 1.35f;
             }
