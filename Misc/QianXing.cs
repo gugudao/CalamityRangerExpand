@@ -92,16 +92,22 @@ namespace CalamityAmmo.Misc
         }
         public override bool CanTownNPCSpawn(int numTownNPCs, int money)
         { // Requirements for the town NPC to spawn.
-            for (int k = 0; k < 255; k++)
-            {
-                Player player = Main.player[k];
-                if (!player.active)
-                {
-                    continue;
-                }
-            }
-            return false;
-        }
+			for (int i = 0; i < 255; i++)
+			{
+				Player player = Main.player[i];
+				if (!player.active)
+					continue;
+
+				for (int j = 0; j < 58; j++)
+				{
+					Item item = player.inventory[j];
+					if (item != null && item.stack > 0 && (item.ammo != 0 || item.useAmmo != 0))
+						return true;
+				}
+			}
+
+			return false;
+		}
         public override List<string> SetNPCNameList()
         {
             return new List<string>() {

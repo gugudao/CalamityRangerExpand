@@ -50,7 +50,6 @@ namespace CalamityAmmo.Projectiles.Hardmode
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
             target.AddBuff(ModContent.BuffType<AstralInfectionDebuff>(), 180);
-            base.OnHitNPC(target, damage, knockback, crit);
         }
         public override bool PreAI()
         {
