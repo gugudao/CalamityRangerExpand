@@ -37,10 +37,10 @@ namespace CalamityAmmo.Accessories
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Live Mushroom");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "一般路过的蘑菇");
-            Tooltip.SetDefault("Generate a healing mushroom near the player randomly , and restores 15 health after picking");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "在玩家附近生成一个治愈蘑菇，拾取后恢复15点生命值");
+            // DisplayName.SetDefault("Live Mushroom");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "一般路过的蘑菇");
+            // Tooltip.SetDefault("Generate a healing mushroom near the player randomly , and restores 15 health after picking");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "在玩家附近生成一个治愈蘑菇，拾取后恢复15点生命值");
         }
 
         public override void SetDefaults()
@@ -71,8 +71,8 @@ namespace CalamityAmmo.Accessories
         public override string Texture => "CalamityAmmo/Accessories/LifeMushroom";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Heal Orb");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "治疗菇");
+            // DisplayName.SetDefault("Heal Orb");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "治疗菇");
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 4;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
             Main.projFrames[Projectile.type] = 1;

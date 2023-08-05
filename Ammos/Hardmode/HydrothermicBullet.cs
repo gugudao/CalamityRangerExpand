@@ -35,13 +35,13 @@ namespace CalamityAmmo.Ammos.Hardmode
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Hydrothermic Bullet");
-            Tooltip.SetDefault("My body burns at over 1,400 degrees!");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "渊泉子弹");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "我的身体内部，可是一千四百度喔。");
+            // DisplayName.SetDefault("Hydrothermic Bullet");
+            // Tooltip.SetDefault("My body burns at over 1,400 degrees!");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "渊泉子弹");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "我的身体内部，可是一千四百度喔。");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ископаемая пуля");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Прочные окаменелости сокрушают оборону врага \nГниющие в кислоте окаменелости высвобождают годы остаточного яда");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ископаемая пуля");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Прочные окаменелости сокрушают оборону врага \nГниющие в кислоте окаменелости высвобождают годы остаточного яда");
         }
         public override void SetDefaults()
         {
@@ -74,7 +74,7 @@ namespace CalamityAmmo.Ammos.Hardmode
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Hydrothermic Bullet");
+            // DisplayName.SetDefault("Hydrothermic Bullet");
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 6;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
         }
@@ -100,10 +100,9 @@ namespace CalamityAmmo.Ammos.Hardmode
             return true;
         }
 
-        public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
             Projectile.NewProjectile(Projectile.GetSource_FromThis(),new Vector2(target.Center.X, target.Center.Y+target.height/2),new Vector2 (0, 0), ModContent.ProjectileType<HydrothermicVolcano>(), Projectile.damage, 0f,Main.myPlayer);
-            base.ModifyHitNPC(target, ref damage, ref knockback, ref crit, ref hitDirection);
         }
         public override void AI()
         {
@@ -120,7 +119,7 @@ namespace CalamityAmmo.Ammos.Hardmode
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Hydrothermic Volcano ");
+            // DisplayName.SetDefault("Hydrothermic Volcano ");
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 6;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
         }
@@ -168,10 +167,10 @@ namespace CalamityAmmo.Ammos.Hardmode
                 }
             }
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
           
-            base.OnHitNPC(target, damage, knockback, crit);
+            
         }
 
     }

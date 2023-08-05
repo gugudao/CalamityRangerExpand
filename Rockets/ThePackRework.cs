@@ -66,8 +66,8 @@ namespace CalamityAmmo.Rockets
         }
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("PR");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "PR");
+            // DisplayName.SetDefault("PR");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "PR");
             Main.projFrames[Projectile.type] = 4;
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 6;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 2;
@@ -219,7 +219,7 @@ namespace CalamityAmmo.Rockets
             Projectile.type = AIType;
             return true;
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.immune[Projectile.owner] = 2;
         }

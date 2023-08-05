@@ -40,12 +40,11 @@ namespace CalamityAmmo.Rockets
         int i = 0;
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Beenade Launcher");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "蜜蜂掷弹筒");
-            Tooltip.SetDefault("Fires a brittle spiky ball\nEvery four attack will shoot 6 sand blasts");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "使用手榴弹作为弹药\n" +
-                "");
-            SacrificeTotal = 1;
+			// DisplayName.SetDefault("Beenade Launcher");
+			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "蜜蜂掷弹筒");
+			// Tooltip.SetDefault("Fires a brittle spiky ball\nEvery four attack will shoot 6 sand blasts");
+			//Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "使用手榴弹作为弹药\n" +"");
+			Item.ResearchUnlockCount = 1;
         }
 
         public override void SetDefaults()

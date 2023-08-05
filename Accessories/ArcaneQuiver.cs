@@ -37,15 +37,15 @@ namespace CalamityAmmo.Accessories
         
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Arcane Quiver");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "奥术箭袋");
-            Tooltip.SetDefault("Allows you consume mana to enchant arrows and increase damage when holding a bow or repeater, \n" +
+            // DisplayName.SetDefault("Arcane Quiver");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "奥术箭袋");
+            /* Tooltip.SetDefault("Allows you consume mana to enchant arrows and increase damage when holding a bow or repeater, \n" +
                 "Mana usage and damage scale are based on usetime of the weapon\n" +
                 "Mana Sickness also reduces player's ranged damage\n" +
                 "greatly increases arrow speed\n20% chance to not consume arrows\n" +
-                "Energy, power. My people are addicted to it!");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese),
-                "使你的箭矢在飞行轨迹上留下无害的紫色奥术粒子" ) ;
+                "Energy, power. My people are addicted to it!"); */
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese),
+                //"使你的箭矢在飞行轨迹上留下无害的紫色奥术粒子" ) ;
         }
 
         public override void SetDefaults()
@@ -91,7 +91,7 @@ namespace CalamityAmmo.Accessories
         private Vector2[] oldPosi = new Vector2[5];
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Arcane Arrow");
+            // DisplayName.SetDefault("Arcane Arrow");
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 2;
         }
@@ -125,7 +125,7 @@ namespace CalamityAmmo.Accessories
         {
 
         }
-        public override void ModifyDamageScaling(ref float damageScale)
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
             Player player = Main.player[Projectile.owner];
           

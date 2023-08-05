@@ -31,11 +31,11 @@ namespace CalamityAmmo.Projectiles
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Victide Bullet");
-            DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "胜潮弹");
+            // DisplayName.SetDefault("Victide Bullet");
+            //DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "胜潮弹");
             Main.projFrames[Projectile.type] = 1;
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Победоносная пуля");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Победоносная пуля");
         }
         public override void SetDefaults()
         {
@@ -62,16 +62,18 @@ namespace CalamityAmmo.Projectiles
                 Projectile.extraUpdates = 2;
             }
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            base.OnHitNPC(target, damage, knockback, crit);
+            
         }
-        public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
             if (Projectile.wet)
             {
-                damage = (int)(damage * 1.5f);
-            }
+				modifiers.ModifyHitInfo += (ref NPC.HitInfo hitInfo) => {
+                    hitInfo.Damage += (int)(hitInfo.Damage * 0.4f);
+				};
+			}
         }
         public override bool PreDraw(ref Color lightColor)
         {

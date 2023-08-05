@@ -42,10 +42,10 @@ namespace CalamityAmmo.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Grapeshot");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "爆裂葡萄");
-            Tooltip.SetDefault("There is a zombie on your lawn");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "草地上有个脏比");
+            // DisplayName.SetDefault("Grapeshot");
+            ////DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "爆裂葡萄");
+            // Tooltip.SetDefault("There is a zombie on your lawn");
+            ////Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "草地上有个脏比");
         }
 
         public override void SetDefaults()
@@ -89,8 +89,7 @@ namespace CalamityAmmo.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("GrapeExplosion");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "葡萄爆炸");
+            // DisplayName.SetDefault("GrapeExplosion");
         }
         public override void SetDefaults()
         {
@@ -110,7 +109,7 @@ namespace CalamityAmmo.Accessories
             if (Projectile.ai[0]>7)
             Projectile.velocity.Y += 1f;
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             Projectile.Kill();
         }

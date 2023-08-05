@@ -31,14 +31,14 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Celestial Carrot");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "天体萝卜");
+            // DisplayName.SetDefault("Celestial Carrot");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "天体萝卜");
             
-            Tooltip.SetDefault("Every four hits on enemies you will call upon small power of one celestial pillar randomly");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "每命中四次，便随机引动一根天界柱的微弱力量");
+            // Tooltip.SetDefault("Every four hits on enemies you will call upon small power of one celestial pillar randomly");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "每命中四次，便随机引动一根天界柱的微弱力量");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Небесная морковь");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Каждые четыре удара по врагам вы будете случайным образом призывать силу одного элемента");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Небесная морковь");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Каждые четыре удара по врагам вы будете случайным образом призывать силу одного элемента");
         }
         public override void SetDefaults()
         {

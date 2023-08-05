@@ -29,11 +29,11 @@ namespace CalamityAmmo.Projectiles
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("WulfrumArrow");
-            DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "钨钢箭");
+            // DisplayName.SetDefault("WulfrumArrow");
+            //DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "钨钢箭");
             Main.projFrames[Projectile.type] = 1;
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Вульфрум Стрела");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Вульфрум Стрела");
         }
         public override void SetDefaults()
         {
@@ -67,13 +67,13 @@ namespace CalamityAmmo.Projectiles
                 Projectile.velocity.Y +=3f;
             }
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            base.OnHitNPC(target, damage, knockback, crit);
+            
         }
-        public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
-            damage += 12;
+            modifiers.FinalDamage.Base += 12;
         }
         public override bool PreDraw(ref Color lightColor)
         {

@@ -33,11 +33,11 @@ namespace CalamityAmmo.Projectiles
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Rotten Bullet");
-            DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "腐烂物");
+            // DisplayName.SetDefault("Rotten Bullet");
+            //DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "腐烂物");
             Main.projFrames[Projectile.type] = 1;
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Гнилая пуля");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Гнилая пуля");
         }
         public override void SetDefaults()
         {
@@ -76,11 +76,11 @@ namespace CalamityAmmo.Projectiles
         }
 
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
 
         }
-        public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
 
         }

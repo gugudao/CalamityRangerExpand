@@ -25,7 +25,7 @@ namespace CalamityAmmo.Projectiles.Hardmode
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Perennial Flower");
+            // DisplayName.SetDefault("Perennial Flower");
         }
 
         public override void SetDefaults()
@@ -53,7 +53,7 @@ namespace CalamityAmmo.Projectiles.Hardmode
             Projectile.rotation += 0.01f;
             CalamityUtils.HomeInOnNPC(Projectile, !Projectile.tileCollide, 500f, speed, 12f);
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             
 

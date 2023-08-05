@@ -23,11 +23,11 @@ namespace CalamityAmmo.Rockets
         public override void SetStaticDefaults()
         {
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
-            DisplayName.SetDefault("Earth-Penetrating Missile");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "钻地导弹");
-            Tooltip.SetDefault("Can go through tiles and tracking enemies\n" +
-                "Move faster in sand blocks");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "在物块中自动寻的\n在沙子中移动更快");
+            // DisplayName.SetDefault("Earth-Penetrating Missile");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "钻地导弹");
+            /* Tooltip.SetDefault("Can go through tiles and tracking enemies\n" +
+                "Move faster in sand blocks"); */
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "在物块中自动寻的\n在沙子中移动更快");
         }
 
         public override void SetDefaults()
@@ -136,8 +136,8 @@ namespace CalamityAmmo.Rockets
         }
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Earth-Penetrating Missile");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "钻地导弹");
+            // DisplayName.SetDefault("Earth-Penetrating Missile");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "钻地导弹");
             Main.projFrames[Projectile.type] = 12;
         }
         public override void SetDefaults()
@@ -203,7 +203,7 @@ namespace CalamityAmmo.Rockets
             Projectile.type = AIType;
             return true;
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.immune[Projectile.owner] = 10;
         }

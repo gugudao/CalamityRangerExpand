@@ -34,14 +34,14 @@ namespace CalamityAmmo.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Infected Crab Gill");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "感染蟹腮");
-            Tooltip.SetDefault("Summons spores over time that will damage enemies\n" +
+            // DisplayName.SetDefault("Infected Crab Gill");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "感染蟹腮");
+            /* Tooltip.SetDefault("Summons spores over time that will damage enemies\n" +
                 "Probability shoot out extra fungal rounds that split on death\n"+
-                "Decrease liferegen by 1");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "随着时间推移召唤可以伤害敌人的孢子\n" +
+                "Decrease liferegen by 1"); 
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "随着时间推移召唤可以伤害敌人的孢子\n" +
                 "发射远程弹幕时有概率额外射出命中后分裂的真菌弹\n" +
-                "减少1点生命再生");
+                "减少1点生命再生");*/
         }
 
         public override void SetDefaults()
@@ -63,8 +63,8 @@ namespace CalamityAmmo.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Crabulon's Spore");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "菌生蟹的孢子");
+            // DisplayName.SetDefault("Crabulon's Spore");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "菌生蟹的孢子");
             Main.projFrames[Projectile.type] = 4;
         }
         public override void SetDefaults()
@@ -102,7 +102,7 @@ namespace CalamityAmmo.Accessories
             }
                 
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             Player player = Main.player[Projectile.owner];
             CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
@@ -136,8 +136,8 @@ namespace CalamityAmmo.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Spore Cloud");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "孢子云");
+            // DisplayName.SetDefault("Spore Cloud");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "孢子云");
         }
         public override void SetDefaults()
         {
@@ -179,8 +179,8 @@ namespace CalamityAmmo.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Spore Cloud");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "孢子云");
+            // DisplayName.SetDefault("Spore Cloud");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "孢子云");
         }
         public override void SetDefaults()
         {
@@ -223,8 +223,8 @@ namespace CalamityAmmo.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Spore Cloud");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "孢子云");
+            // DisplayName.SetDefault("Spore Cloud");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "孢子云");
         }
         public override void SetDefaults()
         {

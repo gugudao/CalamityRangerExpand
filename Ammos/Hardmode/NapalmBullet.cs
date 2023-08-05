@@ -30,12 +30,12 @@ namespace CalamityAmmo.Ammos.Hardmode
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Napalm Bullet");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "汽油弹");
-            Tooltip.SetDefault(IsChinese() ? "一点点火光，谁也烧不到！" : "A little spark can't burn anyone");
+            // DisplayName.SetDefault("Napalm Bullet");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "汽油弹");
+            // Tooltip.SetDefault(IsChinese() ? "一点点火光，谁也烧不到！" : "A little spark can't burn anyone");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Пуля с напалмом");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Маленькая искра никого не может сжечь");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Пуля с напалмом");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Маленькая искра никого не может сжечь");
         }
         public override void SetDefaults()
         {

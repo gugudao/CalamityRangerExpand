@@ -22,7 +22,7 @@ namespace CalamityAmmo.Projectiles.Hardmode
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Astral Star");
+            // DisplayName.SetDefault("Astral Star");
             ProjectileID.Sets.TrailCacheLength[base.Projectile.type] = 4;
             ProjectileID.Sets.TrailingMode[base.Projectile.type] = 0;
         }
@@ -76,17 +76,17 @@ namespace CalamityAmmo.Projectiles.Hardmode
             return new Color?(new Color(200, 200, 200, base.Projectile.alpha));
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(ModContent.BuffType<AstralInfectionDebuff>(), 180, false);
         }
 
-        public override void OnHitPvp(Player target, int damage, bool crit)
-        {
-            target.AddBuff(ModContent.BuffType<AstralInfectionDebuff>(), 180, true, false);
-        }
+		public override void OnHitPlayer(Player target, Player.HurtInfo info)
+		{
+			target.AddBuff(ModContent.BuffType<AstralInfectionDebuff>(), 180, true, false);
+		}
 
-        public override void Kill(int timeLeft)
+		public override void Kill(int timeLeft)
         {
             if (Main.myPlayer == Projectile.owner)
             {

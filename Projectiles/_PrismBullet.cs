@@ -29,10 +29,10 @@ namespace CalamityAmmo.Projectiles
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("PrsimBullet");
-            DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "棱晶子弹");
+            // DisplayName.SetDefault("PrsimBullet");
+            //DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "棱晶子弹");
             Main.projFrames[Projectile.type] = 1;
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Морская призматическая пуля");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Морская призматическая пуля");
         }
         public override void SetDefaults()
         {
@@ -57,13 +57,13 @@ namespace CalamityAmmo.Projectiles
         {
             
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            base.OnHitNPC(target, damage, knockback, crit);
+            
         }
-        public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
-            base.ModifyHitNPC(target, ref damage, ref knockback, ref crit, ref hitDirection);
+            
         }
         public override bool PreDraw(ref Color lightColor)
         {

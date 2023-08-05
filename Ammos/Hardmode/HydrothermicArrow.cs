@@ -22,12 +22,12 @@ namespace CalamityAmmo.Ammos.Hardmode
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Hydrothermic Arrow");
-            Tooltip.SetDefault("You dare strike my shield with your spear? That's gonna end with you in pieces!");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "渊泉箭");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "以子之矛攻子之盾，就会产生大爆炸！");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "");
+            // DisplayName.SetDefault("Hydrothermic Arrow");
+            // Tooltip.SetDefault("You dare strike my shield with your spear? That's gonna end with you in pieces!");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "渊泉箭");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "以子之矛攻子之盾，就会产生大爆炸！");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
         }
         public override void SetDefaults()
@@ -60,7 +60,7 @@ namespace CalamityAmmo.Ammos.Hardmode
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Hydrothermic Arrow");
+            // DisplayName.SetDefault("Hydrothermic Arrow");
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 6;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
         }
@@ -86,13 +86,12 @@ namespace CalamityAmmo.Ammos.Hardmode
             return true;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             if (Projectile.owner == Main.myPlayer)
             {
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center.X, Projectile.Center.Y, 0f, 0f, ModContent.ProjectileType<HydrothermicExplosion>(), (int)(Projectile.damage*1.5f), Projectile.knockBack, Projectile.owner, 0f, 0f);
             }
-            base.OnHitNPC(target, damage, knockback, crit);
         }
         public override void OnSpawn(IEntitySource source)
         {
@@ -119,10 +118,7 @@ namespace CalamityAmmo.Ammos.Hardmode
             public override string Texture => "CalamityMod/Projectiles/InvisibleProj";
             public override void SetStaticDefaults()
             {
-                base.SetStaticDefaults();
-                DisplayName.SetDefault("Hydrothermic Explosion");
-                DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "渊泉爆炸");
-                DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "");
+
             }
             public override void SetDefaults()
             {
@@ -130,10 +126,13 @@ namespace CalamityAmmo.Ammos.Hardmode
                 Projectile.ArmorPenetration = 35;
                 base.SetDefaults();
             }
-            public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-            {
-                target.AddBuff(24, 300, false);
-            }
-        }
+           
+                
+            
+            public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+			{
+				target.AddBuff(24, 300, false);
+			}
+		}
     }
 }

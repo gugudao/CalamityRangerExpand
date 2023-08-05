@@ -42,12 +42,12 @@ namespace CalamityAmmo.Accessories
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Mushroom United Nations");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "蘑拟黏合国");
-            Tooltip.SetDefault("Has the effect of  Live Mushroom, Evil Mushroom, Fungal Carapace,Infected CrabGill, MarvelousMycelium and OddMushroom\n"+
+			// DisplayName.SetDefault("Mushroom United Nations");
+			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "蘑拟黏合国");
+			/* Tooltip.SetDefault("Has the effect of  Live Mushroom, Evil Mushroom, Fungal Carapace,Infected CrabGill, MarvelousMycelium and OddMushroom\n"+
                 "A mushroom sniper rifle hovers above your head, sniping enemies that come into range\n "+
-                "reducing chance for enemies to target you" ) ;
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese),
+                "reducing chance for enemies to target you" ) ; 
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese),
                 "生成一个治愈蘑菇，拾取后恢复15点生命值\n"+
                 "你和被命中的敌人均获得死亡标记\n" +
                 "受到伤害时释放一大片蘑菇孢子\n"+
@@ -57,8 +57,8 @@ namespace CalamityAmmo.Accessories
                 "发射远程弹幕时有概率额外射出命中后分裂的真菌弹\n" +
                 "隐藏饰品可见性时给予幻菇中毒buff\n" +
                 "一杆蘑菇狙击枪悬浮在你的头顶，狙杀进入射程的敌人\n"+
-                "敌人将不那么容易瞄准你");
-            Main.RegisterItemAnimation(base.Item.type, new DrawAnimationVertical(4, 8, false));
+                "敌人将不那么容易瞄准你");*/
+			Main.RegisterItemAnimation(base.Item.type, new DrawAnimationVertical(4, 8, false));
             ItemID.Sets.AnimatesAsSoul[base.Type] = true;
         }
 

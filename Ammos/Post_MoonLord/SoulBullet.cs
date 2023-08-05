@@ -39,13 +39,13 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Soul Bullet");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "魂弹");
-            Tooltip.SetDefault("May attract something small \nSummon red lightning when not critically hit");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "噢！如此悲惨的结局！");
+            // DisplayName.SetDefault("Soul Bullet");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "魂弹");
+            // Tooltip.SetDefault("May attract something small \nSummon red lightning when not critically hit");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "噢！如此悲惨的结局！");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Золотого пера Стрела");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Может привлечь что-то маленькое \nвызвать красную молнию, когда не нанесен критический удар");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Золотого пера Стрела");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Может привлечь что-то маленькое \nвызвать красную молнию, когда не нанесен критический удар");
         }
         public override void SetDefaults()
         {
@@ -65,7 +65,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
         public override void AddRecipes()
         {
             CreateRecipe(333)
-            .AddIngredient(ModContent.ItemType<Phantoplasm>(), 3)
+            .AddIngredient(ModContent.ItemType<Polterplasm>(), 3)
             .AddIngredient(ItemID.Ectoplasm, 5)
             // .AddIngredient(ModContent.ItemType<RuinousSoul > (), 1)
             .AddTile(TileID.LunarCraftingStation)
@@ -79,7 +79,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Phantom Spirit");
+            // DisplayName.SetDefault("Phantom Spirit");
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 2;
         }
@@ -117,7 +117,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
                 }
                 else
                 {
-                    NetMessage.SendData(MessageID.SpawnBoss, -1, -1, null, player.whoAmI, randomSoul, 0f, 0f, 0, 0, 0);
+                    NetMessage.SendData(MessageID.SpawnBossUseLicenseStartEvent, -1, -1, null, player.whoAmI, randomSoul, 0f, 0f, 0, 0, 0);
                 }
             }
         }
@@ -140,9 +140,9 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
             }
             CalamityUtils.HomeInOnNPC(Projectile, !Projectile.tileCollide, 600f, 12f, 12f);
         }
-        public override void ModifyDamageScaling(ref float damageScale)
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
-            damageScale = 1f - 0.25f*(3 - Projectile.penetrate);
+			modifiers.FinalDamage *= 1f - 0.25f*(3 - Projectile.penetrate);
         }
         public override Color? GetAlpha(Color lightColor)
         {

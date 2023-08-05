@@ -30,11 +30,11 @@ namespace CalamityAmmo.Projectiles
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Pearl Bullet");
-            DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "珍珠子弹");
+            // DisplayName.SetDefault("Pearl Bullet");
+            //DisplayName.AddTranslation(Terraria.Localization.GameCulture.FromCultureName(Terraria.Localization.GameCulture.CultureName.Chinese), "珍珠子弹");
             Main.projFrames[Projectile.type] = 1;
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Жемчужная пуля");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Жемчужная пуля");
         }
         public override void SetDefaults()
         {
@@ -59,14 +59,14 @@ namespace CalamityAmmo.Projectiles
         {
 
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(ModContent.BuffType<PearlAura>(), 45);
-            base.OnHitNPC(target, damage, knockback, crit);
+            
         }
-        public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
-            base.ModifyHitNPC(target, ref damage, ref knockback, ref crit, ref hitDirection);
+            
         }
         public override bool PreDraw(ref Color lightColor)
         {

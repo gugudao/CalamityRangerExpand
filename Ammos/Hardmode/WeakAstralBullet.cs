@@ -31,13 +31,13 @@ namespace CalamityAmmo.Ammos.Hardmode
     {
         public override void SetStaticDefaults()
         {
-                DisplayName.SetDefault("Weak Astral Bullet");
-                DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "尘星子弹");
-                Tooltip.SetDefault(IsChinese() ? "力量还不够......\n在击败被星辉瘟疫侵蚀的机械巨兽后，进化" : "The power is not enough...\nWill upgrade after Astrum Aureus is defeated");
-               //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "在打败白金星舰后升级\n在打败星神游龙会再次升级");
+                // DisplayName.SetDefault("Weak Astral Bullet");
+                //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "尘星子弹");
+                // Tooltip.SetDefault(IsChinese() ? "力量还不够......\n在击败被星辉瘟疫侵蚀的机械巨兽后，进化" : "The power is not enough...\nWill upgrade after Astrum Aureus is defeated");
+               ////Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "在打败白金星舰后升级\n在打败星神游龙会再次升级");
                 Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Слабая Астральная пуля ");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Мощности недостаточно...\nБудет обновляться после поражения Аструм Деуса");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Слабая Астральная пуля ");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Мощности недостаточно...\nБудет обновляться после поражения Аструм Деуса");
         }
         public override void SetDefaults()
         {

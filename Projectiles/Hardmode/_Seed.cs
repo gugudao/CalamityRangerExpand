@@ -32,8 +32,8 @@ namespace CalamityAmmo.Projectiles.Hardmode
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Perennial Seed");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "永恒种子");
+            // DisplayName.SetDefault("Perennial Seed");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "永恒种子");
             Main.projFrames[Projectile.type] = 1;
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
         }
@@ -62,14 +62,14 @@ namespace CalamityAmmo.Projectiles.Hardmode
         }
 
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             
-            base.OnHitNPC(target, damage, knockback, crit);
+            
         }
-        public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
-            base.ModifyHitNPC(target, ref damage, ref knockback, ref crit, ref hitDirection);
+            
         }
         public override bool PreDraw(ref Color lightColor)
         {

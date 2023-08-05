@@ -42,10 +42,10 @@ namespace CalamityAmmo.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Evil Mushroom");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "恶毒的蘑菇");
-            Tooltip.SetDefault("Both you and the target enemy gain Marked for Death");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "你和被命中的敌人均获得死亡标记");
+            // DisplayName.SetDefault("Evil Mushroom");
+            ////DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "恶毒的蘑菇");
+            // Tooltip.SetDefault("Both you and the target enemy gain Marked for Death");
+            ////Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "你和被命中的敌人均获得死亡标记");
         }
 
         public override void SetDefaults()

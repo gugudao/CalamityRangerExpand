@@ -37,12 +37,12 @@ namespace CalamityAmmo.Rockets
         int i = 0;
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Sand Dog");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "沙狗");
-            Tooltip.SetDefault("Fires a brittle spiky ball\nEvery four attack will shoot 6 sand blasts");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "发射一个易碎的刺球\n" +
-                "每攻击四次额外发射一小波沙暴");
-            SacrificeTotal = 1;
+            // DisplayName.SetDefault("Sand Dog");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "沙狗");
+            // Tooltip.SetDefault("Fires a brittle spiky ball\nEvery four attack will shoot 6 sand blasts");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "发射一个易碎的刺球\n" +
+            //    "每攻击四次额外发射一小波沙暴");
+            Item.ResearchUnlockCount = 1;
         }
 
         public override void SetDefaults()
@@ -106,9 +106,9 @@ namespace CalamityAmmo.Rockets
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Spiky Ball");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "沙刺球");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Кровавая пуля");
+            // DisplayName.SetDefault("Spiky Ball");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "沙刺球");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Кровавая пуля");
             Main.projFrames[Projectile.type] = 1;
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
         }
@@ -145,13 +145,13 @@ namespace CalamityAmmo.Rockets
         }
 
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         
     }
-    public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+    public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
     {
-        base.ModifyHitNPC(target, ref damage, ref knockback, ref crit, ref hitDirection);
+        
     }
     public override bool PreDraw(ref Color lightColor)
     {
@@ -182,8 +182,8 @@ namespace CalamityAmmo.Rockets
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Spike");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "斯派克");
+            // DisplayName.SetDefault("Spike");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "斯派克");
             Main.projFrames[Projectile.type] = 1;
         }
         public override void SetDefaults()

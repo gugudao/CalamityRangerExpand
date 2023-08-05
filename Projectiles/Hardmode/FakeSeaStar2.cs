@@ -26,7 +26,7 @@ namespace CalamityAmmo.Projectiles.Hardmode
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Brittle Star");
+            // DisplayName.SetDefault("Brittle Star");
         }
 
         public override void SetDefaults()

@@ -21,7 +21,7 @@ namespace CalamityAmmo.Projectiles.Hardmode
         // Token: 0x06002DBA RID: 11706 RVA: 0x00178D40 File Offset: 0x00176F40
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Astral Arrow");
+            // DisplayName.SetDefault("Astral Arrow");
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 6;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
         }
@@ -47,12 +47,12 @@ namespace CalamityAmmo.Projectiles.Hardmode
             return true;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
 
                 
             
-            base.OnHitNPC(target, damage, knockback, crit);
+            
         }
         public override void OnSpawn(IEntitySource source)
         {

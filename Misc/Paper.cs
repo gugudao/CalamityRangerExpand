@@ -23,10 +23,10 @@ namespace CalamityAmmo.Misc
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Wood Pulp Paper");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "木浆纸");
+            // DisplayName.SetDefault("Wood Pulp Paper");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "木浆纸");
             //Tooltip.SetDefault("{$CommonItemTooltip.MajorStats}\nJust one look and you're full");
-            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "{$CommonItemTooltip.MajorStats}\n光是看上一眼就饱了");
+            ////Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "{$CommonItemTooltip.MajorStats}\n光是看上一眼就饱了");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 5;
         }
 
@@ -63,10 +63,10 @@ namespace CalamityAmmo.Misc
         public override string Texture => "CalamityAmmo/Misc/Paper";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Bamboo Pulp Paper");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "竹浆纸");
+            // DisplayName.SetDefault("Bamboo Pulp Paper");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "竹浆纸");
             //Tooltip.SetDefault("{$CommonItemTooltip.MajorStats}\nJust one look and you're full");
-            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "{$CommonItemTooltip.MajorStats}\n光是看上一眼就饱了");
+            ////Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "{$CommonItemTooltip.MajorStats}\n光是看上一眼就饱了");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 5;
         }
 

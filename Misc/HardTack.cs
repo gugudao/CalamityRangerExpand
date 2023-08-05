@@ -22,10 +22,10 @@ namespace CalamityAmmo.Misc
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Hard Tack");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "圣金源压缩饼干");
-            Tooltip.SetDefault("{$CommonItemTooltip.MajorStats}\nJust one look and you're full");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "{$CommonItemTooltip.MajorStats}\n光是看上一眼就饱了");
+            // DisplayName.SetDefault("Hard Tack");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "圣金源压缩饼干");
+            // Tooltip.SetDefault("{$CommonItemTooltip.MajorStats}\nJust one look and you're full");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "{$CommonItemTooltip.MajorStats}\n光是看上一眼就饱了");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 5;
         }
 

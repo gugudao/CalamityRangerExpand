@@ -36,15 +36,15 @@ namespace CalamityAmmo.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Odd Mushroom(equipable)");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "致幻蘑菇（可装备）");
-            Tooltip.SetDefault("When hide visual grains the Trippy buff\n" +
-                " You can't always trust what you see.");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "隐藏饰品可见性时给予幻菇中毒buff\n" +
-                "“眼睛所见的，未必真实”");
-        }
+			// DisplayName.SetDefault("Odd Mushroom(equipable)");
+			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "致幻蘑菇（可装备）");
+			/* Tooltip.SetDefault("When hide visual grains the Trippy buff\n" +
+                " You can't always trust what you see."); 
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "隐藏饰品可见性时给予幻菇中毒buff\n" +
+                "“眼睛所见的，未必真实”");*/
+		}
 
-        public override void SetDefaults()
+		public override void SetDefaults()
         {
             Item.width = 28;
             Item.height = 32;

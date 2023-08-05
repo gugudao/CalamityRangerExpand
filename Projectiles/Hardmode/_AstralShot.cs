@@ -15,7 +15,7 @@ namespace CalamityAmmo.Projectiles.Hardmode
     {
         public override void SetStaticDefaults()
         {
-            base.DisplayName.SetDefault("Astral Laser");
+            // base.DisplayName.SetDefault("Astral Laser");
             Main.projFrames[base.Projectile.type] = 4;
             ProjectileID.Sets.TrailCacheLength[base.Projectile.type] = 5;
             ProjectileID.Sets.TrailingMode[base.Projectile.type] = 0;
@@ -66,10 +66,10 @@ namespace CalamityAmmo.Projectiles.Hardmode
             base.Projectile.rotation = (float)Math.Atan2(Projectile.velocity.Y,Projectile.velocity.X) + 1.57079637f;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(ModContent.BuffType<AstralInfectionDebuff>(), 120);
-            base.OnHitNPC(target, damage, knockback, crit);
+            
         }
 
         public override Color? GetAlpha(Color lightColor)

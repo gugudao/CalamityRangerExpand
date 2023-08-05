@@ -29,8 +29,7 @@ namespace CalamityAmmo.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Explosion");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "爆炸");
+            // DisplayName.SetDefault("Explosion");
             Main.projFrames[Projectile.type] = 6;
         }
         public override void SetDefaults()
@@ -65,13 +64,13 @@ namespace CalamityAmmo.Accessories
                 Projectile.frame = 0;
             }
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            base.OnHitNPC(target, damage, knockback, crit);
+            
         }
-        public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
-            base.ModifyHitNPC(target, ref damage, ref knockback, ref crit, ref hitDirection);
+            
         }
         public override bool PreDraw(ref Color lightColor)
         {

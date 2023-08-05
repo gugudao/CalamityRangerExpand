@@ -28,10 +28,10 @@ namespace CalamityAmmo.Misc
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Chengying's Fumo");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "精美毛绒玩具");
-            Tooltip.SetDefault("You should understand that we cannot deal with the darkness with gentleness, but with fire.");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "你要明白，我们不能用温柔去应对黑暗，要用火。");
+            // DisplayName.SetDefault("Chengying's Fumo");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "精美毛绒玩具");
+            // Tooltip.SetDefault("You should understand that we cannot deal with the darkness with gentleness, but with fire.");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "你要明白，我们不能用温柔去应对黑暗，要用火。");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
         public override void SetDefaults()
@@ -94,7 +94,7 @@ namespace CalamityAmmo.Misc
             }
             public override void SetStaticDefaults()
             {
-                DisplayName.SetDefault("Chengying's Fumo");
+                // DisplayName.SetDefault("Chengying's Fumo");
 
                 CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
             }

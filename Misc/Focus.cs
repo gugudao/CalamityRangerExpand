@@ -16,10 +16,10 @@ namespace CalamityAmmo.Misc
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Focus");
-            Description.SetDefault("I can do this all day");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "专注");
-            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "我可以耗上一整天");
+            // DisplayName.SetDefault("Focus");
+            // Description.SetDefault("I can do this all day");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "专注");
+            //Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "我可以耗上一整天");
         }
 
         public override void Update(Player player, ref int buffIndex)

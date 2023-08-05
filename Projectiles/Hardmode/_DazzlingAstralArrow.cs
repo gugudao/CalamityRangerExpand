@@ -21,7 +21,7 @@ namespace CalamityAmmo.Projectiles.Hardmode
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Dazzling Astral Arrow");
+            // DisplayName.SetDefault("Dazzling Astral Arrow");
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 6;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
         }
@@ -47,10 +47,10 @@ namespace CalamityAmmo.Projectiles.Hardmode
             return true;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(ModContent.BuffType<AstralInfectionDebuff>(), 180);
-            base.OnHitNPC(target, damage, knockback, crit);
+            
         }
         public override bool PreAI()
         {
@@ -78,12 +78,12 @@ namespace CalamityAmmo.Projectiles.Hardmode
 
             return false;
         }
-        public override void ModifyDamageScaling(ref float damageScale)
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
             Player player = Main.player[Projectile.owner];
             if (player.HeldItem.type == ModContent.ItemType<TheStorm>())
             {
-                damageScale = 0.5f;
+                
             }
         }
         public override void Kill(int timeLeft)

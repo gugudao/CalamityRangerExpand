@@ -22,7 +22,7 @@ namespace CalamityAmmo.Projectiles.Hardmode
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Fossil Bullet");
+            // DisplayName.SetDefault("Fossil Bullet");
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 6;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
         }
@@ -46,10 +46,10 @@ namespace CalamityAmmo.Projectiles.Hardmode
             return true;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(ModContent.BuffType<ArmorCrunch>(), 150);
-            base.OnHitNPC(target, damage, knockback, crit);
+            
         }
         public override void OnSpawn(IEntitySource source)
         {

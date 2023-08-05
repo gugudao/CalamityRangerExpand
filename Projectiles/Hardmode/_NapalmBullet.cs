@@ -19,7 +19,7 @@ namespace CalamityAmmo.Projectiles.Hardmode
         // Token: 0x06002DBA RID: 11706 RVA: 0x00178D40 File Offset: 0x00176F40
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Napalm Bullet");
+            // DisplayName.SetDefault("Napalm Bullet");
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 6;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
         }
@@ -59,7 +59,7 @@ namespace CalamityAmmo.Projectiles.Hardmode
                 Dust.NewDust(base.Projectile.position + base.Projectile.velocity, base.Projectile.width, base.Projectile.height, 6, base.Projectile.velocity.X * 0.5f, base.Projectile.velocity.Y * 0.5f, 0, default(Color), 1f);
             }
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(BuffID.Oiled, 180);
             if (target.HasBuff(BuffID.Oiled))
@@ -67,7 +67,7 @@ namespace CalamityAmmo.Projectiles.Hardmode
                 target.AddBuff(BuffID.OnFire3, 120);
                 target.AddBuff(ModContent.BuffType<WeakBrimstoneFlames>(), 120);
             }
-            base.OnHitNPC(target, damage, knockback, crit);
+            
         }
         public override void Kill(int timeLeft)
         {

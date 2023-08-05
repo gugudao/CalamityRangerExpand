@@ -16,11 +16,11 @@ namespace CalamityAmmo.Misc
     {
         public override void SetStaticDefaults()
         {
-            base.DisplayName.SetDefault("Spectre Rifle");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "幽灵狙击枪"); 
-            base.Tooltip.SetDefault("Converts musket balls into powerful homing souls");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "将火枪子弹转化为强大的追踪灵魂弹");
-            base.SacrificeTotal = 1;
+            // base.DisplayName.SetDefault("Spectre Rifle");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "幽灵狙击枪"); 
+            // base.Tooltip.SetDefault("Converts musket balls into powerful homing souls");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "将火枪子弹转化为强大的追踪灵魂弹");
+            base.Item.ResearchUnlockCount = 1;
         }
 
         public override void SetDefaults()

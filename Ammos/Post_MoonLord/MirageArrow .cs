@@ -38,13 +38,13 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Mirage Arrow");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "幻境箭");
-            Tooltip.SetDefault("Another two,another two, another two,and another two");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "我给你留了（至少）两箭！");
+            // DisplayName.SetDefault("Mirage Arrow");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "幻境箭");
+            // Tooltip.SetDefault("Another two,another two, another two,and another two");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "我给你留了（至少）两箭！");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Золотого пера Стрела");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Может привлечь что-то маленькое \nвызвать красную молнию, когда не нанесен критический удар");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Золотого пера Стрела");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Может привлечь что-то маленькое \nвызвать красную молнию, когда не нанесен критический удар");
         }
         public override void SetDefaults()
         {
@@ -66,7 +66,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
         public override void AddRecipes()
         {
             CreateRecipe(333)
-            .AddIngredient(ModContent.ItemType<Phantoplasm>(), 3)
+            .AddIngredient(ModContent.ItemType<Polterplasm>(), 3)
             .AddIngredient(1508,5)
             // .AddIngredient(ModContent.ItemType<RuinousSoul > (), 1)
             .AddTile(TileID.LunarCraftingStation)
@@ -80,7 +80,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Mirage Arrow");
+            // DisplayName.SetDefault("Mirage Arrow");
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 2;
         }
@@ -118,14 +118,14 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
                 Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center + new Vector2(spawnPos, spawnPos) + Projectile.velocity*2, Projectile.velocity, ModContent.ProjectileType<MirageArrow_Proj2>(), Projectile.damage , Projectile.knockBack, Main.myPlayer);
             }
         }
-        public override void ModifyDamageScaling(ref float damageScale)
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
-            damageScale = 0.6f;
             Player player = Main.player[Projectile.owner];
             if (player.HeldItem.type == ModContent.ItemType<TheStorm>())
             {
-                damageScale = 0.3f;
+                modifiers.FinalDamage *= 0.33f;
             }
+            else modifiers.FinalDamage *= 0.66f;
         }
         public override void AI()
         {
@@ -149,7 +149,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
         public override string Texture => "CalamityAmmo/Ammos/Post_MoonLord/MirageArrow_Proj";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Mirage Arrow");
+            // DisplayName.SetDefault("Mirage Arrow");
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 6;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
         }
@@ -175,16 +175,17 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
             SoundEngine.PlaySound(SoundID.Item8, new Vector2?(Projectile.position));
             return true;
         }
-        public override void ModifyDamageScaling(ref float damageScale)
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
-            damageScale = 0.6f;
+            
             Player player = Main.player[Projectile.owner];
             if (player.HeldItem.type==ModContent.ItemType<TheStorm>())
             {
-                damageScale = 0.3f;
+				modifiers.FinalDamage*= 0.33f;
             }
-          
-        }
+            else modifiers.FinalDamage *= 0.66f;
+
+		}
         public override void OnSpawn(IEntitySource source)
         {
 

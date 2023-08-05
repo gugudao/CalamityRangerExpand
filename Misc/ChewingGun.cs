@@ -19,10 +19,10 @@ namespace CalamityAmmo.Misc
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Chewing Gun");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "口枪糖");
-            Tooltip.SetDefault("barely-usable");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "勉强能冲");
+            // DisplayName.SetDefault("Chewing Gun");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "口枪糖");
+            // Tooltip.SetDefault("barely-usable");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "勉强能冲");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -74,8 +74,8 @@ namespace CalamityAmmo.Misc
         }
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Chewing Gum");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "口香糖");
+            // DisplayName.SetDefault("Chewing Gum");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "口香糖");
             Main.projFrames[Projectile.type] = 1;
             ProjectileID.Sets.DontAttachHideToAlpha[Type] = true;
         }
@@ -208,7 +208,7 @@ namespace CalamityAmmo.Misc
         private const int MAX_STICKY_JAVELINS = 8;
         private readonly Point[] _stickingJavelins = new Point[MAX_STICKY_JAVELINS];
 
-        public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
             IsStickingToTarget = true; // we are sticking to a target
             TargetWhoAmI = target.whoAmI; // Set the target whoAmI

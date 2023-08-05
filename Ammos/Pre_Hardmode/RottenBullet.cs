@@ -29,12 +29,12 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Rotten Bullet");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "腐烂子弹");
-            Tooltip.SetDefault("Split into several small pieces of rotten matter when fire \n \"It's still crawling and proliferating, and  seems will never be exhausted\"");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "开火时射出一小片霰弹\n“它还在蠕动，增殖，似乎永远也不会被耗尽”");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Гнилая пуля");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "При пожаре распадается на несколько маленьких кусочков гнилой материи \n\"Он все еще ползает и размножается, и, кажется, никогда не истощится\"");
+            // DisplayName.SetDefault("Rotten Bullet");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "腐烂子弹");
+            // Tooltip.SetDefault("Split into several small pieces of rotten matter when fire \n \"It's still crawling and proliferating, and  seems will never be exhausted\"");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "开火时射出一小片霰弹\n“它还在蠕动，增殖，似乎永远也不会被耗尽”");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Гнилая пуля");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "При пожаре распадается на несколько маленьких кусочков гнилой материи \n\"Он все еще ползает и размножается, и, кажется, никогда не истощится\"");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
         }
         public override void SetDefaults()

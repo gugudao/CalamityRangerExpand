@@ -29,12 +29,12 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Sea Prism Bullet");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "棱晶子弹");
-            Tooltip.SetDefault("Release a stream of water during crushing");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "破碎时释放一束洋流");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Морская призматическая пуля");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Выпустить поток воды во время дробления");
+            // DisplayName.SetDefault("Sea Prism Bullet");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "棱晶子弹");
+            // Tooltip.SetDefault("Release a stream of water during crushing");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "破碎时释放一束洋流");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Морская призматическая пуля");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Выпустить поток воды во время дробления");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
         }
         public override void SetDefaults()

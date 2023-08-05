@@ -32,10 +32,10 @@ namespace CalamityAmmo.Accessories
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Adamantite Coil ");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "精金线圈");
-            Tooltip.SetDefault("Increased ranged crit chance ,amplification depends on attack speed\nMediumly increases all ranged projectile velocity");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "提高远程暴击率\n远程武器的攻速越快，越容易暴击\n中幅提升远程弹幕的飞行速度");
+            // DisplayName.SetDefault("Adamantite Coil ");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "精金线圈");
+            // Tooltip.SetDefault("Increased ranged crit chance ,amplification depends on attack speed\nMediumly increases all ranged projectile velocity");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "提高远程暴击率\n远程武器的攻速越快，越容易暴击\n中幅提升远程弹幕的飞行速度");
         }
 
         public override void SetDefaults()

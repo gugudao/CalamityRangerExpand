@@ -29,9 +29,9 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
         // Token: 0x06005275 RID: 21109 RVA: 0x002D8772 File Offset: 0x002D6972
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Red Lightning");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "孙红雷");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Красная Молния");
+            // DisplayName.SetDefault("Red Lightning");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "孙红雷");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Красная Молния");
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 20;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 1;
         }
@@ -170,10 +170,10 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
             }
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(144, 120);
-            base.OnHitNPC(target, damage, knockback, crit);
+            
         }
         public override void OnSpawn(IEntitySource source)
         {
@@ -185,7 +185,7 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
                 }
                 else
                 {
-                    NetMessage.SendData(MessageID.SpawnBoss, -1, -1, null, player.whoAmI, ModContent.NPCType<Bumblefuck>(), 0f, 0f, 0, 0, 0);
+                    NetMessage.SendData(MessageID.SpawnBossUseLicenseStartEvent, -1, -1, null, player.whoAmI, ModContent.NPCType<Bumblefuck>(), 0f, 0f, 0, 0, 0);
                 }
             base.OnSpawn(source);
         }

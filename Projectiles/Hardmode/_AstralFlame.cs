@@ -23,7 +23,7 @@ namespace CalamityMod.Projectiles.Ranged
         // Token: 0x06002DB3 RID: 11699 RVA: 0x0017884C File Offset: 0x00176A4C
         public override void SetStaticDefaults()
         {
-            base.DisplayName.SetDefault("Astral Crystal");
+            // base.DisplayName.SetDefault("Astral Crystal");
             Main.projFrames[base.Projectile.type] = 4;
             ProjectileID.Sets.TrailCacheLength[base.Projectile.type] = 5;
             ProjectileID.Sets.TrailingMode[base.Projectile.type] = 0;
@@ -87,7 +87,7 @@ namespace CalamityMod.Projectiles.Ranged
             return false;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(ModContent.BuffType<AstralInfectionDebuff>(), 180, false);
         }

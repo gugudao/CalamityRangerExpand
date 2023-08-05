@@ -25,7 +25,7 @@ namespace CalamityAmmo.Projectiles.Hardmode
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Aquatic Star");
+            // DisplayName.SetDefault("Aquatic Star");
         }
 
         public override void SetDefaults()

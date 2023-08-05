@@ -27,12 +27,12 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Blood Bullet");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "血弹");
-            Tooltip.SetDefault("May steal life from the enemies");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "有概率从敌人身上偷取生命");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Кровавая пуля");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Может украсть жизнь у врагов");
+            // DisplayName.SetDefault("Blood Bullet");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "血弹");
+            // Tooltip.SetDefault("May steal life from the enemies");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "有概率从敌人身上偷取生命");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Кровавая пуля");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Может украсть жизнь у врагов");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
         }
         public override void SetDefaults()

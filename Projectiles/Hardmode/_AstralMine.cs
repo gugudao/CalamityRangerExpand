@@ -23,7 +23,7 @@ namespace CalamityAmmo.Projectiles.Hardmode
         // Token: 0x06002DBA RID: 11706 RVA: 0x00178D40 File Offset: 0x00176F40
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Astral Mine");
+            // DisplayName.SetDefault("Astral Mine");
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
         }

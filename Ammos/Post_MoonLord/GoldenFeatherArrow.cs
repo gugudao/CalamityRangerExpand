@@ -33,13 +33,13 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Golden Feather Arrow");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "金羽箭");
-            Tooltip.SetDefault("May attract something small \nSummon red lightning when not critically hit");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "可能会吸引某些小东西\n击中敌人且未暴击时召唤红色的闪电");
+            // DisplayName.SetDefault("Golden Feather Arrow");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "金羽箭");
+            // Tooltip.SetDefault("May attract something small \nSummon red lightning when not critically hit");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "可能会吸引某些小东西\n击中敌人且未暴击时召唤红色的闪电");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Золотого пера Стрела");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Может привлечь что-то маленькое \nвызвать красную молнию, когда не нанесен критический удар");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Золотого пера Стрела");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Может привлечь что-то маленькое \nвызвать красную молнию, когда не нанесен критический удар");
         }
         public override void SetDefaults()
         {
@@ -67,16 +67,7 @@ namespace CalamityAmmo.Ammos.Post_MoonLord
             recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<EffulgentFeather>(), 1);
             recipe.AddIngredient(ItemID.RichMahogany, 11);
-            recipe.AddCondition(NetworkText.FromLiteral(Language.GetTextValue("")), rec => {
-                if (DownedBossSystem.downedDragonfolly)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            });
+            recipe.AddCondition(new Condition(Language.GetTextValue(""), () => DownedBossSystem.downedDragonfolly));
             recipe.ReplaceResult(ModContent.ItemType<GoldenFeatherArrow>(),233);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();

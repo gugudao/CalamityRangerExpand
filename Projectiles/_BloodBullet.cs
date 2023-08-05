@@ -32,9 +32,9 @@ namespace CalamityAmmo.Projectiles
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Blood Bullet");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "血弹");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Кровавая пуля");
+            // DisplayName.SetDefault("Blood Bullet");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "血弹");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Кровавая пуля");
             Main.projFrames[Projectile.type] = 1;
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 1;
         }
@@ -64,7 +64,7 @@ namespace CalamityAmmo.Projectiles
         }
         
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
             {
                 if (target.type != NPCID.TargetDummy && Main.myPlayer == Projectile.owner&& Main.rand.NextBool(5))
                 {
@@ -72,11 +72,11 @@ namespace CalamityAmmo.Projectiles
                     Main.projectile[proj].timeLeft = 300;
                     Main.projectile[proj].netUpdate = true;
                 }
-                base.OnHitNPC(target, damage, knockback, crit);
+                
             }
-            public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+            public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
             {
-                base.ModifyHitNPC(target, ref damage, ref knockback, ref crit, ref hitDirection);
+                
             }
             public override bool PreDraw(ref Color lightColor)
             {

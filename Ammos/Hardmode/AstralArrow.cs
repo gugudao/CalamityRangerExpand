@@ -30,12 +30,12 @@ namespace CalamityAmmo.Ammos.Hardmode
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Astral Arrow");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "幻星箭");
-            Tooltip.SetDefault(IsChinese() ? "击败诞生于星辰之间的恐惧以完成进化" : "Will upgrade after Astrum Deus is defeated");
-            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "在打败白金星舰后升级\n在打败星神游龙会再次升级");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Астральная стрела");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Будет обновляться после поражения Аструм Деуса");
+            // DisplayName.SetDefault("Astral Arrow");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "幻星箭");
+            // Tooltip.SetDefault(IsChinese() ? "击败诞生于星辰之间的恐惧以完成进化" : "Will upgrade after Astrum Deus is defeated");
+            ////Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "在打败白金星舰后升级\n在打败星神游龙会再次升级");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Астральная стрела");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Будет обновляться после поражения Аструм Деуса");
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
         }
         public override void SetDefaults()

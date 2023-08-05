@@ -27,9 +27,9 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
         private List<int> previousNPCs = new List<int> { -1 };
         public override void SetStaticDefaults()
         {
-            base.DisplayName.SetDefault("Lightning Vortex");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Вихрь молнии");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "星旋闪电");
+            // base.DisplayName.SetDefault("Lightning Vortex");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Вихрь молнии");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "星旋闪电");
             ProjectileID.Sets.TrailCacheLength[base.Projectile.type] = 10;
             ProjectileID.Sets.TrailingMode[base.Projectile.type] = 2;
         }
@@ -114,7 +114,7 @@ namespace CalamityAmmo.Projectiles.Post_MoonLord
             return new Color(255, 255, 255, 200);
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(BuffID.Electrified, 180);
             if (Projectile.penetrate != -1)

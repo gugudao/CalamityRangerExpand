@@ -28,6 +28,7 @@ using CalamityMod.Items.Weapons.Rogue;
 using CalamityMod.CalPlayer;
 using CalamityMod.Items.Mounts;
 using CalamityMod.Items.SummonItems;
+using Terraria.Localization;
 
 namespace CalamityAmmo.Global
 {
@@ -51,12 +52,12 @@ namespace CalamityAmmo.Global
         {
               if (item.type == ModContent.ItemType<GloveOfRecklessness>())
               {
-                 tooltips.Add(new TooltipLine(Mod,"GORtooltip", GetTranslation("Glove")));
+                 tooltips.Add(new TooltipLine(Mod,"GORtooltip", Language.GetTextValue("Mods.CalamityAmmo.Glove")));
               }
             if (item.type == ModContent.ItemType<GloveOfPrecision>())
             {
-                tooltips.Add(new TooltipLine(Mod, "GOPtooltip", GetTranslation("Glove")));
-                //tooltips.Insert(5, new TooltipLine(Mod, "GOPtooltip", GetTranslation("Glove")));
+                tooltips.Add(new TooltipLine(Mod, "GOPtooltip", Language.GetTextValue("Mods.CalamityAmmo.Glove")));
+                //tooltips.Insert(5, new TooltipLine(Mod, "GOPtooltip", Language.GetTextValue("Glove")));
                 //tooltips.Find(line => line.Name == "GOPtooltip");
             }
         }

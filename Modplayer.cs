@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.GameContent;
 using Terraria.ModLoader;
 using Terraria.GameInput;
 using Terraria.ID;
-using IL.Terraria.GameContent;
-using On.Terraria.GameContent;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using CalamityMod.Projectiles.Ranged;
@@ -230,25 +229,8 @@ namespace CalamityAmmo
             base.DrawEffects(drawInfo, ref r, ref g, ref b, ref a, ref fullBright);
         }
 
-        public void ItemOnHit(Item item, int damage, Vector2 position, bool crit, bool npcCheck)
-        {
-            IEntitySource source = Player.GetSource_ItemUse(item);
-            if (Stars && crit)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    int projectileType = Utils.SelectRandom<int>(Main.rand, new int[]
-                    {
-                            ModContent.ProjectileType<AstralStar>(),
-                            92,
-                            ModContent.ProjectileType<FallenStarProj>(),
-                    });
-                    int astralStarDamage = (int)Player.GetBestClassDamage().ApplyTo(120f);
-                    Projectile star = CalamityUtils.ProjectileRain(source, position, 400f, 100f, 500f, 800f, 12f, projectileType, astralStarDamage, 5f, base.Player.whoAmI);
-                }
-            }
-        }
-        public override void PostHurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit, int cooldownCounter)
+      
+        public override void PostHurt(Player.HurtInfo info)
         {
             if (Mycelium)
             {
@@ -257,14 +239,14 @@ namespace CalamityAmmo
                 Player.GetCritChance<RangedDamageClass>() -= 9f;
             }
         }
-        public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPCWithItem(Item item, NPC target, NPC.HitInfo hit, int damageDone)/* tModPorter If you don't need the Item, consider using OnHitNPC instead */
         {
             if (Evil)
             {
                 target.AddBuff(ModContent.BuffType<MarkedforDeath>(), 150);
             }
         }
-        public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)/* tModPorter If you don't need the Projectile, consider using OnHitNPC instead */
         {
             if (Evil)
             {

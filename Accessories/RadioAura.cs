@@ -1,6 +1,7 @@
 ﻿using System;
 using CalamityAmmo;
 using CalamityMod;
+using CalamityMod.Buffs.DamageOverTime;
 using CalamityMod.NPCs;
 using CalamityMod.NPCs.AcidRain;
 using Microsoft.Xna.Framework;
@@ -16,7 +17,7 @@ namespace CalamityAmmo.Accessories
     {
         public override void SetStaticDefaults()
         {
-            base.DisplayName.SetDefault("Red Lightning Aura");
+            // base.DisplayName.SetDefault("Red Lightning Aura");
             ProjectileID.Sets.MinionSacrificable[base.Projectile.type] = true;
         }
 
@@ -69,20 +70,18 @@ namespace CalamityAmmo.Accessories
         {
             return new Color(140, 234, 87, 200);
         }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(144, 180, false);
   
         }
 
-        // Token: 0x06001707 RID: 5895 RVA: 0x0009A640 File Offset: 0x00098840
-        public override void OnHitPvp(Player target, int damage, bool crit)
-        {
-            target.AddBuff(144, 180, true, false);
-        }
+		public override void OnHitPlayer(Player target, Player.HurtInfo info)
+		{
+			target.AddBuff(144, 180, true, false);
+		}
 
-        // Token: 0x06001708 RID: 5896 RVA: 0x0009A654 File Offset: 0x00098854
-        public override bool PreDraw(ref Color lightColor)
+		public override bool PreDraw(ref Color lightColor)
         {
             Texture2D sprite = ModContent.Request<Texture2D>(this.Texture, (ReLogic.Content.AssetRequestMode)2).Value;
             Color drawColour = Color.White;

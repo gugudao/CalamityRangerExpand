@@ -1,3 +1,4 @@
+
 Mods: {
 	CalamityAmmo: {
 		Bestiary.QianXing: A cat girl who gives you ammunition,she is cute in appearance and affordable in price.  With enough money you can even try to buy herself  (provided that you are not killed with a big axe).
@@ -13,7 +14,7 @@ Mods: {
 				LikeBiome: This place is full of dangers and treasures,I like it.Are you ready to die anytime?
 				LoveBiome: Don't even think about it, Choosing forest is just for your shopping convenience.
 				DislikeBiome: The sandstorm here makes me dirty, can I move to another place?
-				HateBiome: No cat in her right mind would jump into ocean to catch fish for dinner.
+				HateBiome: No cat in his right mind would jump into ocean to catch fish for dinner.
 				LikeNPC: "{NPCName}doesn't sell any scraps basically, he's pretty good."
 				LikeNPC_Princess: Why do I like {NPCName}? The official answer is: "Every NPC likes the princess." The private answer is: "The staff of resonance is too easy to use."
 				LoveNPC: "{NPCName} chats well with me, is that because both we have animal ears?"
@@ -22,70 +23,249 @@ Mods: {
 			}
 		}
 
-		QX: Starry
 		Glove: Similar effects also applies to ranger
 
 		Projectiles: {
-			ArcaneArrow_Proj.DisplayName: Arcane Arrow
-			Crabulon_Spore.DisplayName: Crabulon's Spore
-			HealOrb.DisplayName: Heal Orb
-			RadioAura.DisplayName: Red Lightning Aura
-			Shroomere.DisplayName: Shroomere
-			Spore1.DisplayName: Spore Cloud
-			Spore2.DisplayName: Spore Cloud
-			Spore3.DisplayName: Spore Cloud
-			HydrothermicArrow_Proj.DisplayName: Hydrothermic Arrow
-			HydrothermicExplosion.DisplayName: Hydrothermic Explosion
-			HydrothermicBullet_Proj.DisplayName: Hydrothermic Bullet
-			HydrothermicVolcano.DisplayName: "Hydrothermic Volcano "
-			VolcanicFireballRanged.DisplayName: Volcanic Fireball
-			MirageArrow_Proj.DisplayName: Mirage Arrow
-			MirageArrow_Proj2.DisplayName: Mirage Arrow
-			SoulBullet_Proj.DisplayName: Phantom Spirit
-			Chengying_Fumo_Proj.DisplayName: Chengying's Fumo
-			_BloodBullet.DisplayName: Blood Bullet
-			_DesertFeatherArrow.DisplayName: Desert Feather Arrow
-			_PearlArrow.DisplayName: Pearl Arrow
-			_PearlBullet.DisplayName: Pearl Bullet
-			_PrismBullet.DisplayName: PrsimBullet
-			_RottenBullet.DisplayName: Rotten Bullet
-			_RottenBullet2.DisplayName: Rotten Bullet
-			_SeaBubble.DisplayName: Stream
-			_VictideArrow.DisplayName: Victide Arrow
-			_VictideBullet.DisplayName: Victide Bullet
-			_WulfArrow.DisplayName: WulfrumArrow
-			_AstralArrow.DisplayName: Astral Arrow
-			_AstralBullet.DisplayName: Astral Bullet
-			_AstralMine.DisplayName: Astral Mine
-			_AstralShot.DisplayName: Astral Laser
-			_AstralStar.DisplayName: Astral Star
-			_AstralStar2.DisplayName: Astral Star
-			_DazzlingAstralArrow.DisplayName: Dazzling Astral Arrow
-			_DazzlingAstralBullet.DisplayName: Astral Bullet
-			_Flower.DisplayName: Perennial Flower
-			_FossilArrow.DisplayName: Fossil Arrow
-			_FossilBullet.DisplayName: Fossil Bullet
-			_FossilShard.DisplayName: 化石碎片
-			_FossilShard2.DisplayName: 化石碎片
-			_NapalmBullet.DisplayName: Napalm Bullet
-			_Seed.DisplayName: Perennial Seed
-			_WeakAstralArrow.DisplayName: Astral Bullet
-			_WeakAstralBullet.DisplayName: Weak Astral Bullet
-			FakeSeaStar1.DisplayName: Aquatic Star
-			FakeSeaStar2.DisplayName: Brittle Star
-			_ElementalArrow.DisplayName: Elemental Arrow
-			_ElementalBullet.DisplayName: Shredded Celestial Carrot
-			_GoldenFeatherArrow.DisplayName: GoldenFeather Arrow
-			_RedLightning.DisplayName: Red Lightning
-			HealingRain.DisplayName: Healing Rain
-			HealingStarcloud.DisplayName: Healing Nebula
-			LightningVortex.DisplayName: Lightning Vortex
-			MetorSolar.DisplayName: Solar Fireball
-			WulfrumBoltRanged.DisplayName: WulfrumBoltRanged
-			AeroGrenade.DisplayName: Aerocket
-			AeroMine.DisplayName: Aerocket
-			AeroRocket.DisplayName: Aerocket
-			AeroSnowman.DisplayName: Aerocket
+			ArcaneArrow_Proj: {
+				DisplayName: Arcane Arrow
+			}
+
+			Crabulon_Spore: {
+				DisplayName: Crabulon's Spore
+			}
+
+			HealOrb: {
+				DisplayName: Heal Orb
+			}
+
+			RadioAura: {
+				DisplayName: Red Lightning Aura
+			}
+
+			Shroomere: {
+				DisplayName: Shroomere
+			}
+
+			Spore1: {
+				DisplayName: Spore Cloud
+			}
+
+			Spore2: {
+				DisplayName: Spore Cloud
+			}
+
+			Spore3: {
+				DisplayName: Spore Cloud
+			}
+
+			HydrothermicArrow_Proj: {
+				DisplayName: Hydrothermic Arrow
+			}
+
+			HydrothermicExplosion: {
+				DisplayName: Hydrothermic Explosion
+			}
+
+			HydrothermicBullet_Proj: {
+				DisplayName: Hydrothermic Bullet
+			}
+
+			HydrothermicVolcano: {
+				DisplayName: "Hydrothermic Volcano "
+			}
+
+			VolcanicFireballRanged: {
+				DisplayName: Volcanic Fireball
+			}
+
+			MirageArrow_Proj: {
+				DisplayName: Mirage Arrow
+			}
+
+			MirageArrow_Proj2: {
+				DisplayName: Mirage Arrow
+			}
+
+			SoulBullet_Proj: {
+				DisplayName: Phantom Spirit
+			}
+
+			Chengying_Fumo_Proj: {
+				DisplayName: Chengying's Fumo
+			}
+
+			_BloodBullet: {
+				DisplayName: Blood Bullet
+			}
+
+			_DesertFeatherArrow: {
+				DisplayName: Desert Feather Arrow
+			}
+
+			_PearlArrow: {
+				DisplayName: Pearl Arrow
+			}
+
+			_PearlBullet: {
+				DisplayName: Pearl Bullet
+			}
+
+			_PrismBullet: {
+				DisplayName: PrsimBullet
+			}
+
+			_RottenBullet: {
+				DisplayName: Rotten Bullet
+			}
+
+			_RottenBullet2: {
+				DisplayName: Rotten Bullet
+			}
+
+			_SeaBubble: {
+				DisplayName: Stream
+			}
+
+			_VictideArrow: {
+				DisplayName: Victide Arrow
+			}
+
+			_VictideBullet: {
+				DisplayName: Victide Bullet
+			}
+
+			_WulfArrow: {
+				DisplayName: WulfrumArrow
+			}
+
+			_AstralArrow: {
+				DisplayName: Astral Arrow
+			}
+
+			_AstralBullet: {
+				DisplayName: Astral Bullet
+			}
+
+			_AstralMine: {
+				DisplayName: Astral Mine
+			}
+
+			_AstralShot: {
+				DisplayName: Astral Laser
+			}
+
+			_AstralStar: {
+				DisplayName: Astral Star
+			}
+
+			_AstralStar2: {
+				DisplayName: Astral Star
+			}
+
+			_DazzlingAstralArrow: {
+				DisplayName: Dazzling Astral Arrow
+			}
+
+			_DazzlingAstralBullet: {
+				DisplayName: Astral Bullet
+			}
+
+			_Flower: {
+				DisplayName: Perennial Flower
+			}
+
+			_FossilArrow: {
+				DisplayName: Fossil Arrow
+			}
+
+			_FossilBullet: {
+				DisplayName: Fossil Bullet
+			}
+
+			_FossilShard: {
+				DisplayName: 化石碎片
+			}
+
+			_FossilShard2: {
+				DisplayName: 化石碎片
+			}
+
+			_NapalmBullet: {
+				DisplayName: Napalm Bullet
+			}
+
+			_Seed: {
+				DisplayName: Perennial Seed
+			}
+
+			_WeakAstralArrow: {
+				DisplayName: Astral Bullet
+			}
+
+			_WeakAstralBullet: {
+				DisplayName: Weak Astral Bullet
+			}
+
+			FakeSeaStar1: {
+				DisplayName: Aquatic Star
+			}
+
+			FakeSeaStar2: {
+				DisplayName: Brittle Star
+			}
+
+			_ElementalArrow: {
+				DisplayName: Elemental Arrow
+			}
+
+			_ElementalBullet: {
+				DisplayName: Shredded Celestial Carrot
+			}
+
+			_GoldenFeatherArrow: {
+				DisplayName: GoldenFeather Arrow
+			}
+
+			_RedLightning: {
+				DisplayName: Red Lightning
+			}
+
+			HealingRain: {
+				DisplayName: Healing Rain
+			}
+
+			HealingStarcloud: {
+				DisplayName: Healing Nebula
+			}
+
+			LightningVortex: {
+				DisplayName: Lightning Vortex
+			}
+
+			MetorSolar: {
+				DisplayName: Solar Fireball
+			}
+
+			WulfrumBoltRanged: {
+				DisplayName: Wulfrum Bolt
+			}
+
+			AeroGrenade: {
+				DisplayName: Aerocket
+			}
+
+			AeroMine: {
+				DisplayName: Aerocket
+			}
+
+			AeroRocket: {
+				DisplayName: Aerocket
+			}
+
+			AeroSnowman: {
+				DisplayName: Aerocket
+			}
+
 			Mushroom_ClusterRocketI.DisplayName: Mushroom
 			Mushroom_ClusterRocketII.DisplayName: Mushroom
 			Mushroom_DryRocket.DisplayName: Mushroom
@@ -98,49 +278,139 @@ Mods: {
 			Mushroom_RocketIII.DisplayName: Mushroom
 			Mushroom_RocketIV.DisplayName: Mushroom
 			Mushroom_WetRocket.DisplayName: Mushroom
-			Sand_Rocket.DisplayName: Earth-Penetrating Missile
-			SandGrenade.DisplayName: Earth-Penetrating Missile
-			SandMine.DisplayName: Earth-Penetrating Missile
-			SandSnowman.DisplayName: Earth-Penetrating Missile
-			Spike.DisplayName: Spike
-			SpikyBall.DisplayName: Spiky Ball
-			ThePack_ClusterRocketI.DisplayName: PR
-			ThePack_ClusterRocketII.DisplayName: PR
-			ThePack_DryRocket.DisplayName: PR
-			ThePack_HoneyRocket.DisplayName: PR
-			ThePack_LavaRocket.DisplayName: PR
-			ThePack_MiniNukeRocketI.DisplayName: PR
-			ThePack_MiniNukeRocketII.DisplayName: PR
-			ThePack_RocketI.DisplayName: PR
-			ThePack_RocketII.DisplayName: PR
-			ThePack_RocketIII.DisplayName: PR
-			ThePack_RocketIV.DisplayName: PR
-			ThePack_SandRocket.DisplayName: PR
-			ThePack_WetRocket.DisplayName: PR
-			ThePackLittle_ClusterRocketI.DisplayName: PR
-			ThePackLittle_ClusterRocketII.DisplayName: PR
-			ThePackLittle_DryRocket.DisplayName: PR
-			ThePackLittle_HoneyRocket.DisplayName: PR
-			ThePackLittle_LavaRocket.DisplayName: PR
-			ThePackLittle_MiniNukeRocketI.DisplayName: PR
-			ThePackLittle_MiniNukeRocketII.DisplayName: PR
-			ThePackLittle_RocketI.DisplayName: PR
-			ThePackLittle_RocketII.DisplayName: PR
-			ThePackLittle_RocketIII.DisplayName: PR
-			ThePackLittle_RocketIV.DisplayName: PR
-			ThePackLittle_WetRocket.DisplayName: PR
-			_AstralFlame.DisplayName: Astral Crystal
-			Explode.DisplayName: Explode
-			GrapeProj.DisplayName: Grape Proj
-			GrapeShot.DisplayName: Grape Shot
 
-			Magic: {
-				HydrothermicExplosion.DisplayName: Hydrothermic Explosion
-				WulfrumBoltRanged.DisplayName: Wulfrum Bolt Ranged
+			Sand_Rocket: {
+				DisplayName: Earth-Penetrating Missile
 			}
 
-			Summon.VolcanicFireballRanged.DisplayName: Volcanic Fireball Ranged
-			StcikyChewingGum.DisplayName: Stciky Chewing Gum
+			SandGrenade: {
+				DisplayName: Earth-Penetrating Missile
+			}
+
+			SandMine: {
+				DisplayName: Earth-Penetrating Missile
+			}
+
+			SandSnowman: {
+				DisplayName: Earth-Penetrating Missile
+			}
+
+			Spike: {
+				DisplayName: Spike
+			}
+
+			SpikyBall: {
+				DisplayName: Spiky Ball
+			}
+
+			ThePack_ClusterRocketI: {
+				DisplayName: PR
+			}
+
+			ThePack_ClusterRocketII: {
+				DisplayName: PR
+			}
+
+			ThePack_DryRocket: {
+				DisplayName: PR
+			}
+
+			ThePack_HoneyRocket: {
+				DisplayName: PR
+			}
+
+			ThePack_LavaRocket: {
+				DisplayName: PR
+			}
+
+			ThePack_MiniNukeRocketI: {
+				DisplayName: PR
+			}
+
+			ThePack_MiniNukeRocketII: {
+				DisplayName: PR
+			}
+
+			ThePack_RocketI: {
+				DisplayName: PR
+			}
+
+			ThePack_RocketII: {
+				DisplayName: PR
+			}
+
+			ThePack_RocketIII: {
+				DisplayName: PR
+			}
+
+			ThePack_RocketIV: {
+				DisplayName: PR
+			}
+
+			ThePack_SandRocket: {
+				DisplayName: PR
+			}
+
+			ThePack_WetRocket: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_ClusterRocketI: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_ClusterRocketII: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_DryRocket: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_HoneyRocket: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_LavaRocket: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_MiniNukeRocketI: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_MiniNukeRocketII: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_RocketI: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_RocketII: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_RocketIII: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_RocketIV: {
+				DisplayName: PR
+			}
+
+			ThePackLittle_WetRocket: {
+				DisplayName: PR
+			}
+
+			_AstralFlame: {
+				DisplayName: Astral Crystal
+			}
+
+			Explode.DisplayName: Explosion
+			GrapeProj.DisplayName: GrapeExplosion
+			GrapeShot.DisplayName: Grape Shot
+			StcikyChewingGum.DisplayName: Chewing Gum
 		}
 
 		Items: {
@@ -173,8 +443,8 @@ Mods: {
 			}
 
 			GrapeLauncher: {
-				DisplayName: Suspended Shotgun Shell Launcher
-				Tooltip: Fire a series of bullets after hit enemy 8 times in a row
+				DisplayName: Grapeshot
+				Tooltip: There is a zombie on your lawn
 			}
 
 			InfectedCrabGill: {
@@ -214,7 +484,12 @@ Mods: {
 
 			MushroomUnitedNations: {
 				DisplayName: Mushroom United Nations
-				Tooltip: Both you and the target enemy gain Marked for Death
+				Tooltip:
+					'''
+					Has the effect of  Live Mushroom, Evil Mushroom, Fungal Carapace,Infected CrabGill, MarvelousMycelium and OddMushroom
+					A mushroom sniper rifle hovers above your head, sniping enemies that come into range
+					 reducing chance for enemies to target you
+					'''
 			}
 
 			OdddMushroom: {
@@ -230,8 +505,8 @@ Mods: {
 				DisplayName: "Adamantite Coil "
 				Tooltip:
 					'''
-					Increased ranged damage to 1.1x
-					Slightly increases all ranged projectile velocity
+					Increased ranged crit chance ,amplification depends on attack speed
+					Mediumly increases all ranged projectile velocity
 					'''
 			}
 
@@ -239,8 +514,8 @@ Mods: {
 				DisplayName: "Titanium Coil "
 				Tooltip:
 					'''
-					Increased ranged damage to 1.1x
-					Slightly increases all ranged projectile velocity
+					Increased ranged damage ,amplification depends on attack speed
+					Mediumly increases all ranged projectile velocity
 					'''
 			}
 
@@ -255,44 +530,32 @@ Mods: {
 
 			AstralArrow: {
 				DisplayName: Astral Arrow
-				Tooltip: 击败诞生于星辰之间的恐惧以完成进化
+				Tooltip: Will upgrade after Astrum Deus is defeated
 			}
 
 			AstralBullet: {
 				DisplayName: Astral Bullet
-				Tooltip: 击败诞生于星辰之间的恐惧以完成进化
+				Tooltip: Will upgrade after Astrum Deus is defeated
 			}
 
 			DazzlingAstralArrow: {
 				DisplayName: Dazzling Astral Arrow
-				Tooltip:
-					'''
-					星星，排列好了！
-					你确定？
-					'''
+				Tooltip: Look to the skies , The stars align
 			}
 
 			DazzlingAstralBullet: {
 				DisplayName: Dazzling Astral Bullet
-				Tooltip: 行星，恒星，力量就在其中！
+				Tooltip: planet，star，how powerful they are
 			}
 
 			FossilArrow: {
 				DisplayName: Fossil Arrow
-				Tooltip:
-					'''
-					坚固的化石击碎敌人的防御
-					酸腐的化石释放积年的余毒
-					'''
+				Tooltip: Solid fossils smash the enemy's defense and cause sulphuric poisoning
 			}
 
 			FossilBullet: {
 				DisplayName: Fossil Bullet
-				Tooltip:
-					'''
-					坚固的化石击碎敌人的防御
-					酸腐的化石释放积年的余毒
-					'''
+				Tooltip: Solid fossils smash the enemy's defense and cause sulphuric poisoning
 			}
 
 			HydrothermicArrow: {
@@ -307,25 +570,25 @@ Mods: {
 
 			NapalmBullet: {
 				DisplayName: Napalm Bullet
-				Tooltip: 一点点火光，谁也烧不到！
+				Tooltip: A little spark can't burn anyone
 			}
 
 			PerennialSeed: {
 				DisplayName: Perennial Seed
-				Tooltip: 长盛不衰
+				Tooltip: Bloom and bear fruit on the enemies
 			}
 
 			WeakAstralArrow: {
 				DisplayName: WeakAstralArrow
-				Tooltip: 蠕虫说，“是的我有很多父亲”
+				Tooltip: The worm said, "Yes, I have many fathers."
 			}
 
 			WeakAstralBullet: {
 				DisplayName: Weak Astral Bullet
 				Tooltip:
 					'''
-					力量还不够......
-					在击败被星辉瘟疫侵蚀的机械巨兽后，进化
+					The power is not enough...
+					Will upgrade after Astrum Aureus is defeated
 					'''
 			}
 
@@ -529,17 +792,8 @@ Mods: {
 					'''
 			}
 
-			Lore.KnowledgeAuric.DisplayName: Knowledge Auric
-
-			Paper: {
-				DisplayName: Paper
-				Tooltip: ""
-			}
-
-			Paper2: {
-				DisplayName: Paper2
-				Tooltip: ""
-			}
+			Paper.DisplayName: Wood Pulp Paper
+			Paper2.DisplayName: Bamboo Pulp Paper
 		}
 
 		Buffs: {
@@ -560,38 +814,20 @@ Mods: {
 
 		NPCs: {
 			QianXing: {
-				DisplayName: 弹药商
-
-				TownNPCMood: {
-					Content: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.Content}"
-					NoHome: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.NoHome}"
-					FarFromHome: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.FarFromHome}"
-					LoveSpace: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.LoveSpace}"
-					DislikeCrowded: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.DislikeCrowded}"
-					HateCrowded: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.HateCrowded}"
-					LoveBiome: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.LoveBiome}"
-					LikeBiome: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.LikeBiome}"
-					DislikeBiome: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.DislikeBiome}"
-					HateBiome: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.HateBiome}"
-					LoveNPC: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.LoveNPC}"
-					LikeNPC: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.LikeNPC}"
-					DislikeNPC: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.DislikeNPC}"
-					HateNPC: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.HateNPC}"
-					LikeNPC_Princess: "{$Mods.CalamityAmmo.TownNPCMood.QianXing.LikeNPC_Princess}"
-					Princess_LovesNPC: I like {NPCName}.
-				}
+				DisplayName: Ammo Dealer
 			}
 		}
 
 		Keybinds.Trippy.DisplayName: Trippy
 		Homeless1: Hmm... if you can see me, you must be a ranger!
 		Homeless2: I can't believe you don't even have a room, can't you even build a basic NPC prison? Aughhhhhhhh
-		Any1: Why do I carrying this axe? Because it used to be a godly battle axe with 44 damage !
+		Any1: Why do I carrying this axe? Because it used to be a godly battle axe with 44 damage!
+		QX: Starry
 		Any2: If you start flipping through npc's conversation, I suggest going to find someone to join you online.
 		Any3: Have you run out of ammunition materials since I came here?
 		Any4: I haven't eaten for two minutes. I'm so hungry... Do you have anything to eat?
 		Day1: Running a server is really tired , as the owner you have to solve all the problems.
-		Day2: My habit is to name the character as "Qianxing" xx Generation every time I start a new game, now estimated to be 25th generation .
+		Day2: My habit is to name the character as "Qianxing" xx Generation every time I start a new game, now estimated to be 25th generation.
 		Day3: I have 20,000HP, without any accidents I'm able to live until you graduate .
 		Day4: Don't touch my tail, it's impolite.
 		Night1: What do you want me to do at night, night owls can't stand your troubles also.

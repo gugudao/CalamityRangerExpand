@@ -18,10 +18,10 @@ namespace CalamityAmmo.Rockets
         public override void SetStaticDefaults()
         {
             Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
-            DisplayName.SetDefault("Aerocket");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "天蓝浮雷");
-            Tooltip.SetDefault("Right click to switch projectile into air-staying booby trap");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "会爆炸出跟踪羽毛的滞空诡雷");
+            // DisplayName.SetDefault("Aerocket");
+            //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "天蓝浮雷");
+            // Tooltip.SetDefault("Right click to switch projectile into air-staying booby trap");
+            //Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "会爆炸出跟踪羽毛的滞空诡雷");
         }
 
         public override void SetDefaults()
@@ -79,8 +79,8 @@ namespace CalamityAmmo.Rockets
             }
             public override void SetStaticDefaults()
             {
-                DisplayName.SetDefault("Aerocket");
-                DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "天蓝火箭");
+                // DisplayName.SetDefault("Aerocket");
+                //DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "天蓝火箭");
                 Main.projFrames[Projectile.type] = 4;
             }
    
@@ -98,7 +98,7 @@ namespace CalamityAmmo.Rockets
                 Projectile.type = AIType;
                 return true;
             }
-            public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+            public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
             {
                 // if (AIType == ProjectileID.RocketI && target.Hitbox.Intersects(new Rectangle((int)Projectile.Center.X - 12, (int)Projectile.Center.Y - 12, 24, 24))) damage *= 2;
                 //if (AIType == ProjectileID.ProximityMineI && Projectile.velocity.Length() < 1f && Projectile.alpha < 255) damage *= 3;
