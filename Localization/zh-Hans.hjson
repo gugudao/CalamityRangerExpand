@@ -131,16 +131,17 @@ Mods: {
 			ThePackLittle_WetRocket.DisplayName: PR
 			_AstralFlame.DisplayName: Astral Crystal
 			// Explode.DisplayName: Explode
-			// GrapeProj.DisplayName: Grape Proj
-			// GrapeShot.DisplayName: Grape Shot
+			// GrapeProj.DisplayName: Grape
+			// GrapeShot.DisplayName: Grape
 
 			Magic: {
 				// HydrothermicExplosion.DisplayName: Hydrothermic Explosion
-				// WulfrumBoltRanged.DisplayName: Wulfrum Bolt Ranged
+				// WulfrumBoltRanged.DisplayName: Wulfrum Bolt
 			}
 
-			// Summon.VolcanicFireballRanged.DisplayName: Volcanic Fireball Ranged
+			// Summon.VolcanicFireballRanged.DisplayName: Volcanic Fireball
 			// StcikyChewingGum.DisplayName: Stciky Chewing Gum
+			// _DazzlingAstralArrowNew.DisplayName: Dazzling Astral Arrow
 		}
 
 		Items: {
@@ -379,6 +380,11 @@ Mods: {
 				Tooltip: “它们还在秃鹰身上的时候可没这么快啊”
 			}
 
+			DesertFeather: {
+				// DisplayName: Desert Feather
+				// Tooltip: ""
+			}
+
 			ElectricArrow: {
 				DisplayName: 闪电箭
 				Tooltip: “追逐风暴”
@@ -451,6 +457,11 @@ Mods: {
 			Chengying_Fumo: {
 				DisplayName: 精美毛绒玩具
 				Tooltip: 你要明白，我们不能用温柔去应对黑暗，要用火。
+				/* TooltipDay:
+					'''
+					A toast to all who sought to kill me! 
+					You failed.
+					''' */
 			}
 
 			ChewingGum: {
@@ -557,6 +568,15 @@ Mods: {
 				// DisplayName: Paper2
 				// Tooltip: ""
 			}
+
+			DazzlingAstralArrowNew: {
+				// DisplayName: Dazzling Astral Arrow
+				/* Tooltip:
+					'''
+					Look to the skies!The stars align!
+					"Are you sure about that？"
+					''' */
+			}
 		}
 
 		Buffs: {
@@ -600,7 +620,7 @@ Mods: {
 			}
 		}
 
-		Keybinds.Trippy.DisplayName: Trippy
+		// Keybinds.Odd.DisplayName: Trippy
 		Homeless1: 让我想想，既然能见到我，那你玩的一定是射手吧！
 		Homeless2: 居然连一个房间也没有，你连最基本的npc监狱都不会造吗？真是弱诶。
 		Any1: 已经两分钟没有吃东西了，好饿啊...你有什么吃的吗？

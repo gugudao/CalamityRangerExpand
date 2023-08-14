@@ -45,14 +45,14 @@ namespace CalamityAmmo.Misc
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            TooltipLine tooltip = Enumerable.FirstOrDefault<TooltipLine>(tooltips, (TooltipLine x) => x.Name == "Tooltip0" && x.Mod == "Terraria");
+            TooltipLine tooltip = Enumerable.FirstOrDefault(tooltips, (TooltipLine x) => x.Name == "Tooltip0" && x.Mod == "Terraria");
             if(Main.dayTime)  
             {
-                tooltip.Text = "“举杯吧！敬那些想要杀死我的人！”\n“你们失败了。”";
+                tooltip.Text = Language.GetTextValue("Mods.CalamityAmmo.Items.Chengying_Fumo.TooltipDay");
             }
             if(!Main.dayTime)
             {
-                tooltip.Text = "“你要明白，我们不能用温柔去应对黑暗，要用火。”";
+                tooltip.Text = Language.GetTextValue("Mods.CalamityAmmo.Items.Chengying_Fumo.Tooltip");
             }
             tooltip.OverrideColor = CAEUtils.ColorSwap(new Color(191, 0, 15), new Color(255, 79, 63), 3f);
         }

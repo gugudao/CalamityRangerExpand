@@ -88,7 +88,8 @@ namespace CalamityAmmo.Projectiles.Hardmode
         }
         public override void Kill(int timeLeft)
         {
-            Vector2 projSpawn = new(Projectile.Center.X + Main.rand.Next(144) - Main.rand.Next(144), Projectile.Center.Y - 600);
+			Player player = Main.player[Projectile.owner];
+			Vector2 projSpawn = new(Projectile.Center.X + Main.rand.Next(144) - Main.rand.Next(144), player.Center.Y - 600);
             int proj = Projectile.NewProjectile(Projectile.GetSource_FromThis(), projSpawn, Vector2.Normalize(Projectile.Center - projSpawn) * 18,
                                                 ModContent.ProjectileType<_AstralStar>(), (int)(Projectile.damage * 0.5), 2, 0);
             Main.projectile[proj].netUpdate = true;

@@ -2,6 +2,8 @@
 using CalamityAmmo.Ammos.Post_MoonLord;
 using CalamityAmmo.Ammos.Pre_Hardmode;
 using CalamityMod;
+using CalamityMod.BiomeManagers;
+using CalamityMod.Items.Ammo;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
@@ -192,24 +194,84 @@ namespace CalamityAmmo.Misc
 		}
 		public override void AddShops()
 		{
+			Condition ZoneAstral =
+			new Condition("Conditions.ZoneAstral",
+			() => Main.LocalPlayer.InModBiome<AbovegroundAstralBiome>()
+			|| Main.LocalPlayer.InModBiome<AbovegroundAstralBiomeSurface>()
+			|| Main.LocalPlayer.InModBiome<AbovegroundAstralSnowBiome>()
+			|| Main.LocalPlayer.InModBiome<AbovegroundAstralDesertBiome>()
+			|| Main.LocalPlayer.InModBiome<UndergroundAstralBiome>()
+			);
+			Condition ZoneSulphurousSeaBiome = new Condition("Conditions.SulphurousSeaBiome",
+			() => Main.LocalPlayer.InModBiome<SulphurousSeaBiome>());
+
+			Condition ZoneSulphurousSeaBiomeOrAcid = new Condition("Conditions.SulphurousSeaBiomeOrAcid",
+			() => Main.LocalPlayer.InModBiome<SulphurousSeaBiome>() || Main.LocalPlayer.InModBiome<AcidRainBiome>());
+
+			Condition ZoneBrimstoneCragsBiome = new Condition("Conditions.BrimstoneCragsBiome",
+			() => Main.LocalPlayer.InModBiome<BrimstoneCragsBiome>());
+
+			Condition DownedSeaScourgeAcidRain = new Condition("Conditions.DownedSeaScourgeAcidRain", () => DownedBossSystem.downedAquaticScourgeAcidRain);
+
+			Condition DownedYouhua = new Condition("Conditions.DownedYouhua",
+			() => DownedBossSystem.downedPolterghast);
+
+			Condition DownedStoneGrantOrGolem = new Condition("Conditions.StoneGrantOrGolem",
+			() => DownedBossSystem.downedRavager || Condition.DownedGolem.IsMet());
+
+			Condition DownedDragonfolly = new Condition("Conditions.DownedDragonfolly",
+			() => DownedBossSystem.downedDragonfolly);
 			var npcShop = new NPCShop(Type, ShopName)
-			   .Add(ModContent.ItemType<WulfrumArrow>(), Condition.TimeDay)
-				.Add(ModContent.ItemType<DesertFeatherArrow>(), Condition.InDesert)
-				.Add(ModContent.ItemType<ElectricArrow>(), Condition.InUndergroundDesert)
-				.Add(ModContent.ItemType<PearlArrow>(), DownedDesertScourge)
-				.Add(ModContent.ItemType<VictideArrow>(), DownedDesertScourge)
-				.Add(ModContent.ItemType<WeakAstralArrow>())
-				.Add(ModContent.ItemType<NapalmBullet>())
-				.Add(ModContent.ItemType<FossilArrow>())
-				.Add(ModContent.ItemType<HydrothermicArrow>())
-				.Add(ModContent.ItemType<GoldenFeatherArrow>())
-				.Add(ModContent.ItemType<MirageArrow>());
+				.Add(ModContent.ItemType<WulfrumArrow>(), Condition.TimeDay)
+				.Add(ModContent.ItemType<DesertFeatherArrow>(), Condition.InDesert, Condition.TimeDay)
+				.Add(ModContent.ItemType<ElectricArrow>(), Condition.InUndergroundDesert, Condition.TimeDay)
+				.Add(ModContent.ItemType<PearlArrow>(), DownedDesertScourge, Condition.TimeDay)
+				.Add(ModContent.ItemType<VictideArrow>(), DownedDesertScourge, Condition.TimeDay)
+				.Add(ModContent.ItemType<WeakAstralArrow>(), ZoneAstral, Condition.TimeDay)
+				.Add(ModContent.ItemType<NapalmArrow>(), Condition.Hardmode, ZoneBrimstoneCragsBiome, Condition.TimeDay)
+				.Add(ModContent.ItemType<ArcticArrow>(), Condition.InSnow, new("Condions.DownedC",() => DownedBossSystem.downedCryogen), Condition.TimeDay)
+				.Add(ModContent.ItemType<FossilArrow>(), ZoneSulphurousSeaBiomeOrAcid, DownedSeaScourgeAcidRain, Condition.TimeDay)
+				.Add(ModContent.ItemType<TerraArrow>(), Condition.DownedPlantera, Condition.TimeDay)
+				.Add(ModContent.ItemType<IcicleArrow>(), Condition.DownedIceQueen, Condition.DownedSantaNK1, Condition.DownedEverscream, Condition.TimeDay)
+				.Add(ModContent.ItemType<HydrothermicArrow>(), DownedStoneGrantOrGolem, Condition.TimeDay)
+				.Add(ModContent.ItemType<ElysianArrow>(), Condition.DownedMoonLord, new("Condions.ZoneHolyOrHell", () => Condition.InUnderworld.IsMet()||Condition.InHallow.IsMet()),Condition.TimeDay)
+				.Add(ModContent.ItemType<GoldenFeatherArrow>(), DownedDragonfolly, Condition.TimeDay)
+				.Add(ModContent.ItemType<MirageArrow>(), Condition.InDungeon, Condition.DownedMoonLord, Condition.TimeDay)
+				.Add(ModContent.ItemType<BloodfireArrow>(), DownedYouhua, Condition.TimeDay)
+				.Add(ModContent.ItemType<VanquisherArrow>(), new Condition("Conditions.DownedDoG", () => DownedBossSystem.downedDoG), Condition.TimeDay)
+
+				.Add<FlashRound>(Condition.TimeNight)
+				.Add(ModContent.ItemType<WulfrumBullet>(), Condition.TimeNight)
+				.Add<PearlBullet>(Condition.TimeNight, DownedDesertScourge)
+				.Add<VictideBullet>(Condition.TimeNight, DownedDesertScourge)
+				.Add<SPBullet>(Condition.TimeNight, DownedDesertScourge)
+				.Add<AccelerationRound>(Condition.TimeNight, DownedDesertScourge)
+				.Add<SuperballBullet>(Condition.TimeNight, DownedDesertScourge,Condition.DownedEowOrBoc)
+				.Add<RottenBullet>(Condition.TimeNight, new("Conditions.DownedHM", () => DownedBossSystem.downedHiveMind))
+				.Add<BloodBullet>(Condition.TimeNight, new("Conditions.DownedP", () => DownedBossSystem.downedPerforator))
+				.Add<MarksmanRound>(Condition.TimeNight, Condition.Hardmode)
+				.Add<WeakAstralBullet>(Condition.TimeNight, Condition.Hardmode,ZoneAstral)
+				.Add(ModContent.ItemType<NapalmBullet>(), Condition.Hardmode, ZoneBrimstoneCragsBiome, Condition.TimeDay)
+				.Add<VeriumBullet>(Condition.TimeNight, new("Condions.DownedC", () => DownedBossSystem.downedCryogen),Condition.InSnow)
+				.Add<FossilBullet>(Condition.TimeNight, ZoneSulphurousSeaBiomeOrAcid, DownedSeaScourgeAcidRain)
+				.Add<TerraBullet>(Condition.TimeNight, Condition.DownedPlantera)
+				.Add<EnhancedNanoRound>(Condition.TimeNight, Condition.DownedPlantera, Condition.NpcIsPresent(NPCID.Cyborg))
+				.Add<IcyBullet>(Condition.TimeNight, Condition.DownedIceQueen, Condition.DownedSantaNK1, Condition.DownedEverscream)
+				.Add<HydrothermicBullet>(Condition.TimeNight, DownedStoneGrantOrGolem)
+				.Add<HyperiusBullet>(Condition.TimeNight, new("Condions.DownedC", () => DownedBossSystem.downedCryogen),Condition.DownedPlantera,DownedStoneGrantOrGolem)
+				.Add<BubonicRound>(Condition.TimeNight, new("Conditions.DownedPB", () => DownedBossSystem.downedPlaguebringer))
+				.Add<MortarRound>(Condition.TimeNight, new("Conditions.DownedPPG", () => DownedBossSystem.downedProvidence))
+				.Add<RubberMortarRound>(Condition.TimeNight, new("Conditions.DownedPPG", () => DownedBossSystem.downedProvidence))
+				.Add<HolyFireBullet>(Condition.TimeNight, new("Condions.ZoneHolyOrHell", () => Condition.InUnderworld.IsMet() || Condition.InHallow.IsMet()), Condition.DownedMoonLord)
+				.Add<BloodfireBullet>(Condition.TimeNight, DownedYouhua)
+				.Add<GodSlayerSlug>(Condition.TimeNight, new Condition("Conditions.DownedDoG", () => DownedBossSystem.downedDoG))
+				;
 
 			npcShop.Register();
 		}
 		public override void ModifyActiveShop(string shopName, Item[] items)
 		{
-			
+
 		}
 	}
 }

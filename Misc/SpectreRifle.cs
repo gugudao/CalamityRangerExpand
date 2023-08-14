@@ -25,15 +25,15 @@ namespace CalamityAmmo.Misc
 
         public override void SetDefaults()
         {
-            base.Item.damage = 150;
+            base.Item.damage = 147;
             base.Item.DamageType = DamageClass.Ranged;
             base.Item.width = 88;
             base.Item.height = 30;
-            base.Item.useTime = 25;
-            base.Item.useAnimation = 25;
+            base.Item.useTime = 48;
+            base.Item.useAnimation = 48;
             base.Item.useStyle = 5;
             base.Item.noMelee = true;
-            base.Item.knockBack = 7f;
+            base.Item.knockBack = 6f;
             base.Item.value = Item.buyPrice(0, 80, 0, 0);
             base.Item.rare = ItemRarityID.Yellow;
             base.Item.UseSound = new SoundStyle?(SoundID.Item40);
@@ -46,7 +46,7 @@ namespace CalamityAmmo.Misc
 
         public override void ModifyWeaponCrit(Player player, ref float crit)
         {
-            crit += 22f;
+            crit += 25f;
         }
 
         public override Vector2? HoldoutOffset()

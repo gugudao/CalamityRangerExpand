@@ -6,16 +6,10 @@ using Terraria.ModLoader;
 
 namespace CalamityAmmo.Ammos.Hardmode
 {
-	public class DazzlingAstralArrow : ModItem
+	public class DazzlingAstralArrowNew : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
-			// DisplayName.SetDefault("Dazzling Astral Arrow");
-			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "炫星箭");
-			// Tooltip.SetDefault(IsChinese() ? "星星，排列好了！\n你确定？" : "Look to the skies , The stars align");
-			////Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "在打败白金星舰后升级\n在打败星神游龙会再次升级");
-			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ослепительная Астральная Стрела");
-			//Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "БЗвезды расставлены!\n вы уверены?");
 			Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 		public override void SetDefaults()
@@ -29,7 +23,7 @@ namespace CalamityAmmo.Ammos.Hardmode
 			Item.knockBack = 2.5f;
 			Item.value = Item.buyPrice(0, 0, 1, 0);
 			Item.rare = 9;
-			Item.shoot = ModContent.ProjectileType<_DazzlingAstralArrow>();
+			Item.shoot = ModContent.ProjectileType<_DazzlingAstralArrowNew>();
 			Item.shootSpeed = 5f;
 			Item.ArmorPenetration = 5;
 			Item.ammo = AmmoID.Arrow;

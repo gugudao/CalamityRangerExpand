@@ -35,7 +35,7 @@ namespace CalamityAmmo.Misc
         }
         public override void SetDefaults()
         {
-            Item.maxStack = 9999;
+            Item.maxStack = 99999;
             Item.consumable = true;
             Item.width = 24;
             Item.height = 24;

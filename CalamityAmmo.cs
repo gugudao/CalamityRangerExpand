@@ -62,7 +62,6 @@ namespace CalamityAmmo
                 List<Asset<Texture2D>> assetsGlow = new List<Asset<Texture2D>>(TextureAssets.GlowMask);
                 assetsGlow.AddRange(assets);
                 TextureAssets.GlowMask = assetsGlow.ToArray();
-                TrippyKey = KeybindLoader.RegisterKeybind(this, "Trippy", "G");
             }
 
         }
@@ -73,7 +72,6 @@ namespace CalamityAmmo
             //List<Asset<Texture2D>> assetsGlow = new List<Asset<Texture2D>>(TextureAssets.GlowMask);
             //assetsGlow.RemoveAll(x => assets.Find(y => y == x) != default(Asset<Texture2D>));
             //TextureAssets.GlowMask = assetsGlow.ToArray();
-            TrippyKey = null;
         }
 
         public CalamityAmmo()
@@ -84,7 +82,6 @@ namespace CalamityAmmo
 
             // 以上这些了解一下就行了，每个mod都要有这个
         }
-        internal static ModKeybind TrippyKey;
         
 
 

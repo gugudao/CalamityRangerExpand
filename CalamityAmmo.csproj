@@ -11,9 +11,13 @@
     <Compile Remove="Rockets\MushroomMortar.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Ammos\Hardmode\DazzlingAstralArrowNew.png" />
+    <None Remove="Misc\DesertFeather.png" />
+    <None Remove="Misc\Paper2.png" />
     <None Remove="Projectiles\Hardmode\Star2.png" />
     <None Remove="Projectiles\Hardmode\Star4.png" />
     <None Remove="Projectiles\Hardmode\Star5.png" />
+    <None Remove="Projectiles\Hardmode\_DazzlingAstralArrowNew.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />

@@ -136,11 +136,12 @@ Mods: {
 
 			Magic: {
 				// HydrothermicExplosion.DisplayName: Hydrothermic Explosion
-				// WulfrumBoltRanged.DisplayName: Wulfrum Bolt Ranged
+				// WulfrumBoltRanged.DisplayName: Wulfrum Bolt
 			}
 
-			// Summon.VolcanicFireballRanged.DisplayName: Volcanic Fireball Ranged
+			// Summon.VolcanicFireballRanged.DisplayName: Volcanic Fireball
 			StcikyChewingGum.DisplayName: Жевательная резинка
+			// _DazzlingAstralArrowNew.DisplayName: Dazzling Astral Arrow
 		}
 
 		Items: {
@@ -360,6 +361,11 @@ Mods: {
 				Tooltip: "Когда перо все еще было на грифе, все происходило не так быстро "
 			}
 
+			DesertFeather: {
+				// DisplayName: Desert Feather
+				// Tooltip: ""
+			}
+
 			ElectricArrow: {
 				DisplayName: Электрическая стрела
 				Tooltip: "В погоне за бурей "
@@ -432,6 +438,11 @@ Mods: {
 			Chengying_Fumo: {
 				DisplayName: Фумо Чен Ина
 				Tooltip: Мы не можем справиться с тьмой мягко, но с огнем...
+				/* TooltipDay:
+					'''
+					A toast to all who sought to kill me! 
+					You failed.
+					''' */
 			}
 
 			ChewingGum: {
@@ -533,6 +544,15 @@ Mods: {
 				DisplayName: Бумага из бамбуковой массы
 				// Tooltip: ""
 			}
+
+			DazzlingAstralArrowNew: {
+				// DisplayName: Dazzling Astral Arrow
+				/* Tooltip:
+					'''
+					Look to the skies!The stars align!
+					"Are you sure about that？"
+					''' */
+			}
 		}
 
 		Buffs: {
@@ -576,7 +596,7 @@ Mods: {
 			}
 		}
 
-		Keybinds.Trippy.DisplayName: Триппи
+		// Keybinds.Odd.DisplayName: Trippy
 		Homeless1: Хм... если ты меня видишь, значит, ты стрелок!
 		Homeless2: Не могу поверить, что у тебя даже нет комнаты, разве ты не можешь построить обычную комнату для НПС?
 		Any1: Почему я ношу с собой этот топор? Потому что раньше это был божественный боевой топор 44 урона!

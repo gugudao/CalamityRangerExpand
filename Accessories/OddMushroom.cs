@@ -29,12 +29,14 @@ using CalamityMod.Buffs.StatDebuffs;
 using CalamityAmmo.Ammos.Post_MoonLord;
 using CalamityMod.Buffs.Alcohol;
 using CalamityMod.Items.Potions.Alcohol;
+using CalamityAmmo.CAESystem;
 
 namespace CalamityAmmo.Accessories
 {
     public class OdddMushroom : ModItem
     {
-        public override void SetStaticDefaults()
+        public static string hotkey = CAEKeybind.OddHotKey.GetAssignedKeys().First();
+		public override void SetStaticDefaults()
         {
 			// DisplayName.SetDefault("Odd Mushroom(equipable)");
 			//DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "致幻蘑菇（可装备）");
@@ -56,10 +58,7 @@ namespace CalamityAmmo.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             CaePlayer modplayer = player.GetModPlayer<CaePlayer>();
-            if(hideVisual)
-            {
-                modplayer.Odd = true;
-            }
+            modplayer.Odd2 = true;
         }
         public override void AddRecipes()
         {
@@ -68,6 +67,17 @@ namespace CalamityAmmo.Accessories
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.Register();
         }
-    }
+		public override void ModifyTooltips(List<TooltipLine> tooltips)
+		{
+            
+			int index = tooltips.FindIndex(tip => tip.Name.StartsWith("Tooltip0"));
+			TooltipLine helperLine = new TooltipLine(Mod, "extra", Language.GetTextValue("Mods.CalamityAmmo.Items.OdddMushroom.Tooltip", hotkey));
+            tooltips.RemoveAt(index);
+
+			tooltips.Add(helperLine);
+			//tooltips.Insert(index + 2, helperLine2);
+
+		}
+	}
 }
 

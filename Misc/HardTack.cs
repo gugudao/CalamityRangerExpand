@@ -37,13 +37,14 @@ namespace CalamityAmmo.Misc
             Item.useAnimation = 25;
             Item.useStyle = ItemUseStyleID.EatFood;
             Item.value = Item.buyPrice(0, 10, 0, 0);
-            Item.rare = ModContent.RarityType<Violet>();
+			//Item.value = Item.sellPrice(0,10,0,0);
+			Item.rare = ModContent.RarityType<Violet>();
             Item.UseSound = new SoundStyle?(SoundID.Item8);
             Item.autoReuse = false;
             Item.buffType = BuffID.WellFed3;
             Item.buffTime = 60 * 60 * 18;
             Item.consumable = true;
-            Item.maxStack = 9999;
+            Item.maxStack = 99999;
             
         }
         public override bool CanUseItem(Player player)

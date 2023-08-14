@@ -44,7 +44,7 @@ namespace CalamityAmmo.Ammos.Hardmode
             Item.DamageType = DamageClass.Ranged;
             Item.width = 8;
             Item.height = 8;
-            Item.maxStack = 999;
+            Item.maxStack = 9999;
             Item.consumable = true;
             Item.knockBack = 2.5f;
             Item.value = Item.buyPrice(0, 0, 1, 0);
@@ -58,7 +58,7 @@ namespace CalamityAmmo.Ammos.Hardmode
         public override void UpdateInventory(Player player)
         {
             int i = Item.stack;
-            if (DownedBossSystem.downedAstrumAureus)
+            if (DownedBossSystem.downedAstrumDeus)
             {
                 Item.SetDefaults(ModContent.ItemType<DazzlingAstralBullet>(), true);
                 Item.stack = i;

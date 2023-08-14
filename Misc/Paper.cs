@@ -37,7 +37,7 @@ namespace CalamityAmmo.Misc
             Item.useTime = 25;
             Item.useAnimation = 25;
             Item.useStyle = ItemUseStyleID.EatFood;
-            Item.value = Item.buyPrice(0, 10, 0, 0);
+            Item.value = Item.buyPrice(0, 0, 0, 2);
             Item.rare = 1;
             Item.autoReuse = false;
             Item.consumable = true;
@@ -47,7 +47,7 @@ namespace CalamityAmmo.Misc
 
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe(50);
+            Recipe recipe = CreateRecipe(10);
             recipe.AddRecipeGroup(RecipeGroupID.Wood, 1);
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
@@ -60,7 +60,6 @@ namespace CalamityAmmo.Misc
     }
     public class Paper2 : ModItem
     {
-        public override string Texture => "CalamityAmmo/Misc/Paper";
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Bamboo Pulp Paper");
@@ -77,7 +76,7 @@ namespace CalamityAmmo.Misc
             Item.useTime = 25;
             Item.useAnimation = 25;
             Item.useStyle = ItemUseStyleID.EatFood;
-            Item.value = Item.buyPrice(0, 10, 0, 0);
+            Item.value = Item.buyPrice(0, 0, 0, 2);
             Item.rare = 1;
             Item.autoReuse = false;
             Item.consumable = true;
@@ -87,8 +86,8 @@ namespace CalamityAmmo.Misc
 
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe(50);
-            recipe.AddIngredient(4564, 1);
+            Recipe recipe = CreateRecipe(10);
+            recipe.AddIngredient(ItemID.BambooBlock, 1);
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
             var recipe2 = CreateRecipe();

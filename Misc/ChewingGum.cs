@@ -31,14 +31,14 @@ namespace CalamityAmmo.Misc
             Item.useTime = 25;
             Item.useAnimation = 25;
             Item.useStyle = ItemUseStyleID.EatFood;
-            Item.value = Item.buyPrice(0, 0, 0, 50);
+            Item.value = Item.sellPrice(0, 0, 0, 5);
             Item.rare = ItemRarityID.Yellow;
             Item.UseSound = new SoundStyle?(SoundID.Item8);
             Item.autoReuse = false ;
             Item.buffType = ModContent.BuffType<Focus>();
             Item.buffTime = 60 * 60 * 12;
             Item.consumable = true;
-            Item.maxStack = 9999;
+            Item.maxStack = 99999;
 
         }
         public override void AddRecipes()

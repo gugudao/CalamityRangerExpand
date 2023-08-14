@@ -20,6 +20,7 @@ using Terraria.GameContent;
 using CalamityMod.Projectiles.Magic;
 using CalamityMod.Items.Materials;
 using CalamityAmmo.Projectiles;
+using CalamityAmmo.Misc;
 
 namespace CalamityAmmo.Ammos.Pre_Hardmode
 {
@@ -41,7 +42,7 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
             Item.DamageType = DamageClass.Ranged;
             Item.width = 8;
             Item.height = 8;
-            Item.maxStack = 999;
+            Item.maxStack = 9999;
             Item.consumable = true;
             Item.knockBack = 0f;
             Item.value = Item.buyPrice(0, 0, 0, 35);
@@ -54,7 +55,7 @@ namespace CalamityAmmo.Ammos.Pre_Hardmode
         {
             Recipe recipe = CreateRecipe(20);
             recipe.AddIngredient(ItemID.WoodenArrow, 20);
-           // recipe.AddIngredient(ModContent.ItemType<DesertFeather>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<DesertFeather>(), 1);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }

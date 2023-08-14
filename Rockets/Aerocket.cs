@@ -37,7 +37,7 @@ namespace CalamityAmmo.Rockets
             Item.noMelee = true;
             Item.ammo = AmmoID.Rocket;
             Item.DamageType = DamageClass.Ranged;
-            Item.maxStack = 999;
+            Item.maxStack = 9999;
             Item.consumable = true;
         }
         public override void ModifyWeaponDamage(Player player, ref StatModifier damage)

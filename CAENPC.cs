@@ -1,4 +1,5 @@
 ﻿using CalamityAmmo.Accessories;
+using CalamityAmmo.Misc;
 using CalamityAmmo.Projectiles.Hardmode;
 using CalamityAmmo.Projectiles.Post_MoonLord;
 using CalamityAmmo.Rockets;
@@ -24,7 +25,7 @@ namespace CalamityAmmo
 	{
 		public override bool InstancePerEntity => true;
 		public int carrot = 0;
-		
+
 
 		public override void OnHitByProjectile(NPC npc, Projectile projectile, NPC.HitInfo hit, int damageDone)
 		{
@@ -160,6 +161,10 @@ public class NPCLoot : GlobalNPC
 			notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<BeenadeLauncher>(), 4));
 			npcLoot.Add(notExpertRule);
 		}
+		if(npc.type==NPCID.Vulture)
+		{
+			npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<DesertFeather>(), 1, 1, 2));
+		}
 	}
 }
 public class ArmsDealer : GlobalNPC
@@ -177,7 +182,7 @@ public class ArmsDealer : GlobalNPC
 		}
 	}
 
-	
+
 }
 public class Demolitionist : GlobalNPC
 {
@@ -195,7 +200,7 @@ public class Demolitionist : GlobalNPC
 			shop.Add(ModContent.ItemType<Aerocket>(), DownedAnyCalamityEvilBoss);
 		}
 	}
-	
+
 }
 
 
