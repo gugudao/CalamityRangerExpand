@@ -38,7 +38,7 @@ namespace CalamityAmmo.Misc
             Item.buffType = ModContent.BuffType<Focus>();
             Item.buffTime = 60 * 60 * 12;
             Item.consumable = true;
-            Item.maxStack = 99999;
+            Item.maxStack = 9999;
 
         }
         public override void AddRecipes()

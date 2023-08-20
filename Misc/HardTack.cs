@@ -44,7 +44,7 @@ namespace CalamityAmmo.Misc
             Item.buffType = BuffID.WellFed3;
             Item.buffTime = 60 * 60 * 18;
             Item.consumable = true;
-            Item.maxStack = 99999;
+            Item.maxStack = 9999;
             
         }
         public override bool CanUseItem(Player player)

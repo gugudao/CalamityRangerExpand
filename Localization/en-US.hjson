@@ -142,6 +142,16 @@ Mods: {
 			Summon.VolcanicFireballRanged.DisplayName: Volcanic Fireball
 			StcikyChewingGum.DisplayName: Stciky Chewing Gum
 			_DazzlingAstralArrowNew.DisplayName: Dazzling Astral Arrow
+			DivineArrow_Proj.DisplayName: Divine Arrow_ Proj
+			DivineGeodeMeteor.DisplayName: Divine Geode Meteor
+			DivineGeodeMeteor2.DisplayName: Divine Geode Meteor2
+
+			Typeless: {
+				DivineGeodeMeteor.DisplayName: Divine Geode Meteor
+				DivineGeodeMeteor2.DisplayName: Divine Geode Meteor2
+			}
+
+			DivineBullet_Proj.DisplayName: Divine Bullet_ Proj
 		}
 
 		Items: {
@@ -567,6 +577,16 @@ Mods: {
 					Look to the skies!The stars align!
 					"Are you sure about that？"
 					'''
+			}
+
+			DivineArrow: {
+				DisplayName: Divine Arrow
+				Tooltip: ""
+			}
+
+			DivineBullet: {
+				DisplayName: Divine Bullet
+				Tooltip: ""
 			}
 		}
 

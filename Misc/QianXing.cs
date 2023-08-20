@@ -84,16 +84,22 @@ namespace CalamityAmmo.Misc
 				// Sets your NPC's flavor text in the bestiary.
 				new FlavorTextBestiaryInfoElement(Language.GetTextValue("Mods.CalamityAmmo.Bestiary.QianXing"))});
 		}
-		public override bool CanTownNPCSpawn(int numTownNPCs)/* tModPorter Suggestion: Copy the implementation of NPC.SpawnAllowed_Merchant in vanilla if you to count money, and be sure to set a flag when unlocked, so you don't count every tick. */
+		public override bool CanTownNPCSpawn(int numTownNPCs)
 		{ // Requirements for the town NPC to spawn.
-			for (int k = 0; k < 255; k++)
+			for (int i = 0; i < 255; i++)
 			{
-				Player player = Main.player[k];
+				Player player = Main.player[i];
 				if (!player.active)
-				{
 					continue;
+
+				for (int j = 0; j < 58; j++)
+				{
+					Item item = player.inventory[j];
+					if (item != null && item.stack > 0 && (item.ammo != 0 || item.useAmmo != 0))
+						return true;
 				}
 			}
+
 			return false;
 		}
 		public override List<string> SetNPCNameList()
@@ -229,12 +235,12 @@ namespace CalamityAmmo.Misc
 				.Add(ModContent.ItemType<VictideArrow>(), DownedDesertScourge, Condition.TimeDay)
 				.Add(ModContent.ItemType<WeakAstralArrow>(), ZoneAstral, Condition.TimeDay)
 				.Add(ModContent.ItemType<NapalmArrow>(), Condition.Hardmode, ZoneBrimstoneCragsBiome, Condition.TimeDay)
-				.Add(ModContent.ItemType<ArcticArrow>(), Condition.InSnow, new("Condions.DownedC",() => DownedBossSystem.downedCryogen), Condition.TimeDay)
+				.Add(ModContent.ItemType<ArcticArrow>(), Condition.InSnow, new("Condions.DownedC", () => DownedBossSystem.downedCryogen), Condition.TimeDay)
 				.Add(ModContent.ItemType<FossilArrow>(), ZoneSulphurousSeaBiomeOrAcid, DownedSeaScourgeAcidRain, Condition.TimeDay)
 				.Add(ModContent.ItemType<TerraArrow>(), Condition.DownedPlantera, Condition.TimeDay)
 				.Add(ModContent.ItemType<IcicleArrow>(), Condition.DownedIceQueen, Condition.DownedSantaNK1, Condition.DownedEverscream, Condition.TimeDay)
 				.Add(ModContent.ItemType<HydrothermicArrow>(), DownedStoneGrantOrGolem, Condition.TimeDay)
-				.Add(ModContent.ItemType<ElysianArrow>(), Condition.DownedMoonLord, new("Condions.ZoneHolyOrHell", () => Condition.InUnderworld.IsMet()||Condition.InHallow.IsMet()),Condition.TimeDay)
+				.Add(ModContent.ItemType<ElysianArrow>(), Condition.DownedMoonLord, new("Condions.ZoneHolyOrHell", () => Condition.InUnderworld.IsMet() || Condition.InHallow.IsMet()), Condition.TimeDay)
 				.Add(ModContent.ItemType<GoldenFeatherArrow>(), DownedDragonfolly, Condition.TimeDay)
 				.Add(ModContent.ItemType<MirageArrow>(), Condition.InDungeon, Condition.DownedMoonLord, Condition.TimeDay)
 				.Add(ModContent.ItemType<BloodfireArrow>(), DownedYouhua, Condition.TimeDay)
@@ -246,19 +252,19 @@ namespace CalamityAmmo.Misc
 				.Add<VictideBullet>(Condition.TimeNight, DownedDesertScourge)
 				.Add<SPBullet>(Condition.TimeNight, DownedDesertScourge)
 				.Add<AccelerationRound>(Condition.TimeNight, DownedDesertScourge)
-				.Add<SuperballBullet>(Condition.TimeNight, DownedDesertScourge,Condition.DownedEowOrBoc)
+				.Add<SuperballBullet>(Condition.TimeNight, DownedDesertScourge, Condition.DownedEowOrBoc)
 				.Add<RottenBullet>(Condition.TimeNight, new("Conditions.DownedHM", () => DownedBossSystem.downedHiveMind))
 				.Add<BloodBullet>(Condition.TimeNight, new("Conditions.DownedP", () => DownedBossSystem.downedPerforator))
 				.Add<MarksmanRound>(Condition.TimeNight, Condition.Hardmode)
-				.Add<WeakAstralBullet>(Condition.TimeNight, Condition.Hardmode,ZoneAstral)
+				.Add<WeakAstralBullet>(Condition.TimeNight, Condition.Hardmode, ZoneAstral)
 				.Add(ModContent.ItemType<NapalmBullet>(), Condition.Hardmode, ZoneBrimstoneCragsBiome, Condition.TimeDay)
-				.Add<VeriumBullet>(Condition.TimeNight, new("Condions.DownedC", () => DownedBossSystem.downedCryogen),Condition.InSnow)
+				.Add<VeriumBullet>(Condition.TimeNight, new("Condions.DownedC", () => DownedBossSystem.downedCryogen), Condition.InSnow)
 				.Add<FossilBullet>(Condition.TimeNight, ZoneSulphurousSeaBiomeOrAcid, DownedSeaScourgeAcidRain)
 				.Add<TerraBullet>(Condition.TimeNight, Condition.DownedPlantera)
 				.Add<EnhancedNanoRound>(Condition.TimeNight, Condition.DownedPlantera, Condition.NpcIsPresent(NPCID.Cyborg))
 				.Add<IcyBullet>(Condition.TimeNight, Condition.DownedIceQueen, Condition.DownedSantaNK1, Condition.DownedEverscream)
 				.Add<HydrothermicBullet>(Condition.TimeNight, DownedStoneGrantOrGolem)
-				.Add<HyperiusBullet>(Condition.TimeNight, new("Condions.DownedC", () => DownedBossSystem.downedCryogen),Condition.DownedPlantera,DownedStoneGrantOrGolem)
+				.Add<HyperiusBullet>(Condition.TimeNight, new("Condions.DownedC", () => DownedBossSystem.downedCryogen), Condition.DownedPlantera, DownedStoneGrantOrGolem)
 				.Add<BubonicRound>(Condition.TimeNight, new("Conditions.DownedPB", () => DownedBossSystem.downedPlaguebringer))
 				.Add<MortarRound>(Condition.TimeNight, new("Conditions.DownedPPG", () => DownedBossSystem.downedProvidence))
 				.Add<RubberMortarRound>(Condition.TimeNight, new("Conditions.DownedPPG", () => DownedBossSystem.downedProvidence))

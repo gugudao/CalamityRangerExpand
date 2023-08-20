@@ -12,6 +12,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Ammos\Hardmode\DazzlingAstralArrowNew.png" />
+    <None Remove="Ammos\Post_MoonLord\DivineBullet_Proj.png" />
+    <None Remove="Ammos\Post_MoonLord\DivineGeodeMeteor.png" />
+    <None Remove="Ammos\Post_MoonLord\DivineGeodeMeteor2.png" />
+    <None Remove="Ammos\Post_MoonLord\小晶体.png" />
     <None Remove="Misc\DesertFeather.png" />
     <None Remove="Misc\Paper2.png" />
     <None Remove="Projectiles\Hardmode\Star2.png" />

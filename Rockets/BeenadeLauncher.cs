@@ -12,7 +12,6 @@ namespace CalamityAmmo.Rockets
 {
 	public class BeenadeLauncher : ModItem
 	{
-		int i = 0;
 		public override void SetStaticDefaults()
 		{
 			// DisplayName.SetDefault("Beenade Launcher");

@@ -36,7 +36,7 @@ namespace CalamityAmmo.Ammos.Hardmode
             Item.DamageType = DamageClass.Ranged;
             Item.width = 8;
             Item.height = 8;
-            Item.maxStack = 99999;
+            Item.maxStack = 9999;
             Item.consumable = true;
             Item.knockBack = 2.5f;
             Item.value = Item.buyPrice(0, 0, 4, 0);

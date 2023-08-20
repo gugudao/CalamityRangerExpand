@@ -62,7 +62,7 @@ namespace CalamityAmmo.Accessories
             Item.UseSound = new SoundStyle?(SoundID.Item1);
             Item.autoReuse = true;
             Item.consumable = true;
-            Item.maxStack = 99999;
+            Item.maxStack = 9999;
             Item.value = CalamityGlobalItem.Rarity1BuyPrice;
             Item.rare = 3;
             Item.shoot = ModContent.ProjectileType<GrapeProj>();

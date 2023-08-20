@@ -1,123 +1,17 @@
-﻿中文说明在更下方↓↓↓
+﻿Calamity Ranger Expansion is a mod that provides several extra ranger ammunitions and accessories, in order to provides more options for rangers and play for fun, instead of doing strict researches about "Who is the strongest equipment set now" or "How overpowered this thing is" all day long;
 
-【Attention Please】This mod must  load with calamity mod !!!
+About the recipes: 
+Please use the Recipe Browser mod.
 
-【请注意】此模组必须与灾厄mod本体同时加载！！！
+[h1]About ammunitions effects:[/h1] 
+In the game there are simple text descriptions. As for their specific functions, I hope you guys can explore and discover them by yourself 
 
-Calamity Ranger Expansion is a mod that provides several extra ranger ammunitions and accessories ,in order to promote the toy weapons of most rangers to a level that can be used at will, instead of doing useless research all day long;
-
-Changelog(The latest now released on discord & bilibili)
-v0.1
-Where the dream start :)
-v0.2
-Completed all pre-hardmode ammo (except the aerialite because I have no idea yet and the sprite of aerospec armor seems will change soon）
-v1.0.0.3
-Changed several bullet projectiles' sprite in order to make them more like the vanilla bullet appearance (a-short-straight-line）
-Try to make the rotten bullet spawn more rational
-Try to make this steamworkshop description more readable
-v1.0.0.4
-Added NapalmBullet
-Added weak astral arrow , astral arrow and dazzling astral arrow
-Similarly, added astral bullets
-v1.0.0.5
-Fixed the wrong use of verbs as nouns in the mod name
-v1.0.0.6
-Icon upgraded.Thanks for @Doggo—Gooo！！
-v1.0.0.7
-Nerfed the astral arrows' damage from 11-15-17 to 11-13-15
-Changed the astral bullets' damage from 10-15-20 to 12-14-16
-[Astral bullet]
-Astral flame projectile now cause 70% damage instead of 140%
-[Dazzling astral arrow]
-The star projectiles now cause 75% damage instead of 100%
-[Dazzling astral bullet]
-Astral mine now has a maximum existence limit of 20.If cannot be put down , they will explode immediately.
-Nerfed napalm bullet's damage from 13 to 12
-v1.0.0.8
-Added Spectre Rifle
-Added FossilArrow
-Added FossilBullet
-v1.0.0.9
-Now Russian is available
-Added Golden Feather Arrow
-Added Celestial Carrot
-（May have some small problems above）
-[Weak astral bullet]
-Nerfed  damage from 12 to 9 (equal to the damage of Chlorophyte Bullet with the same tracking ability)
-No longer increase damage during evolution
-[Astral bullet]
-No longer increase damage during evolution
-Astral flame projectile now cause 50% damage instead of 70%
-[Dazzling astral bullet]
-Astral flame projectile now cause 50% damage instead of 140%
-Astral mine now has a maximum existence limit of 16
-
-
-About the recipe questions:
-Please use the "recipe browser" mod solve them by yourself , thx .
-
-About ammunitions effects:
-In the game there are simple text descriptions .  As for their specific functions, I hope you guys can explore and discover them by yourself 
-
-Here is the ammunition list ：
-[Pre Hardmode][Done]
-Wulfrum Arrow
-Wulfrum Bullet
-Desert Feather Arrow
-Electric Arrow
-Pearl Arrow
-Pearl Bullet
-Victide Arrow
-Victide Bullet
-Sea Prism Bullet
-Rotten Bullet
-Blood Bullet
-[Hardmode][Doing]
-Weak Astral Bullet
-[Post-Moonlord][To Do]
-
-At last
+[h1]At last[/h1]
 Thank very much for the source code reference provided by Homeward Journey mod and the author's gracious teaching.
 
 
-灾厄弹药拓展是一个提供了数种额外射手弹药的模组，目的在于把大部分射手的玩具武器拉到随便抓一把起来都勉强能用的水平而不用整天做无用的研究；
-
-更新日志（现改为在discord服务器和哔哩哔哩发布）
-v0.1
-梦开始的地方
-v0.2
-完成所有肉前弹药（除了天蓝，暂时没有什么好主意，且天蓝系列的材质似乎很快将被重绘）
-v1.0.0.3
-更换了几个子弹弹幕的材质，让它们更贴近原版子弹的样式（一条短直线）
-试图让腐烂子弹的生成位置更加自然
-试图让这个创意工坊说明可读性更强
-v1.0.0.4
-添加了汽油子弹
-添加了尘星箭、幻星箭和炫星箭
-同样的，也添加了三种幻星主题的子弹
-v1.0.0.5
-英文名打错了，改改改
-v1.0.0.6
-更换了模组图标；感谢Doggo_杜格的绘画：）
-v1.0.0.7
-将星幻箭矢的伤害由11-15-17削弱至11-13-15
-将星幻子弹的伤害由10-15-20调整至12-14-16
-幻星子弹的衍生弹幕“星瀚逐影焰”现在仅造成主弹幕70%的伤害而不是140%
-炫星箭召唤的落星仅造成主弹幕75%的伤害而不是100%
-对于炫星子弹，现在场上最多同时存在20颗星幻雷；放不下的星幻雷会立即爆炸
-将汽油子弹的伤害由13削弱至12
-v1.0.0.8
-加入幽灵狙击枪
-加入化石箭
-加入化石子弹
-v1.0.0.9
-现在支持俄语
-加入了应该能用的天体萝卜和金羽箭
-将尘星子弹的伤害由12削弱至9 （与同样具有跟踪能力的叶绿弹的伤害持平）
-尘星子弹和幻星子弹在进化时不再提升伤害
-幻星子弹的衍生弹幕“星瀚逐影焰”现在仅造成主弹幕50%的伤害而不是70%
-炫星子弹的衍生弹幕“星瀚逐影焰”现在仅造成主弹幕50%的伤害而不是140%（上次忘记削了）
-现在场上最多同时存在16颗星幻雷
+灾厄射手拓展是一个提供了数种额外射手弹药和饰品的模组，目的在于提供更多的选择以横向拓展射手职业的游戏内容，以及“玩的开心”
+不欢迎嘴巴不干净的不肯好好说话的开口就逆天逆天的游戏装备平衡魔怔人自诩正义前来辱骂
 
 关于获取方式问题：
 请善用合成表Mod（Recipe Browser）自助解决
@@ -125,50 +19,5 @@ v1.0.0.9
 关于弹药效果问题：
 游戏内有简单的文本说明，至于具体有何种妙用，希望各位能自行探索与发现
 
-下面是弹药清单：
-【肉前】
-钨钢箭
-废钢弹
-荒漠羽箭
-闪电箭
-珍珠箭
-珍珠子弹
-胜潮箭
-胜潮弹
-棱晶子弹
-腐烂子弹
-血弹
-【肉后】（待完成）
-尘星箭
-尘星子弹
-泰坦心能榴弹
-永恒种子
-永恒之箭
-永恒榴弹
-渊泉子弹
-渊泉箭
-渊泉榴弹
-灾劫之箭
-【月后】（待完成）
-元素之箭
-元素子弹
-幽魂之箭
-魂弹
-闪金镇步兵制式子弹幻想I型
-黄金羽箭
-圣晶榴弹
-虚无之箭
-虚空种子
-虚空爆弹
-猎魂鲨牙箭
-猎魂鲨牙子弹
-巨龙之魂
-金源子弹
-金源榴弹
-余烬之箭
-星流子弹
-奇迹生长
-......
-
-最后
+[h1]最后[/h1]
 非常感谢旅人归途模组提供的源码参考及其作者的殷切指导（各种意义上都）
